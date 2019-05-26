@@ -50,3 +50,8 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/Server/sqlite3/db.lock
+/JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/Server/sqlite3/storage.ide
+/JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/Server/sqlite3/storage.ide-shm
+/JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/Server/sqlite3/storage.ide-wal
+/JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/.suo

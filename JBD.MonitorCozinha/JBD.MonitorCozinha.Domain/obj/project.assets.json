@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Projetos Gerais\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
+      "projectUniqueName": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
       "projectName": "JBD.MonitorCozinha.Domain",
-      "projectPath": "F:\\Projetos Gerais\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
+      "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
       "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "F:\\Projetos Gerais\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\obj\\",
+      "outputPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\ProgramData\\Xamarin\\NuGet\\",

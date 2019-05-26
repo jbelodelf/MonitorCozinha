@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Apllicatio", "1-Apllicatio", "{A3FD72FD-044B-4113-A751-218E3E73D7B6}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Apllication", "1-Apllication", "{A3FD72FD-044B-4113-A751-218E3E73D7B6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-WebApplication", "0-WebApplication", "{9FBD008E-83D0-461A-BC62-D10CC1C71EA6}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-WebApis", "4-WebApis", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-TDD", "5-TDD", "{7614FA2A-0A3F-4CBC-A953-AE40DCA455C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBD.MonitorCozinha.Domain", "JBD.MonitorCozinha.Domain\JBD.MonitorCozinha.Domain.csproj", "{A4329FD6-95D6-4E4A-9959-E0498FB1744D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Domain", "JBD.MonitorCozinha.Domain\JBD.MonitorCozinha.Domain.csproj", "{A4329FD6-95D6-4E4A-9959-E0498FB1744D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

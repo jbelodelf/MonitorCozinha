@@ -1,9 +1,7 @@
 ﻿using JBD.MonitorCozinha.Domain.Entitys;
 using JBD.MonitorCozinha.Domain.Interfaces.Repository;
 using JBD.MonitorCozinha.Domain.Interfaces.Service;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace JBD.MonitorCozinha.Domain.Services
 {
@@ -16,9 +14,29 @@ namespace JBD.MonitorCozinha.Domain.Services
             _repository = repository;
         }
 
+        public void Deletar(int Id)
+        {
+            _repository.Deletar(Id);
+        }
+
         public List<EmpresaEntity> ListarEmpresas()
         {
             return _repository.ListarEmpresas();
+        }
+
+        public List<EmpresaEntity> ListarEmpresas(string nome, string cpdcpf)
+        {
+            return _repository.ListarEmpresas(nome, cpdcpf);
+        }
+
+        public EmpresaEntity ObterEmpresaById(int Id)
+        {
+            return _repository.ObterEmpresaById(Id);
+        }
+
+        public void Salvar(EmpresaEntity empresa)
+        {
+            _repository.Salvar(empresa);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Data.Reositories;
 using Data.Reositories.Base;
 using JBD.MonitorCozinha.Application.Interfaces;
@@ -32,6 +33,7 @@ namespace JBD.MonitorCozinha.WebAdmin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddAutoMapper();
 
             //services.Configure<CookiePolicyOptions>(options =>
             //{
@@ -49,7 +51,7 @@ namespace JBD.MonitorCozinha.WebAdmin
 
             services.AddSingleton<IEmpresaService, EmpresaService>();
 
-            services.AddSingleton<IEmpresaRepository, EmpresaResository>();
+            services.AddSingleton<IEmpresaRepository, EmpresaRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

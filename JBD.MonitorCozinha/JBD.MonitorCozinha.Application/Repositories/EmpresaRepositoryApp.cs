@@ -14,9 +14,29 @@ namespace JBD.MonitorCozinha.Application.Repositories
             _sevice = sevice;
         }
 
+        public void Deletar(int Id)
+        {
+            _sevice.Deletar(Id);
+        }
+
         public List<EmpresaEntity> ListarEmpresas()
         {
             return _sevice.ListarEmpresas();
+        }
+
+        public List<EmpresaEntity> ListarEmpresas(string nome, string cpdcpf)
+        {
+            return _sevice.ListarEmpresas(nome, cpdcpf);
+        }
+
+        public EmpresaEntity ObterEmpresaById(int Id)
+        {
+            return _sevice.ObterEmpresaById(Id);
+        }
+
+        public void Salvar(EmpresaEntity empresa)
+        {
+            _sevice.Salvar(empresa);
         }
     }
 }

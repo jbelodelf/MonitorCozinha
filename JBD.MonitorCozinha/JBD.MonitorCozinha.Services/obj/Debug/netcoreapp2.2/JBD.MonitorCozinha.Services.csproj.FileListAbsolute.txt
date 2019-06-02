@@ -1,0 +1,11 @@
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.deps.json
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.csprojAssemblyReference.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.csproj.CoreCompileInputs.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.AssemblyInfoInputs.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.AssemblyInfo.cs
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.runtimeconfig.json
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.runtimeconfig.dev.json
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.pdb
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Services\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Services.csproj.CopyComplete

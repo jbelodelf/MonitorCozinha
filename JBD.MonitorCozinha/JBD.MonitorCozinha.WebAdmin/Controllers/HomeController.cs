@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using JBD.MonitorCozinha.WebAdmin.Models;
 using JBD.MonitorCozinha.Application.Interfaces;
+using AutoMapper;
+using JBD.MonitorCozinha.WebAdmin.Services;
 
 namespace JBD.MonitorCozinha.WebAdmin.Controllers
 {
     public class HomeController : Controller
     {
-        IEmpresaApp _empresaApp;
+        private readonly IEmpresaApp _empresaApp;
+        private readonly IMapper _mapper;
 
-        public HomeController(IEmpresaApp empresaApp)
+        public HomeController(IEmpresaApp empresaApp, IMapper mapper)
         {
             _empresaApp = empresaApp;
+            _mapper = mapper;
         }
 
         public IActionResult Index()
         {
-            var listaEmpresa = _empresaApp.ListarEmpresas();
+            EmpresaServiceWeb service = new EmpresaServiceWeb(_mapper);
+            var teste = service.ListarEmpresas();
             return View();
         }
 

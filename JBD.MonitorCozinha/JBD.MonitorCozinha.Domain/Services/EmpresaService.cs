@@ -24,9 +24,9 @@ namespace JBD.MonitorCozinha.Domain.Services
             return _repository.ListarEmpresas();
         }
 
-        public List<EmpresaEntity> ListarEmpresas(string nome, string cpdcpf)
+        public List<EmpresaEntity> ListarEmpresas(string nome, string cnpjcpf)
         {
-            return _repository.ListarEmpresas(nome, cpdcpf);
+            return _repository.ListarEmpresas(nome, cnpjcpf);
         }
 
         public EmpresaEntity ObterEmpresaById(int Id)

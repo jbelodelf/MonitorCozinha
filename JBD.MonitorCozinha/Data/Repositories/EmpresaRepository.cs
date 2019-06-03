@@ -40,7 +40,7 @@ namespace Data.Reositories
             return ListaEmpresas;
         }
 
-        public List<EmpresaEntity> ListarEmpresas(string nome, string cpdcpf)
+        public List<EmpresaEntity> ListarEmpresas(string nome, string cnpjcpf)
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
             string[] includes = new string[] { "Contatos", "Unidades" };

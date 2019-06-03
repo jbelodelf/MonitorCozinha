@@ -6,4 +6,3 @@ F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Domain\o
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Domain\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.AssemblyInfo.cs
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Domain\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Domain\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.pdb
-F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Domain\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.csprojAssemblyReference.cache

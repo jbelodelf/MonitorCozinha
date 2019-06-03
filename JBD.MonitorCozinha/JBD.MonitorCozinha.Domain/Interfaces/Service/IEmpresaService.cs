@@ -6,7 +6,7 @@ namespace JBD.MonitorCozinha.Domain.Interfaces.Service
     public interface IEmpresaService
     {
         List<EmpresaEntity> ListarEmpresas();
-        List<EmpresaEntity> ListarEmpresas(string nome, string cpdcpf);
+        List<EmpresaEntity> ListarEmpresas(string nome, string cnpjcpf);
         EmpresaEntity ObterEmpresaById(int Id);
         void Salvar(EmpresaEntity empresa);
         void Deletar(int Id);

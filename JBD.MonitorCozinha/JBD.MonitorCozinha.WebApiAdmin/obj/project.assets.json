@@ -3828,19 +3828,6 @@
           }
         }
       },
-      "System.Net.Http.Formatting.Extension/5.2.3": {
-        "type": "package",
-        "compile": {
-          "lib/System.Net.Http.Extensions.dll": {},
-          "lib/System.Net.Http.Formatting.dll": {},
-          "lib/System.Net.Http.Primitives.dll": {}
-        },
-        "runtime": {
-          "lib/System.Net.Http.Extensions.dll": {},
-          "lib/System.Net.Http.Formatting.dll": {},
-          "lib/System.Net.Http.Primitives.dll": {}
-        }
-      },
       "System.Net.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -10387,20 +10374,6 @@
         "system.net.http.nuspec"
       ]
     },
-    "System.Net.Http.Formatting.Extension/5.2.3": {
-      "sha512": "BlYwj3Mbgc2i+NqtBZ+bea3LiN9WuGpE8PCylBvhxV0wBs0XTkXJmDuzkNnUyPhDBqKMBwDK0ZCnwJ8LpQ0aEg==",
-      "type": "package",
-      "path": "system.net.http.formatting.extension/5.2.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/System.Net.Http.Extensions.dll",
-        "lib/System.Net.Http.Formatting.dll",
-        "lib/System.Net.Http.Primitives.dll",
-        "system.net.http.formatting.extension.5.2.3.nupkg.sha512",
-        "system.net.http.formatting.extension.nuspec"
-      ]
-    },
     "System.Net.Primitives/4.3.0": {
       "sha512": "qOu+hDwFwoZPbzPvwut2qATe3ygjeQBDQj91xlsaqGFQUI5i4ZnZb8yyQuLGpDGivEPIt8EJkd1BVzVoP31FXA==",
       "type": "package",
@@ -13115,8 +13088,7 @@
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 2.2.4",
       "Microsoft.NETCore.App >= 2.2.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3",
-      "System.Net.Http.Formatting.Extension >= 5.2.3"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.3"
     ]
   },
   "packageFolders": {
@@ -13205,10 +13177,6 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.2.3, )"
-          },
-          "System.Net.Http.Formatting.Extension": {
-            "target": "Package",
-            "version": "[5.2.3, )"
           }
         },
         "imports": [
@@ -13226,16 +13194,6 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.7' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v2.2"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'System.Net.Http.Formatting.Extension 5.2.3' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
-      "libraryId": "System.Net.Http.Formatting.Extension",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.2"
       ]

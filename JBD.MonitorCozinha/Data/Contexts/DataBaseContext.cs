@@ -25,7 +25,7 @@ namespace Data.Contexts
 
         private string StringConectionConfig()
         {
-            return "Server=DESKTOP-IANDO4A;Initial Catalog=DB_MONITOR_COZINHA;User ID=sa;Password=sqlserver2016;Integrated Security=False;Connect Timeout=15;Encrypt=False;Trusted_Connection=True";
+            return "Server=DESKTOP-24V97RI;Database=DB_MONITOR_COZINHA;User Id=sa;Password=mbelo;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
         }
     }
 }

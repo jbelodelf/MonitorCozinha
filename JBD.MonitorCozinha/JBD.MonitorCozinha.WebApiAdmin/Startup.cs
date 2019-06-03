@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Data.Reositories;
-using Data.Reositories.Base;
+using Data.Repositories.Base;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Application.Repositories;
 using JBD.MonitorCozinha.Domain.Interfaces.Repository;

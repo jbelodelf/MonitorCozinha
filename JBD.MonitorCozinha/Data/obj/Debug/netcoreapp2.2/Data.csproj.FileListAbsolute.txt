@@ -10,3 +10,15 @@ F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.csproj.CopyComplete
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\bin\Debug\netcoreapp2.2\Data.deps.json
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\bin\Debug\netcoreapp2.2\Data.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\bin\Debug\netcoreapp2.2\Data.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.csprojAssemblyReference.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.csproj.CoreCompileInputs.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfoInputs.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.AssemblyInfo.cs
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.csproj.CopyComplete
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\Data\obj\Debug\netcoreapp2.2\Data.pdb

@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 
-namespace Data.Reositories.Base
+namespace Data.Repositories.Base
 {
     public class RepositoryBase<T> : IDisposable, IRepositoryBase<T> where T : class
     {

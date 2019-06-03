@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using JBD.MonitorCozinha.Domain.DTOS;
-using JBD.MonitorCozinha.Domain.Entitys;
 using JBD.MonitorCozinha.WebAdmin.Models;
 
 namespace JBD.MonitorCozinha.WebAdmin.Mappings
@@ -9,8 +8,15 @@ namespace JBD.MonitorCozinha.WebAdmin.Mappings
     {
         public MappingProfiles()
         {
-            CreateMap<EmpresaEntity, EmpresaDTO>().ReverseMap();
             CreateMap<EmpresaDTO, EmpresaModel>().ReverseMap();
+            CreateMap<ControleAcessoDTO, ControleAcessoModel>().ReverseMap();
+            CreateMap<NumeroPedidoDTO, NumeroPedidoModel>().ReverseMap();
+            CreateMap<PessoaDTO, PessoaModel>().ReverseMap();
+            CreateMap<StatusDTO, StatusModel>().ReverseMap();
+            CreateMap<StatusPedidoDTO, StatusPedidoModel>().ReverseMap();
+            CreateMap<TelefoneDTO, TelefoneModel>().ReverseMap();
+            CreateMap<UnidadeDTO, UnidadeModel>().ReverseMap();
+            CreateMap<UsuarioDTO, UsuarioModel>().ReverseMap();
 
 
         }

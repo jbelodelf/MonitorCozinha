@@ -4,7 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Data.Reositories;
-using Data.Reositories.Base;
+using Data.Repositories.Base;
+using Data.Repositories;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Application.Repositories;
 using JBD.MonitorCozinha.Domain.Interfaces.Repository;
@@ -48,10 +49,25 @@ namespace JBD.MonitorCozinha.WebAdmin
             services.AddSingleton(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 
             services.AddSingleton<IEmpresaApp, EmpresaRepositoryApp>();
+            services.AddSingleton<INumeroPedidoApp, NumeroPedidoRepositoryApp>();
+            services.AddSingleton<IPessoaApp, PessoaRepositoryApp>();
+            services.AddSingleton<ITelefoneApp, TelefoneRepositoryApp>();
+            services.AddSingleton<IUnidadeApp, UnidadeRepositoryApp>();
+            services.AddSingleton<IUsuarioApp, UsuarioRepositoryApp>();
 
             services.AddSingleton<IEmpresaService, EmpresaService>();
+            services.AddSingleton<INumeroPedidoService, NumeroPedidoService>();
+            services.AddSingleton<IPessoaService, PessoaService>();
+            services.AddSingleton<ITelefoneService, TelefoneService>();
+            services.AddSingleton<IUnidadeService, UnidadeService>();
+            services.AddSingleton<IUsuarioService, UsuarioService>();
 
             services.AddSingleton<IEmpresaRepository, EmpresaRepository>();
+            services.AddSingleton<INumeroPedidoRepository, NumeroPedidoRepository>();
+            services.AddSingleton<IPessoaRepository, PessoaRepository>();
+            services.AddSingleton<ITelefoneRepository, TelefoneRepository>();
+            services.AddSingleton<IUnidadeRepository, UnidadeRepository>();
+            services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

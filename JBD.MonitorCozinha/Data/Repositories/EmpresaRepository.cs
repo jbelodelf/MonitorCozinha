@@ -1,4 +1,4 @@
-﻿using Data.Reositories.Base;
+﻿using Data.Repositories.Base;
 using JBD.MonitorCozinha.Domain.Entitys;
 using JBD.MonitorCozinha.Domain.Enuns;
 using JBD.MonitorCozinha.Domain.Interfaces.Repository;

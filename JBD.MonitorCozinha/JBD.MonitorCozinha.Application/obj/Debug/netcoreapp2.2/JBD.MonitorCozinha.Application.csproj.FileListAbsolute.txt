@@ -10,3 +10,15 @@ F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Applicat
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.csproj.CopyComplete
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.deps.json
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.csprojAssemblyReference.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.csproj.CoreCompileInputs.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.AssemblyInfoInputs.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.AssemblyInfo.cs
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.csproj.CopyComplete
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.pdb

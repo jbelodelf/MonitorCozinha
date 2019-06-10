@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.WebAdmin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Test.Admin", "JBD.MonitorCozinha.Test.Admin\JBD.MonitorCozinha.Test.Admin.csproj", "{AA7EBAA7-C767-4A5A-90EB-65674FBC2700}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBD.MonitorCozinha.WebApiAdmin", "JBD.MonitorCozinha.WebApiAdmin\JBD.MonitorCozinha.WebApiAdmin.csproj", "{1F8C4851-9051-418D-B237-9CCA90ABB678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.WebApiAdmin", "JBD.MonitorCozinha.WebApiAdmin\JBD.MonitorCozinha.WebApiAdmin.csproj", "{1F8C4851-9051-418D-B237-9CCA90ABB678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

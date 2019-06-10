@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace JBD.MonitorCozinha.Domain.DTOS
 {
@@ -15,7 +16,7 @@ namespace JBD.MonitorCozinha.Domain.DTOS
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
-        //public List<PessoaEntity> Contatos { get; set; }
-        //public List<UnidadeEntity> Unidades { get; set; }
+        public List<PessoaDTO> Contatos { get; set; }
+        public List<UnidadeDTO> Unidades { get; set; }
     }
 }

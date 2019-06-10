@@ -26,7 +26,9 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         }
 
         // GET api/values
-        [HttpGet("ListarEmpresas")]
+        //[HttpGet("ListarEmpresas")]
+        [AcceptVerbs("GET")]
+        [Route("ListarEmpresas")]
         public ObjectResult ListarEmpresas()
         {
             var empresasEntity = _empresaApp.ListarEmpresas();
@@ -35,11 +37,13 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         }
 
         // GET api/values
-        [HttpGet("{id}", Name = "ObterEmpresas")]
+        //[HttpGet("{id}", Name = "ObterEmpresas")]
+        [AcceptVerbs("GET")]
+        [Route("ObterEmpresas/{id}")]
         public ObjectResult ObterEmpresas(int id)
         {
             var empresaEntity = _empresaApp.ObterEmpresaById(id);
-            var empresaDTO = _mapper.Map<List<EmpresaDTO>>(empresaEntity);
+            var empresaDTO = _mapper.Map<EmpresaDTO>(empresaEntity);
             return StatusCode((int)HttpStatusCode.OK, empresaDTO);
         }
 

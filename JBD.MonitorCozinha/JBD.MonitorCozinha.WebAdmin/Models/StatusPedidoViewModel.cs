@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace JBD.MonitorCozinha.WebAdmin.Models
 {
-    public class StatusPedidoModel
+    public class StatusPedidoViewModel
     {
         public int IdStatusPedido { get; set; }
         public string Status { get; set; }

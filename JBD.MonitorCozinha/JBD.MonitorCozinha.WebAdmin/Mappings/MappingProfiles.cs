@@ -8,15 +8,15 @@ namespace JBD.MonitorCozinha.WebAdmin.Mappings
     {
         public MappingProfiles()
         {
-            CreateMap<EmpresaDTO, EmpresaModel>().ReverseMap();
-            CreateMap<ControleAcessoDTO, ControleAcessoModel>().ReverseMap();
-            CreateMap<NumeroPedidoDTO, NumeroPedidoModel>().ReverseMap();
-            CreateMap<PessoaDTO, PessoaModel>().ReverseMap();
-            CreateMap<StatusDTO, StatusModel>().ReverseMap();
-            CreateMap<StatusPedidoDTO, StatusPedidoModel>().ReverseMap();
-            CreateMap<TelefoneDTO, TelefoneModel>().ReverseMap();
-            CreateMap<UnidadeDTO, UnidadeModel>().ReverseMap();
-            CreateMap<UsuarioDTO, UsuarioModel>().ReverseMap();
+            CreateMap<EmpresaDTO, EmpresaViewModel>().ReverseMap();
+            CreateMap<ControleAcessoDTO, ControleAcessoViewModel>().ReverseMap();
+            CreateMap<NumeroPedidoDTO, NumeroPedidoViewModel>().ReverseMap();
+            CreateMap<PessoaDTO, PessoaViewModel>().ReverseMap();
+            CreateMap<StatusDTO, StatusViewModel>().ReverseMap();
+            CreateMap<StatusPedidoDTO, StatusPedidoViewModel>().ReverseMap();
+            CreateMap<TelefoneDTO, TelefoneViewModel>().ReverseMap();
+            CreateMap<UnidadeDTO, UnidadeViewModel>().ReverseMap();
+            CreateMap<UsuarioDTO, UsuarioViewModel>().ReverseMap();
 
 
         }

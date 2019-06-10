@@ -1,3 +1,5 @@
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.Views.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.Views.pdb
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.deps.json
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.runtimeconfig.json
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.runtimeconfig.dev.json
@@ -6,9 +8,11 @@ F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAd
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\Data.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\Data.pdb
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Application.pdb
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.Domain.pdb
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.pdb
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.csprojAssemblyReference.cache
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.csproj.CoreCompileInputs.cache
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.RazorAssemblyInfo.cache

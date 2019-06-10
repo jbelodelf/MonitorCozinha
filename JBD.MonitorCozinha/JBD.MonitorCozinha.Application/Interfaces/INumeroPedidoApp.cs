@@ -11,6 +11,5 @@ namespace JBD.MonitorCozinha.Application.Interfaces
         NumeroPedidoEntity ObterPedidoById(int Id);
         void Salvar(NumeroPedidoEntity pedido);
         void Deletar(int Id);
-
     }
 }

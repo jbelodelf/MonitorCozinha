@@ -29,12 +29,12 @@ namespace Data.Reositories
         public List<EmpresaEntity> ListarEmpresas()
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
-            string[] includes = new string[] { "Contatos", "Unidades" };
+            string[] includes = new string[] { "Unidades", "Contatos" };
             Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
-                ListaEmpresas = rep.Select(expressionFiltro).ToList();
+                ListaEmpresas = rep.Select(expressionFiltro, includes).ToList();
             }
 
             return ListaEmpresas;
@@ -43,12 +43,12 @@ namespace Data.Reositories
         public List<EmpresaEntity> ListarEmpresas(string nome, string cnpjcpf)
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
-            string[] includes = new string[] { "Contatos", "Unidades" };
+            string[] includes = new string[] { "Unidades", "Contatos" };
             Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
-                ListaEmpresas = rep.Select().ToList();
+                ListaEmpresas = rep.Select(expressionFiltro, includes).ToList();
             }
 
             return ListaEmpresas;
@@ -57,12 +57,12 @@ namespace Data.Reositories
         public EmpresaEntity ObterEmpresaById(int Id)
         {
             EmpresaEntity empresa = new EmpresaEntity();
-            string[] includes = new string[] { "Contatos", "Unidades" };
+            string[] includes = new string[] { "Unidades", "Contatos" };
             Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdEmpresa == (Int64)Id);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
-                empresa = rep.Select(expressionFiltro).FirstOrDefault();
+                empresa = rep.Select(expressionFiltro, includes).FirstOrDefault();
             }
 
             return empresa;

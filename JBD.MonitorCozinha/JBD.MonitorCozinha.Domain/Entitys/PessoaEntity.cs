@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -16,13 +17,14 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public int IdPessoa { get; set; }
         public int IdEmpresa { get; set; }
         public int IdUnidade { get; set; }
-        public int CPF { get; set; }
-        public int RG { get; set; }
-        public int Cargo { get; set; }
-        public int EmailPJ { get; set; }
-        public int EmailPF { get; set; }
+        public string Nome { get; set; }
+        public string CPF { get; set; }
+        public string RG { get; set; }
+        public string Cargo { get; set; }
+        public string EmailPJ { get; set; }
+        public string EmailPF { get; set; }
         public int IdStatus { get; set; }
-        public int DataCadastro { get; set; }
+        public DateTime DataCadastro { get; set; }
 
         public List<TelefoneEntity> Telefones { get; set; }
     }

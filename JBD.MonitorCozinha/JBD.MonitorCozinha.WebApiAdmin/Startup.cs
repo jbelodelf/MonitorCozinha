@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Data.Reositories;
+using Data.Repositories;
 using Data.Repositories.Base;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Application.Repositories;
@@ -18,6 +19,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace JBD.MonitorCozinha.WebApiAdmin
 {
@@ -39,10 +41,18 @@ namespace JBD.MonitorCozinha.WebApiAdmin
             services.AddSingleton(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 
             services.AddSingleton<IEmpresaApp, EmpresaRepositoryApp>();
+            services.AddSingleton<INumeroPedidoApp, NumeroPedidoRepositoryApp>();
 
             services.AddSingleton<IEmpresaService, EmpresaService>();
+            services.AddSingleton<INumeroPedidoService, NumeroPedidoService>();
 
             services.AddSingleton<IEmpresaRepository, EmpresaRepository>();
+            services.AddSingleton<INumeroPedidoRepository, NumeroPedidoRepository>();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
 
         }
 
@@ -55,6 +65,12 @@ namespace JBD.MonitorCozinha.WebApiAdmin
             }
 
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
         }
     }
 }

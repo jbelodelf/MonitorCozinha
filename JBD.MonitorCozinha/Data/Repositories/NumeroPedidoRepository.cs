@@ -30,7 +30,6 @@ namespace Data.Repositories
         //List Pedidos
         public List<NumeroPedidoEntity> ListarPedidos()
         {
-
             List<NumeroPedidoEntity> ListaPedidos = new List<NumeroPedidoEntity>();
             Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (a => a.IdStatusPedido != (int)StatusEnum.Excluido);
 
@@ -40,7 +39,6 @@ namespace Data.Repositories
             }
 
             return ListaPedidos;
-
         }
 
         //Get By Id Pedidos

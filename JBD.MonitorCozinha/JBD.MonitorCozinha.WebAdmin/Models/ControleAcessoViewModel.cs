@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace JBD.MonitorCozinha.WebAdmin.Models
 {
-    public class ControleAcessoModel
+    public class ControleAcessoViewModel
     {
         public int IdControleAcesso { get; set; }
         public int IdUsuario { get; set; }

@@ -18,7 +18,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             _mapper = mapper;
         }
 
-        public List<EmpresaModel> ListarEmpresas()
+        public List<EmpresaViewModel> ListarEmpresas()
         {
             using (HttpClient client = new HttpClient())
             {
@@ -27,7 +27,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 List<EmpresaDTO> data = JsonConvert.DeserializeObject<List<EmpresaDTO>>(stringData);
 
-                var empresasModel = _mapper.Map<List<EmpresaModel>>(data);
+                var empresasModel = _mapper.Map<List<EmpresaViewModel>>(data);
                 return empresasModel;
             }
         }

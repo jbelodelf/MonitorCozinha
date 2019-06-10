@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace JBD.MonitorCozinha.WebAdmin.Models
 {
-    public class UnidadeModel
+    public class UnidadeViewModel
     {
         public int IdUnidade { get; set; }
         public int IdEmpresa { get; set; }
@@ -20,8 +20,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
-        //public List<NumeroPedidoEntity> NumeroPedidos { get; set; }
-        //public List<PessoaEntity> Pessoas { get; set; }
+        public List<NumeroPedidoViewModel> NumeroPedidos { get; set; }
+        public List<PessoaViewModel> Pessoas { get; set; }
 
     }
 }

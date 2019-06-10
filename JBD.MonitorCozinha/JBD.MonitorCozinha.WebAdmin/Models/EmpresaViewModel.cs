@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace JBD.MonitorCozinha.WebAdmin.Models
 {
-    public class EmpresaModel
+    public class EmpresaViewModel
     {
         public int IdEmpresa { get; set; }
         public string RazaoSocial { get; set; }
@@ -15,7 +16,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
-        //public List<PessoaEntity> Contatos { get; set; }
-        //public List<UnidadeEntity> Unidades { get; set; }
+        public List<PessoaViewModel> Contatos { get; set; }
+        public List<UnidadeViewModel> Unidades { get; set; }
     }
 }

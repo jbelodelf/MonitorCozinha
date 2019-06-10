@@ -21,6 +21,5 @@ namespace JBD.MonitorCozinha.Domain.DTOS
 
         //public List<NumeroPedidoEntity> NumeroPedidos { get; set; }
         //public List<PessoaEntity> Pessoas { get; set; }
-
     }
 }

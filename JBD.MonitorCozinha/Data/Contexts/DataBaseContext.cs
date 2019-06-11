@@ -22,10 +22,23 @@ namespace Data.Contexts
         }
 
         public DbSet<EmpresaEntity> Empresa { get; set; }
+        public DbSet<NumeroPedidoEntity> NumeroPedido { get; set; }
+        public DbSet<PessoaEntity> Pessoa { get; set; }
+        public DbSet<TelefoneEntity> Telefone { get; set; }
+        public DbSet<UnidadeEntity> Unidade { get; set; }
+        public DbSet<UsuarioEntity> Usuario { get; set; }
+        public DbSet<ControleAcessoEntity> ControleAcesso { get; set; }
+        public DbSet<StatusEntity> Status { get; set; }
+        public DbSet<StatusPedidoEntity> StatusPedido { get; set; }
+        public DbSet<TipoContatoEntity> TipoContato { get; set; }
+
 
         private string StringConectionConfig()
         {
             return "Server=DESKTOP-IANDO4A;Database=DB_MONITOR_COZINHA;User Id=sa;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
+
+            //Michel
+            //return "Server=DESKTOP-24V97RI;Database=DB_MONITOR_COZINHA;User Id=sa;Password=mbelo;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
         }
     }
 }

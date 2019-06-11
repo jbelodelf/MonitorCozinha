@@ -8,18 +8,15 @@ using JBD.MonitorCozinha.WebAdmin.Models;
 using JBD.MonitorCozinha.WebAdmin.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-//using System.Threading;
 
 namespace JBD.MonitorCozinha.WebAdmin.Controllers
 {
     public class MonitorController : Controller
     {
         private readonly IMapper _mapper;
-        //INumeroPedidoApp _numeroPedido;
 
         public MonitorController(IMapper mapper)
         {
-            //_numeroPedido = numeroPedido;
             _mapper = mapper;
         }
 
@@ -111,14 +108,6 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                 return View();
             }
         }
-
-        //public static void CarregaMonitor()
-        //{
-        //    ThreadStart start = new ThreadStart(CarregaMonitor);
-        //    Thread mythread = new Thread(start);
-        //    mythread.Start();
-        //}
-
 
     }
 }

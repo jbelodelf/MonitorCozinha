@@ -14,12 +14,10 @@ namespace JBD.MonitorCozinha.Domain.DTOS
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Pais { get; set; }
-        public int IdContatoPrincipal { get; set; }
-        public int IdContatoSecundario { get; set; }
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
+        public List<PessoaDTO> Pessoas { get; set; }
         //public List<NumeroPedidoEntity> NumeroPedidos { get; set; }
-        //public List<PessoaEntity> Pessoas { get; set; }
     }
 }

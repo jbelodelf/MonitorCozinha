@@ -17,6 +17,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public string EmailPJ { get; set; }
         public string EmailPF { get; set; }
         public int IdStatus { get; set; }
+        public int IdTipoContato { get; set; }
         public DateTime DataCadastro { get; set; }
 
         public List<TelefoneViewModel> Telefones { get; set; }

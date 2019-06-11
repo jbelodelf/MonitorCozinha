@@ -29,7 +29,7 @@ namespace Data.Reositories
         public List<EmpresaEntity> ListarEmpresas()
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
-            string[] includes = new string[] { "Unidades" };
+            string[] includes = new string[] { "Unidades", "Unidades.Pessoas" };
             Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())

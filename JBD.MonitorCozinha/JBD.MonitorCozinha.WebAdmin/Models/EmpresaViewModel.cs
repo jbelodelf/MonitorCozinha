@@ -11,12 +11,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public string CNPJ { get; set; }
         public string InscricaoEstadual { get; set; }
         public string InscricaoMunicipal { get; set; }
-        public int IdContatoPrincipal { get; set; }
-        public int IdContatoSecundario { get; set; }
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
-        public List<PessoaViewModel> Contatos { get; set; }
         public List<UnidadeViewModel> Unidades { get; set; }
     }
 }

@@ -40,7 +40,7 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         // GET api/values
         //[HttpGet("{id}", Name = "ObterEmpresas")]
         [AcceptVerbs("GET")]
-        [Route("ObterEmpresas/{id}")]
+        [Route("ObterEmpresa/{id}")]
         public ObjectResult Get(int id)
         {
             var empresaEntity = _empresaApp.ObterEmpresaById(id);
@@ -51,7 +51,7 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         // POST: api/Empresa
         //[HttpPost]
         [AcceptVerbs("POST")]
-        [Route("InserirEmpresa/{id}")]
+        [Route("InserirEmpresa")]
         public ObjectResult Post([FromBody] EmpresaDTO empresa)
         {
             var empresaEntity = _mapper.Map<EmpresaEntity>(empresa);
@@ -62,8 +62,8 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         // PUT: api/Empresa/5
         //[HttpPut("{id}")]
         [AcceptVerbs("PUT")]
-        [Route("AlterarEmpresa/{id}")]
-        public ObjectResult Put(int id, [FromBody] EmpresaDTO empresa)
+        [Route("AlterarEmpresa")]
+        public ObjectResult Put([FromBody] EmpresaDTO empresa)
         {
             var empresaEntity = _mapper.Map<EmpresaEntity>(empresa);
             _empresaApp.Salvar(empresaEntity);

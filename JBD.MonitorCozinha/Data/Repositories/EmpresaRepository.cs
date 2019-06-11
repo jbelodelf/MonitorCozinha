@@ -43,7 +43,7 @@ namespace Data.Reositories
         public List<EmpresaEntity> ListarEmpresas(string nome, string cnpjcpf)
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
-            string[] includes = new string[] { "Unidades", "Contatos" };
+            string[] includes = new string[] { "Unidades", "Unidades.Pessoa" };
             Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
@@ -57,7 +57,7 @@ namespace Data.Reositories
         public EmpresaEntity ObterEmpresaById(int Id)
         {
             EmpresaEntity empresa = new EmpresaEntity();
-            string[] includes = new string[] { "Unidades", "Contatos" };
+            string[] includes = new string[] { "Unidades", "Unidades.Pessoa" };
             Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdEmpresa == (Int64)Id);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())

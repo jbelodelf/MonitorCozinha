@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace JBD.MonitorCozinha.WebAdmin.Services
 {
@@ -29,6 +30,48 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
 
                 var empresasModel = _mapper.Map<List<EmpresaViewModel>>(data);
                 return empresasModel;
+            }
+        }
+
+        public EmpresaViewModel ObterEmpresa(int Id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                ServiceBase(client);
+                HttpResponseMessage response = client.GetAsync("ObterEmpresa/" + Id).Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                EmpresaDTO data = JsonConvert.DeserializeObject<EmpresaDTO>(stringData);
+
+                var empresaModel = _mapper.Map<EmpresaViewModel>(data);
+                return empresaModel;
+            }
+        }
+
+        public void CadastrarEmpresa(EmpresaViewModel empresa)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var empresasDTO = _mapper.Map<EmpresaDTO>(empresa);
+                ServiceBase(client);
+                string parametroJSON = JsonConvert.SerializeObject(empresasDTO);
+                StringContent conteudo = new StringContent(parametroJSON, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = client.PostAsync("InserirEmpresa", conteudo).Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                EmpresaDTO data = JsonConvert.DeserializeObject<EmpresaDTO>(stringData);
+            }
+        }
+
+        public void AlterarEmpresa(EmpresaViewModel empresa)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var empresasDTO = _mapper.Map<EmpresaDTO>(empresa);
+                ServiceBase(client);
+                string parametroJSON = JsonConvert.SerializeObject(empresasDTO);
+                StringContent conteudo = new StringContent(parametroJSON, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = client.PutAsync("AlterarEmpresa", conteudo).Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                EmpresaDTO data = JsonConvert.DeserializeObject<EmpresaDTO>(stringData);
             }
         }
 

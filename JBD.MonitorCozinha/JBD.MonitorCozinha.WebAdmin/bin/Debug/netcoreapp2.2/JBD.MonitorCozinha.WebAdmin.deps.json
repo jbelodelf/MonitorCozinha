@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "a6e4b2072806cc0b0eae4c1f55ee7027759c818b"
+    "signature": "4506ceae8f895f66da188668e38ef3d969744b72"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,6 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.0",
           "Data": "1.0.0",
-          "FontAwesome": "4.7.0",
           "JBD.MonitorCozinha.Application": "1.0.0",
           "JBD.MonitorCozinha.Domain": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
@@ -71,7 +70,6 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
-      "FontAwesome/4.7.0": {},
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.CSharp": "2.8.0",
@@ -3650,13 +3648,6 @@
       "sha512": "sha512-vqbyqXknln1NFn80fbyJVPqJ3LMZhhhq8wMAl4BGTIH6GmK3gtGofuvo8bnWXXuD07y1lnMEuCmiNacvdtxPkw==",
       "path": "automapper.extensions.microsoft.dependencyinjection/6.1.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.6.1.0.nupkg.sha512"
-    },
-    "FontAwesome/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
-      "path": "fontawesome/4.7.0",
-      "hashPath": "fontawesome.4.7.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",

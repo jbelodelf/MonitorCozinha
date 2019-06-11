@@ -24,6 +24,7 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public string EmailPJ { get; set; }
         public string EmailPF { get; set; }
         public int IdStatus { get; set; }
+        public int IdTipoContato { get; set; }
         public DateTime DataCadastro { get; set; }
 
         public List<TelefoneEntity> Telefones { get; set; }

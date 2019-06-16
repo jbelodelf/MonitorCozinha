@@ -6,6 +6,7 @@
         $("#TopoPesquisa").css("padding-top", "20px");
         $("#TopoPesquisa").css("padding-bottom", "15px");
         var unidade = $("#UnidadePesquisar").val();
+        var idEmpresa = $("#IdEmpresa").val();
 
         var url = "/Unidade/ListarUnidades";
         $.ajax({
@@ -13,7 +14,7 @@
             , datatype: "json"
             , type: "GET"
             , async: false
-            , data: { nomeUnidade: unidade }
+            , data: { nomeUnidade: unidade, IdEmpresa: idEmpresa }
             , cache: false
         }).done(function (data) {
             $("#divListarUnidades").html(data);
@@ -101,7 +102,8 @@
                     Estado: $("#Estado").val(),
                     Pais: $("#Pais").val(),
                     IdStatus: $("#IdStatus").val(),
-                    DataCadastro: $("#DataCadastro").val()                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+                    DataCadastro: $("#DataCadastro").val()  
+                    Telefone{ }
                 };
                 $.ajax({
                     url: url

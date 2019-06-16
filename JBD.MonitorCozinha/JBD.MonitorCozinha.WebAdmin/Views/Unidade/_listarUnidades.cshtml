@@ -1,4 +1,5 @@
-﻿@model IEnumerable<JBD.MonitorCozinha.WebAdmin.Models.UnidadeViewModel>
+﻿@*@model IEnumerable<JBD.MonitorCozinha.WebAdmin.Models.EmpresaViewModel>*@
+@model JBD.MonitorCozinha.WebAdmin.Models.EmpresaViewModel
 
 <table class="table table-striped table-bordered table-hover" id="tbListarUnidades">
     <thead>
@@ -7,47 +8,57 @@
                     @Html.DisplayNameFor(model => model.IdUnidade)
                 </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.IdEmpresa)
+                @*@Html.DisplayNameFor(model => model.IdEmpresa)*@
+                IdEMpresa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                @*@Html.DisplayNameFor(model => model.Unidades.Nome)*@
+                Nome
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CEP)
+                @*@Html.DisplayNameFor(model => model..CEP)*@
+                CEP
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Endereco)
+                @*@Html.DisplayNameFor(model => model.Endereco)*@
+                Endereço
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Bairro)
+                @*@Html.DisplayNameFor(model => model.Bairro)*@
+                Bairro
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Cidade)
+                @*@Html.DisplayNameFor(model => model.Cidade)*@
+                Cidade
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Estado)
+                @*@Html.DisplayNameFor(model => model.Estado)*@
+                Estado
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Pais)
+                @*@Html.DisplayNameFor(model => model.Pais)*@
+                Pais
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdStatus)
+                @*@Html.DisplayNameFor(model => model.IdStatus)*@
+                Stadus
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataCadastro)
+                @*@Html.DisplayNameFor(model => model.DataCadastro)*@
+                Data Cadastro
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
+        @foreach (var item in Model.Unidades)
         {
             <tr>
                 @*<td>
                         @Html.DisplayFor(modelItem => item.IdUnidade)
                     </td>*@
                 <td>
-                    @Html.DisplayFor(modelItem => item.IdEmpresa)
+                    @Html.DisplayFor(modelItem => Model.RazaoSocial)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nome)
@@ -81,8 +92,8 @@
                     <a href="javascript:;" onclick="Unidade.Excluir(@item.IdUnidade)" title="Excluir"><i class="fas fa-trash"></i></a>
 
                     @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                 </td>
             </tr>
         }

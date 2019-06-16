@@ -42,6 +42,19 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
 
+        // GET: Empresa
+        public ActionResult ObterUnidadesByEmpresa(int IdEmpresa)
+        {
+            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+
+            EmpresaViewModel empresasViewModel = new EmpresaViewModel();
+            //EmpresaViewModel empresaVM = new EmpresaViewModel();
+            var empresasDTO = empresaServiceWeb.ObterEmpresa(IdEmpresa);
+            empresasViewModel = _mapper.Map<EmpresaViewModel>(empresasDTO);
+
+            return PartialView("~/Views/Unidade/_listarUnidades.cshtml", empresasViewModel);
+        }
+
         // GET: Empresa/Details/5
         public ActionResult Details(int id)
         {

@@ -14,6 +14,5 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public string DDD { get; set; }
         public string Telefone { get; set; }
         public DateTime DataCadastro { get; set; }
-
     }
 }

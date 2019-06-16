@@ -7,6 +7,11 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
 {
     public class EmpresaViewModel
     {
+        public EmpresaViewModel()
+        {
+            Unidades = new List<UnidadeViewModel>();
+        }
+
         public int IdEmpresa { get; set; }
         [DisplayName("Razão Social")]
         public string RazaoSocial { get; set; }

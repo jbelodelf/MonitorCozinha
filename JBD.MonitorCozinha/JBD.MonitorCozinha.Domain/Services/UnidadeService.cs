@@ -26,6 +26,11 @@ namespace JBD.MonitorCozinha.Domain.Services
             return _repository.ListarUnidades();
         }
 
+        public List<UnidadeEntity> ListarUnidadesByEmpresa(int IdEmpresa)
+        {
+            return _repository.ListarUnidadesByEmpresa(IdEmpresa);
+        }
+
         public UnidadeEntity ObterUnidadeById(int Id)
         {
             return _repository.ObterUnidadeById(Id);

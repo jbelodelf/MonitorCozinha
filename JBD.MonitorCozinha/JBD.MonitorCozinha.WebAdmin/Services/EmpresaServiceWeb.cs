@@ -33,12 +33,12 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             }
         }
 
-        public EmpresaViewModel ObterEmpresa(int Id)
+        public EmpresaViewModel ObterEmpresa(int IdEmpresa)
         {
             using (HttpClient client = new HttpClient())
             {
                 ServiceBase(client);
-                HttpResponseMessage response = client.GetAsync("ObterEmpresa/" + Id).Result;
+                HttpResponseMessage response = client.GetAsync("ObterEmpresa/" + IdEmpresa).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 EmpresaDTO data = JsonConvert.DeserializeObject<EmpresaDTO>(stringData);
 

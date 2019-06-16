@@ -152,7 +152,9 @@
         });
     },
 
-
+    ListarUnidade: function (id) {
+        window.location.href = "Unidade/Index?IdEmpresa=" + id;
+    },
 }
 
 //Carregar grid quando o documento é acessado conforme endereço passado
@@ -207,9 +209,6 @@ $(document).ready(function () {
 
 ////Abrir modal para cadastro
 //$(document).ready(function () {
-
-
-
 
 //});
 

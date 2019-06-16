@@ -1,9 +1,6 @@
-﻿using JBD.MonitorCozinha.Domain.Entitys;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JBD.MonitorCozinha.WebAdmin.Models
 {
@@ -31,14 +28,10 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public DateTime DataCadastro { get; set; }
 
         //Para DropDownList
-        public IEnumerable<EmpresaViewModel> Empresas { get; set; }
+        //public IEnumerable<EmpresaViewModel> Empresas { get; set; }
+
         // Para List Index
-        public string EmpresaName { get; set; }
-
-
         public List<PessoaViewModel> Pessoas { get; set; }
         public List<NumeroPedidoViewModel> NumeroPedidos { get; set; }
-        public virtual EmpresaEntity Empresa { get; private set; }
-        //public virtual Empresa { get; internal set; }
     }
 }

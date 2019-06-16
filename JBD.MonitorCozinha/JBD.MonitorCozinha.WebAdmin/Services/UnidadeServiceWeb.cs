@@ -35,6 +35,21 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             }
         }
 
+        public List<UnidadeViewModel> ListarUnidadesByIdEmpresa(int Id)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                ServiceBase(client);
+                HttpResponseMessage response = client.GetAsync("ListarUnidadeByIdEmpresa/" + Id).Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                List<UnidadeDTO> data = JsonConvert.DeserializeObject<List<UnidadeDTO>>(stringData);
+
+                var unidadeModel = _mapper.Map<List<UnidadeViewModel>>(data);
+                return unidadeModel;
+            }
+
+        }
+
         public UnidadeViewModel ObterUnidade (int Id)
         {
             using (HttpClient client = new HttpClient())

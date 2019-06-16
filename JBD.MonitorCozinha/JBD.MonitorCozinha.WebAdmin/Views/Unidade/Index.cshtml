@@ -1,8 +1,8 @@
 ﻿@model JBD.MonitorCozinha.WebAdmin.Models.UnidadeViewModel
-
     
 <div id="mensagem" name="mensagem" style="display: none; background-color: #ff2d296b; text-align:center; height: 40px; padding-top: 5px; font-size: 20px;"><b>mensagem</b></div>
 <div class="jumbotron row topJumboTrom" id="TopoPesquisa">
+    <input type="hidden" id="IdEmpresa" value="@Model.IdEmpresa" />
     <div class="col-md-8 form-group row">
         <div class="col-md-4">
             <lable>Nome unidade</lable>
@@ -21,7 +21,7 @@
 
 <div id="divListarUnidades"></div>
 
-<script src="~/js/Views/Unidade/Unidade.js"></script>
+@*<script src="~/js/Views/Unidade/Unidade.js"></script>*@
 
 <!-- Modal para cadastrar cliente -->
 <div class="modal fade" id="ModalCadastrarUnidade" tabindex="-1" role="dialog" aria-labelledby="fatorFModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
@@ -54,7 +54,7 @@
                         <div class="form-group row col-md-12">
                             <div class="form-group col-md-3">
                                 <label for="cargo">Empresa</label>
-                                <select asp-for="IdEmpresa" class="form-control" asp-items="@(new SelectList(@Model.Empresas, "IdEmpresa", "NomeFantasia"))"></select>
+                                @*<select asp-for="IdEmpresa" class="form-control" asp-items="@(new SelectList(@Model.Empresas, "IdEmpresa", "NomeFantasia"))"></select>*@
                             </div>
                             <div class="form-group col-md-4">
                                 @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-8" })

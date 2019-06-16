@@ -22,39 +22,34 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
         // GET: Unidade
-        public ActionResult Index()
+        public ActionResult Index(int IdEmpresa = 0)
         {
-            UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
-            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+            //UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
+            //EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
 
+            //var vm = new UnidadeViewModel();
+            //var empresas = empresaServiceWeb.ListarEmpresas();
 
-            var vm = new UnidadeViewModel();
-            var empresas = empresaServiceWeb.ListarEmpresas();
+            //if (empresas.Any())
+            //{               
+            //   vm.Empresas = empresas.Select(c => new EmpresaViewModel { IdEmpresa = c.IdEmpresa, NomeFantasia = c.NomeFantasia });
 
+            //}
 
+            var unidadeViewModel = new UnidadeViewModel();
+            unidadeViewModel.IdEmpresa = IdEmpresa;
 
-            if (empresas.Any())
-            {               
-               vm.Empresas = empresas.Select(c => new EmpresaViewModel { IdEmpresa = c.IdEmpresa, NomeFantasia = c.NomeFantasia });
-                
-            }
-
-            return View(vm);
+            return View(unidadeViewModel);
         }
 
-        public ActionResult ListarUnidades(string nomeUnidade)
+        public ActionResult ListarUnidades(string nomeUnidade, int IdEmpresa)
         {
-            UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
-            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
-
-            List<UnidadeViewModel> unidadesViewModel = new List<UnidadeViewModel>();
-            var unidadesDTO = unidadeServiceWeb.ListarUnidades();
-
-            
-            unidadesViewModel = _mapper.Map<List<UnidadeViewModel>>(unidadesDTO);
-
-
-            return PartialView("~/Views/Unidade/_listarUnidades.cshtml", unidadesViewModel);
+            var empresaViewModel = new EmpresaViewModel();
+            if (IdEmpresa > 0)
+            {
+                empresaViewModel = ObterListaUnidades(IdEmpresa);
+            }
+            return PartialView("~/Views/Unidade/_listarUnidades.cshtml", empresaViewModel);
         }
 
 
@@ -140,5 +135,22 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                 return View();
             }
         }
+
+        #region Methods
+
+        private EmpresaViewModel ObterListaUnidades(int IdEmpresa)
+        {
+            //UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
+            EmpresaServiceWeb unidadeServiceWeb = new EmpresaServiceWeb(_mapper);
+
+            EmpresaViewModel unidadesViewModel = new EmpresaViewModel();
+            var unidadesDTO = unidadeServiceWeb.ObterEmpresa(IdEmpresa);
+
+            unidadesViewModel = _mapper.Map<EmpresaViewModel>(unidadesDTO);
+
+            return unidadesViewModel;
+        }
+
+        #endregion
     }
 }

@@ -48,6 +48,17 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             return StatusCode((int)HttpStatusCode.OK, unidadeDTO);
         }
 
+        // GET: api/Unidade/
+        //[HttpGet("{id}", Name = "Get")]
+        [AcceptVerbs("GET")]
+        [Route("ListarUnidadeByIdEmpresa/{idEmpresa}")]
+        public ObjectResult GetUnidadeByEmpresa(int idEmpresa)
+        {
+            var unidadeEntity = _unidadeApp.ListarUnidadesByEmpresa(idEmpresa);
+            var unidadeDTO = _mapper.Map<List<UnidadeDTO>>(unidadeEntity);
+            return StatusCode((int)HttpStatusCode.OK, unidadeDTO);
+        }
+
         // POST: api/Unidade
         //[HttpPost]
         [AcceptVerbs("POST")]

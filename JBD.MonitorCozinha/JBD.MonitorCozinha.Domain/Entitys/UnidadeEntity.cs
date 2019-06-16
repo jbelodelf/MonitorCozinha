@@ -28,10 +28,7 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
-       
         public List<PessoaEntity> Pessoas { get; set; }
         public List<NumeroPedidoEntity> NumeroPedidos { get; set; }
-
-        
     }
 }

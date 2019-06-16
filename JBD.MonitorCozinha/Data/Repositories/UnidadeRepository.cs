@@ -42,6 +42,21 @@ namespace Data.Repositories
             return ListaUnidades;
         }
 
+        //List Unidades por empresa
+        public List<UnidadeEntity> ListarUnidadesByEmpresa(int IdEmpresa)
+        {
+            List<UnidadeEntity> ListaUnidades = new List<UnidadeEntity>();
+            string[] includes = new string[] { "Pessoas" };
+            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdEmpresa == IdEmpresa);
+
+            using (var rep = new RepositoryBase<UnidadeEntity>())
+            {
+                ListaUnidades = rep.Select(expressionFiltro, includes).ToList();
+            }
+
+            return ListaUnidades;
+        }
+
         //Get Unidades By Id
         public UnidadeEntity ObterUnidadeById(int Id)
         {

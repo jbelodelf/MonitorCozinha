@@ -31,12 +31,12 @@ namespace Data.Repositories
         public List<UnidadeEntity> ListarUnidades()
         {
             List<UnidadeEntity> ListaUnidades = new List<UnidadeEntity>();
-            string[] includes = new string[] { "NumeroPedidos", "Pessoas" };
+            string[] includes = new string[] { "Pessoas" };
             Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
 
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
-                ListaUnidades = rep.Select(expressionFiltro).ToList();
+                ListaUnidades = rep.Select(expressionFiltro, includes).ToList();
             }
 
             return ListaUnidades;
@@ -46,12 +46,12 @@ namespace Data.Repositories
         public UnidadeEntity ObterUnidadeById(int Id)
         {
             UnidadeEntity unidade = new UnidadeEntity();
-            string[] includes = new string[] { "NumeroPedidos", "Pessoas" };
+            string[] includes = new string[] { "Pessoas" };
             Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUnidade == (Int64)Id);
 
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
-                unidade = rep.Select(expressionFiltro).FirstOrDefault();
+                unidade = rep.Select(expressionFiltro, includes).FirstOrDefault();
             }
 
             return unidade;

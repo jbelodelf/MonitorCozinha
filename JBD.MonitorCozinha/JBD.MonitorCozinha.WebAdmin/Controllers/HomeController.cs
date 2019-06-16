@@ -13,19 +13,19 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IEmpresaApp _empresaApp;
-        private readonly IMapper _mapper;
+        //private readonly IEmpresaApp _empresaApp;
+        //private readonly IMapper _mapper;
 
-        public HomeController(IEmpresaApp empresaApp, IMapper mapper)
-        {
-            _empresaApp = empresaApp;
-            _mapper = mapper;
-        }
+        //public HomeController(IEmpresaApp empresaApp, IMapper mapper)
+        //{
+        //    _empresaApp = empresaApp;
+        //    _mapper = mapper;
+        //}
 
         public IActionResult Index()
         {
-            EmpresaServiceWeb service = new EmpresaServiceWeb(_mapper);
-            var teste = service.ListarEmpresas();
+            //EmpresaServiceWeb service = new EmpresaServiceWeb(_mapper);
+            //var teste = service.ListarEmpresas();
             return View();
         }
 
@@ -34,10 +34,10 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public IActionResult Error()
+        //{
+        //    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        //}
     }
 }

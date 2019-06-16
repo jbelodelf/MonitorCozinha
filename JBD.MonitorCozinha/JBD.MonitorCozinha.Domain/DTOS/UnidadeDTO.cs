@@ -8,6 +8,7 @@ namespace JBD.MonitorCozinha.Domain.DTOS
     {
         public int IdUnidade { get; set; }
         public int IdEmpresa { get; set; }
+        public string Nome { get; set; }
         public string CEP { get; set; }
         public string Endereco { get; set; }
         public string Bairro { get; set; }
@@ -17,7 +18,8 @@ namespace JBD.MonitorCozinha.Domain.DTOS
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
+        //public List<EmpresaDTO> Empresas { get; set; }
         public List<PessoaDTO> Pessoas { get; set; }
-        //public List<NumeroPedidoEntity> NumeroPedidos { get; set; }
+        public List<NumeroPedidoDTO> NumeroPedidos { get; set; }
     }
 }

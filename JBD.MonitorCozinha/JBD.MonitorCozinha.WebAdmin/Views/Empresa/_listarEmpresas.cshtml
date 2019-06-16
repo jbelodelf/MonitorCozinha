@@ -1,18 +1,11 @@
 ﻿@model IEnumerable<JBD.MonitorCozinha.WebAdmin.Models.EmpresaViewModel>
 
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-
     <table class="table table-striped table-bordered table-hover" id="tbListarEmpresas">
         <thead>
             <tr>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.IdEmpresa)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.RazaoSocial)
                 </th>
@@ -28,9 +21,9 @@
                 <th>
                     @Html.DisplayNameFor(model => model.InscricaoMunicipal)
                 </th>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.IdStatus)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.DataCadastro)
                 </th>
@@ -41,9 +34,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.IdEmpresa)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.RazaoSocial)
                     </td>
@@ -59,18 +52,21 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
                     </td>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.IdStatus)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.DataCadastro)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                       <a href="javascript:;" onclick="Empresa.Editar(@item.IdEmpresa)" title="Editar"><i class="fas fa-edit"></i></a>
+                       <a href="javascript:;" onclick="Empresa.Excluir(@item.IdEmpresa)" title="Excluir"><i class="fas fa-trash"></i></a>
+                        @*@Html.ActionLink("Edit", "Edit", new { id=item.IdEmpresa }) |
                         @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    <script src="~/lib/fontawesome/fontawesome-free-5.9.0-web/js/all.js"></script>

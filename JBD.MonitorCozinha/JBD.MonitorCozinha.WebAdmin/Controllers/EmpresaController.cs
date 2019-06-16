@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using AutoMapper;
 using JBD.MonitorCozinha.WebAdmin.Models;
 using JBD.MonitorCozinha.WebAdmin.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace JBD.MonitorCozinha.WebAdmin.Controllers
 {
@@ -45,22 +48,26 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             return View();
         }
 
-        // GET: Empresa/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //// GET: Empresa/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Empresa/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+       // [ValidateAntiForgeryToken]
+        public ActionResult SalvarEmpresa(EmpresaViewModel empresa)
         {
             try
             {
-                // TODO: Add insert logic here
+                EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+                EmpresaViewModel empresaViewModel = new EmpresaViewModel();
+                empresaServiceWeb.CadastrarEmpresa(empresa);
 
-                return RedirectToAction(nameof(Index));
+                return Json ( new { mensagem = "Registro salvo com sucesso", retorno = "200"});
+
+               //return Json(new { retorno = response.StatusCode, mensagem = mensagemResp }, JsonRequestBehavior.AllowGet);
             }
             catch
             {
@@ -69,21 +76,29 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
         // GET: Empresa/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditarEmpresa(int id)
         {
-            return View();
+
+            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+            EmpresaViewModel empresaVM = new EmpresaViewModel();
+
+            empresaVM = empresaServiceWeb.ObterEmpresa(id);
+
+            return Json(new {retorno = 200, data = empresaVM});
         }
 
         // POST: Empresa/Edit/5
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        //[ValidateAntiForgeryToken]
+        public ActionResult EditarEmpresa(int id, EmpresaViewModel empresa)
         {
             try
             {
-                // TODO: Add update logic here
+                //EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+                //empresaServiceWeb.AlterarEmpresa(empresa);
 
-                return RedirectToAction(nameof(Index));
+                //return Json(new {mensagem = "Registro alterado com sucesso", retorno ="200" });
+                return View();
             }
             catch
             {
@@ -113,5 +128,6 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                 return View();
             }
         }
+
     }
 }

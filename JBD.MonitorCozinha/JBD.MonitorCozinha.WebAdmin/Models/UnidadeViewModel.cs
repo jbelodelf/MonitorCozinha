@@ -26,9 +26,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public int IdStatus { get; set; }
         [DisplayName("Data de Cadastro")]
         public DateTime DataCadastro { get; set; }
-
-        //Para DropDownList
-        //public IEnumerable<EmpresaViewModel> Empresas { get; set; }
+      
+        public string NomeEmpresa { get; set; }
 
         // Para List Index
         public List<PessoaViewModel> Pessoas { get; set; }

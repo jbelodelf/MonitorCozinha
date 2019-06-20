@@ -39,6 +39,16 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             var unidadeViewModel = new UnidadeViewModel();
             unidadeViewModel.IdEmpresa = IdEmpresa;
 
+            var nomeEmpresa = new UnidadeViewModel();
+
+            //Recuperando Nome Empresa
+            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+            var nome = empresaServiceWeb.ObterEmpresa(IdEmpresa).RazaoSocial;
+
+            //var Nomeaqui = nome.RazaoSocial;
+            unidadeViewModel.NomeEmpresa = nome;
+          
+
             return View(unidadeViewModel);
         }
 
@@ -62,6 +72,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         // GET: Unidade/Create
         public ActionResult Create()
         {
+
             return View();
         }
 

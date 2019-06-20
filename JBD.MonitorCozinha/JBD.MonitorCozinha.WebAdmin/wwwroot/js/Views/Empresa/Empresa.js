@@ -81,11 +81,14 @@
                     return;
                 }
                 var url = "/Empresa/SalvarEmpresa";
+
+                var cnpj = $("#CNPJ").val().replace(/\D/g, '');
+
                 empresa = {
                     IdEmpresa: $("#IdEmpresa").val(),
                     RazaoSocial: $("#RazaoSocial").val(),
                     NomeFantasia: $("#NomeFantasia").val(),
-                    CNPJ: $("#CNPJ").val(),
+                    CNPJ: cnpj,
                     InscricaoEstadual: $("#InscricaoEstadual").val(),
                     InscricaoMunicipal: $("#InscricaoMunicipal").val(),
                     IdStatus: $("#IdStatus").val(),
@@ -103,14 +106,14 @@
                         $("#mensagemModal").text(data.mensagem).show();
                         window.setTimeout(function () {
                             $("#mensagemModal").text("").hide();
-                            window.location.href = "/Empresa/Index";
+                            window.location.href = "/Empresa";
                         }, 3000);
                     }
                     else {
                         $("#mensagemModal").text('Erro:' + data.mensagem).show();
                         window.setTimeout(function () {
                             $("#mensagemModal").text("").hide();
-                            window.location.href = "/Empresa/Index";
+                            window.location.href = "/Empresa";
                         }, 3000);
                         return;
                     }
@@ -204,6 +207,58 @@ $(document).ready(function () {
         Empresa.Listar();
 
     });
+
+    $("#CNPJ").blur(function () {
+        if ($("#CNPJ").val() == "") {
+            return;
+        }
+        else if ($("#CNPJ").val().length < 11) {
+            $("#mensagemModal").text("Número inválido.").show();
+            $("#CNPJ").focus();
+
+            window.setTimeout(function () {
+                $("#mensagemModal").text("").hide();
+            }, 2000);
+            return;
+        }
+        else if ($("#CNPJ").val().length == 14) {
+            var valido = validarCPF($("#CNPJ").val())
+            if (!valido) {
+                $("#mensagemModal").text("Número de CPF inválido.").show();
+                $("#CNPJ").focus();
+
+                window.setTimeout(function () {
+                    $("#mensagemModal").text("").hide();
+                }, 2000);
+                return;
+            }
+        }
+        else if ($("#CNPJ").val().length > 14) {
+            var valido = ValidarCNPJ($("#CNPJ").val())
+            if (!valido) {
+                $("#mensagemModal").text("Número de CNPJ inválido.").show();
+                $("#CNPJ").focus();
+
+                window.setTimeout(function () {
+                    $("#mensagemModal").text("").hide();
+                }, 2000);
+                return;
+            }
+        }
+
+    });
+
+
+    $("#CNPJ").focusout(function () {
+        $("#CNPJ").unmask();
+        var tamanho = $("#CNPJ").val().replace(/\D/g, '').length;
+        if (tamanho == 11) {
+            $("#CNPJ").mask("999.999.999-99");
+        } else if (tamanho == 14) {
+            $("#CNPJ").mask("99.999.999/9999-99");
+        }
+    });
+
 
 })
 

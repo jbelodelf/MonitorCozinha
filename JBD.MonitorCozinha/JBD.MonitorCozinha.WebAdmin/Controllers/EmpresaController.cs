@@ -30,15 +30,35 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         // GET: Empresa
         public ActionResult ListarEmpresas(string nomeEmpresa)
         {
-            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+            if (nomeEmpresa != null)
+            {
+                EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+                var empresaDTO = empresaServiceWeb.ListarEmpresas().Where(c => c.NomeFantasia.ToUpper().Contains(nomeEmpresa.Trim().ToUpper())).ToList();
 
-            List<EmpresaViewModel> empresasViewModel = new List<EmpresaViewModel>();
-            EmpresaViewModel empresaVM = new EmpresaViewModel();
-            var empresasDTO = empresaServiceWeb.ListarEmpresas();
+                List<EmpresaViewModel> empresaVM = new List<EmpresaViewModel>();
 
-            empresasViewModel = _mapper.Map<List<EmpresaViewModel>>(empresasDTO);
+                empresaVM = _mapper.Map<List<EmpresaViewModel>>(empresaDTO);
 
-            return PartialView("~/Views/Empresa/_listarEmpresas.cshtml", empresasViewModel);
+                return PartialView("~/Views/Empresa/_listarEmpresas.cshtml", empresaVM);
+            }
+            else
+            {
+
+                EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+
+                List<EmpresaViewModel> empresasViewModel = new List<EmpresaViewModel>();
+                EmpresaViewModel empresaVM = new EmpresaViewModel();
+                var empresasDTO = empresaServiceWeb.ListarEmpresas();
+
+                empresasViewModel = _mapper.Map<List<EmpresaViewModel>>(empresasDTO);
+
+                return PartialView("~/Views/Empresa/_listarEmpresas.cshtml", empresasViewModel);
+
+            }
+
+            return View();
+
+            
         }
 
 

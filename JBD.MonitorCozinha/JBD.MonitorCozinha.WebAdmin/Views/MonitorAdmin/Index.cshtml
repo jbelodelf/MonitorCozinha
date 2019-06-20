@@ -1,0 +1,71 @@
+﻿
+@model IEnumerable<JBD.MonitorCozinha.WebAdmin.Models.NumeroPedidoViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Monitor Cozinha</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+</head>
+<body>
+    <header>
+        <div class="container-fluid mt-2" id="divTop">
+            <table class="table table-bordered" style="border: 5px solid #dee2e6 !important;">
+                <thead>
+                    <tr class="col-md-12" style="background-color:Gainsboro">
+                        <th style="width:33%; border: 5px solid #dee2e6 !important; font-size:30px; text-align: center;">
+                            À FAZER:
+                        </th>
+                        <th style="width:33%; border: 5px solid #dee2e6 !important; font-size:30px; text-align: center;">
+                            FAZENDO:
+                        </th>
+                        <th style="width:33%; border: 5px solid #dee2e6 !important; font-size:30px; text-align: center;">
+                            PRONTO:
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <table class="table table-bordered" style="border: 5px solid #dee2e6 !important;">
+            <tbody>
+                <tr id="divFazer" style="height: 820px;">
+                    <td style="width:33%;border: 5px solid #dee2e6 !important;">
+                        @Html.Partial("_MonitoAFazer", Model)
+                    </td>
+                    <td style="width:33%;border: 5px solid #dee2e6 !important;">
+                        @Html.Partial("_MonitorFazendo", Model)
+                    </td>
+                    <td style="width:33%;border: 5px solid #dee2e6 !important;">
+                        @Html.Partial("_MonitorPronto", Model)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2019 - JBD.MonitorCozinha.WebAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="~/js/Views/Monitor.js"></script>
+    </environment>
+</body>
+</html>
+<div id="rodape"></div>

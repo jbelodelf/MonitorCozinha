@@ -24,8 +24,8 @@
             $("#cabecalho").css("color", "#FFFFFF")
             $("#colNome").css("width", "680");
             AplicarDataTable('tbListarUnidades', '0', "asc", 20, false, undefined, true);
-            $("#tbListarEmpresas").css("margin-top", "5px");
-            $("#tbListarEmpresas").css("float", "right");
+            $("#tbListarUnidades").css("margin-top", "5px");
+            $("#tbListarUnidades").css("float", "right");
             $("#footer").css("margin-top", "50px");
             $("#footer").css("height", "40px");
             $("#footer").css("padding", "10px");
@@ -48,6 +48,9 @@
             isValido = false;
         }
         else if ($("#Endereco").val() == "") {
+            isValido = false;
+        }
+        else if ($("#Numero").val() == "") {
             isValido = false;
         }
         else if ($("#Bairro").val() == "") {
@@ -103,6 +106,7 @@
                     Nome: $("#Nome").val(),
                     CEP: cep,
                     Endereco: $("#Endereco").val(),
+                    Numero: $("#Numero").val(),
                     Bairro: $("#Bairro").val(),
                     Cidade: $("#Cidade").val(),
                     Estado: $("#Estado").val(),
@@ -156,11 +160,12 @@
                 $("#IdUnidade").val(data.data.idUnidade);
                 $("#IdEmpresa").val(data.data.idEmpresa);
                 $("#Nome").val(data.data.nome);
-                $("#CEP").val(data.data.cep);
-                $("#Endereco").val(data.data.endereco);
-                $("#Bairro").val(data.data.bairro);
-                $("#Cidade").val(data.data.cidade);
-                $("#Estado").val(data.data.estado);
+                $("#CEP").val(data.data.cep).attr("Readonly", true);
+                $("#Endereco").val(data.data.endereco).attr("Readonly", true);
+                $("#Bairro").val(data.data.bairro).attr("Readonly", true);
+                $("#Numero").val(data.data.numero);
+                $("#Cidade").val(data.data.cidade).attr("Readonly", true);
+                $("#Estado").val(data.data.estado).attr("Readonly", true);
                 $("#Pais").val(data.data.pais);
                 $("#IdStatus").val(data.data.idStatus);
                 $("#DataCadastro").val(data.data.dataCadastro);
@@ -200,10 +205,11 @@ $(document).ready(function () {
         $("#IdEmpresa").val("").attr("Readonly", false);
         $("#Nome").val("").attr("Readonly", false);
         $("#CEP").val("").attr("Readonly", false);
-        $("#Endereco").val("").attr("Readonly", false);
-        $("#Bairro").val("").attr("Readonly", false);
-        $("#Cidade").val("").attr("Readonly", false);
-        $("#Estado").val("").attr("Readonly", false);
+        $("#Endereco").val("").attr("Readonly", true);
+        $("#Numero").val("").attr("Readonly", false);
+        $("#Bairro").val("").attr("Readonly", true);
+        $("#Cidade").val("").attr("Readonly", true);
+        $("#Estado").val("").attr("Readonly", true);
         $("#Pais").val("").attr("Readonly", false);
         $("#IdStatus").val("1").attr("Readonly", true);
         $("#DataCadastro").attr("Readonly", false);
@@ -213,6 +219,12 @@ $(document).ready(function () {
 
     });
 
+    $('#btPesquisar').on("click", function () {
+        Unidade.Listar();
+
+    });
+
+
     $('#btnFecharUnidade').on("click", function () {
 
         $("#IdUnidade").val("0");
@@ -220,6 +232,7 @@ $(document).ready(function () {
         $("#Nome").val("");
         $("#CEP").val("");
         $("#Endereco").val("");
+        $("#Numero").val("");
         $("#Bairro").val("");
         $("#Cidade").val("");
         $("#Estado").val("");

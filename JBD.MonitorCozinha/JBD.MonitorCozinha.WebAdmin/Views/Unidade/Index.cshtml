@@ -1,18 +1,35 @@
 ﻿@model JBD.MonitorCozinha.WebAdmin.Models.UnidadeViewModel
-    
+
 <div id="mensagem" name="mensagem" style="display: none; background-color: #ff2d296b; text-align:center; height: 40px; padding-top: 5px; font-size: 20px;"><b>mensagem</b></div>
-<div class="align-content-center" style="text-align:center">
+<div class="row" style=" display: contents !important; text-align:center;">
+    <div style="background-color: #F2F2F2">
+        <h3 class="modal-title" style="background-color: #e9ecef; margin-right: 5px; margin-left: 5px;">Empresa: @Model.NomeEmpresa</h3>
+    </div>
+</div>
+
+<div class="jumbotron row topJumboTrom" id="TopoPesquisa" >
+
     @*Recebe Id empresa para passar no Unidade.JS*@
     <input type="hidden" id="IdEmpresa" value="@Model.IdEmpresa" />
+    <div class="col-md-12 form-inline" style="">
+        <div class="col-md-2" style="text-align:-webkit-right ; padding-top: 5px;">
+            <lable style="font-size:18px ;">Nome Unidade</lable>
+        </div>
 
-    <h3 class="modal-title">Empresa: @Model.NomeEmpresa</h3>
-</div>
-<div class="col-md-8 form-inline" style="">
-    <div class="col-md-1" style="padding-right: 80px">
-        <button class="btn btn-primary" id="btVoltar">Voltar</button>
-    </div>
-    <div class="col-md-1">
-        <button class="btn btn-primary" id="btNovo">Cadastrar</button>
+        <div class="col-md-4">
+            <input type="text" class="form-control" id="UnidadePesquisar" name="UnidadePesquisar" style="width:inherit;" />
+        </div>
+        <div class="col-md-1" style="padding-right: 80px">
+            <button class="btn btn-primary" id="btPesquisar">Pesquisar</button>
+        </div>
+
+        <div class="col-md-1" style="padding-right: 80px">
+            <button class="btn btn-primary" id="btNovo">Cadastrar</button>
+        </div>
+        <div class="col-md-1" style="padding-right: 80px">
+            <button class="btn btn-primary" id="btVoltar" style="align-content:flex-end">Voltar</button>
+        </div>
+
     </div>
 </div>
 
@@ -21,6 +38,7 @@
 @*<script src="~/js/Views/Unidade/Unidade.js"></script>*@
 
 <!-- Modal para cadastrar cliente -->
+
 <div class="modal fade" id="ModalCadastrarUnidade" tabindex="-1" role="dialog" aria-labelledby="fatorFModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog border-dark">
         <div class="modal-content" style="width: 200%; margin-left: -50%;">
@@ -42,7 +60,7 @@
             {
                 @Html.AntiForgeryToken()
                 <input type="hidden" id="IdUnidade" value="" />
-                
+
 
                 <fieldset>
                     <legend>@ViewBag.Title</legend>
@@ -76,6 +94,13 @@
                                     @Html.ValidationMessageFor(model => model.Endereco, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                            <div class="form-group col-md-2">
+                                @Html.LabelFor(model => model.Numero, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Numero, new { htmlAttributes = new { @class = "form-control", @maxlength = "10" } })
+                                    @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
                             <div class="form-group col-md-4">
                                 @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -91,7 +116,7 @@
                                     @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            
+
                             <div class="form-group row col-md-12">
                                 <div class="form-group col-md-2">
                                     @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -111,28 +136,28 @@
                                 </div>
                             </div>
 
-                                @*<div class="form-group col-md-2">
-                @Html.LabelFor(model => model.Pais, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-12">
-                    @Html.EditorFor(model => model.Pais, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
-                    @Html.ValidationMessageFor(model => model.Pais, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-                                <input type="hidden" id="DataCadastro" value="@DateTime.Now" />
-                                <input type="hidden" id="IdStatus" value="" />
-                                <input type="hidden" id="idEmpresaNum" value="@Model.IdEmpresa" />
-                                @*<input type="text" id="paisText" value="" />*@
+                            @*<div class="form-group col-md-2">
+            @Html.LabelFor(model => model.Pais, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.Pais, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
+                @Html.ValidationMessageFor(model => model.Pais, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
+                            <input type="hidden" id="DataCadastro" value="@DateTime.Now" />
+                            <input type="hidden" id="IdStatus" value="" />
+                            <input type="hidden" id="idEmpresaNum" value="@Model.IdEmpresa" />
+                            @*<input type="text" id="paisText" value="" />*@
 
 
-                            </div>
                         </div>
+                    </div>
                 </fieldset>
             }
 
             <!--------------------------------------------------->
             <!-- Modal footer -->
-            <div class="modal-footer">
-                <div class="col-md-12">
+            <div class="modal-footer" style="display:grid">
+                <div class="col-md-12" style="align-content: flex-end">
                     <button id="btnFecharUnidade" type="button" class="btn btn-danger">&nbsp;&nbsp;&nbsp;Fechar&nbsp;&nbsp;&nbsp;</button>
                     <button id="btnSalvarUnidade" type="button" class="btn btn-outline-success">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</button>
 

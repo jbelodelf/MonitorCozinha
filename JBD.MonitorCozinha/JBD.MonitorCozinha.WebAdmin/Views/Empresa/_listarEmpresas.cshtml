@@ -3,9 +3,9 @@
     <table class="table table-striped table-bordered table-hover" id="tbListarEmpresas">
         <thead>
             <tr>
-                <th>
+                @*<th>
                     @Html.DisplayNameFor(model => model.RazaoSocial)
-                </th>
+                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.NomeFantasia)
                 </th>
@@ -28,9 +28,9 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    @*<td>
                         @Html.DisplayFor(modelItem => item.RazaoSocial)
-                    </td>
+                    </td>*@
                     <td>
                         @Html.DisplayFor(modelItem => item.NomeFantasia)
                     </td>

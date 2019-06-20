@@ -24,6 +24,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         // GET: Unidade
         public ActionResult Index(int IdEmpresa = 0)
         {
+
+
             //UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
             //EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
 
@@ -41,9 +43,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
 
             var nomeEmpresa = new UnidadeViewModel();
 
-            //Recuperando Nome Empresa
+            //Recuperando Nome Empresa por Nome Fantasia
             EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
-            var nome = empresaServiceWeb.ObterEmpresa(IdEmpresa).RazaoSocial;
+            var nome = empresaServiceWeb.ObterEmpresa(IdEmpresa).NomeFantasia;
 
             //var Nomeaqui = nome.RazaoSocial;
             unidadeViewModel.NomeEmpresa = nome;
@@ -55,11 +57,37 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         public ActionResult ListarUnidades(string nomeUnidade, int IdEmpresa)
         {
             var empresaViewModel = new EmpresaViewModel();
-            if (IdEmpresa > 0)
+
+
+            if (nomeUnidade != null)
             {
-                empresaViewModel = ObterListaUnidades(IdEmpresa);
+                EmpresaServiceWeb unidadeServiceWeb = new EmpresaServiceWeb(_mapper);
+                //List<EmpresaViewModel> empresaViewModel = new List<EmpresaViewModel>();
+
+                var empresaVM = unidadeServiceWeb.ObterEmpresa(IdEmpresa);
+
+                empresaViewModel = empresaVM;               
+                var unidades = empresaVM.Unidades.Where(c => c.Nome.ToUpper().Contains(nomeUnidade.Trim().ToUpper())).ToList();
+                empresaViewModel.Unidades = new List<UnidadeViewModel>();
+
+                empresaViewModel.Unidades.AddRange(unidades);
+
+                return PartialView("~/Views/Unidade/_listarUnidades.cshtml", empresaViewModel);
+
+            }
+            else
+            {
+
+                // empresaViewModel = new EmpresaViewModel();
+                if (IdEmpresa > 0)
+                {
+                    empresaViewModel = ObterListaUnidades(IdEmpresa);
+                }
+
             }
             return PartialView("~/Views/Unidade/_listarUnidades.cshtml", empresaViewModel);
+
+
         }
 
 
@@ -156,7 +184,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
 
             EmpresaViewModel unidadesViewModel = new EmpresaViewModel();
             var unidadesDTO = unidadeServiceWeb.ObterEmpresa(IdEmpresa);
-
+         
             unidadesViewModel = _mapper.Map<EmpresaViewModel>(unidadesDTO);
 
             return unidadesViewModel;

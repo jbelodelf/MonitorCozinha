@@ -158,6 +158,46 @@
     ListarUnidade: function (id) {
         window.location.href = "Unidade/Index?IdEmpresa=" + id;
     },
+
+    VerificaDuplicidadeCPF: function (cpfcnpj) {
+        if ($("#CNPJ").val().length = 0) {
+            return;
+        }
+
+        var url = "/Empresa/VeficaDuplicidadeCnpjCpf";
+        $.ajax({
+            url: url
+            , datatype: "json"
+            , type: "GET"
+            , async: false
+            , data: { cnpjcpf: cpfcnpj }
+            , cache: false
+        }).done(function (data) {
+            if (data.retorno == "200") {
+                if (data.duplicado) {
+                    $("#mensagemModal").text(data.mensagem).show();
+                    window.setTimeout(function () {
+                        $("#mensagemModal").text("").hide();
+                    }, 3000);
+                    $("#CNPJ").focus();
+                }
+                else if (data.valido) {
+                    $("#mensagemModal").text("").hide();
+                }
+
+            }
+            else {
+                $("#mensagemModal").text('Erro' + data.mensagem).show();
+                window.setTimeout(function () {
+                    $("#mensagemModal").text("").hide();
+                }, 3000);
+                return;
+            }
+        }).fail(function (jqXHR, exception) {
+            TratamentoDeErro(jqXHR, exception);
+        });
+    },
+
 }
 
 //Carregar grid quando o documento é acessado conforme endereço passado
@@ -244,7 +284,12 @@ $(document).ready(function () {
                 }, 2000);
                 return;
             }
+            
         }
+
+        var cnpj = $("#CNPJ").val().replace(/\D/g, '');
+
+        Empresa.VerificaDuplicidadeCPF(cnpj);
 
     });
 

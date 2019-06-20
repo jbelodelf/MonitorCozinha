@@ -79,5 +79,15 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             _empresaApp.Deletar(id);
             return StatusCode((int)HttpStatusCode.Created, id);
         }
+
+        [AcceptVerbs("GET")]
+        [Route("GetVerificaDuplicidadeCPF/{cpfcnpj}")]
+        public ObjectResult GetVerificaDuplicidadeCPF(string cpfcnpj)
+        {
+            bool retorno = _empresaApp.VeficaDuplicidadeCnpjCpf(cpfcnpj);
+            return StatusCode((int)HttpStatusCode.OK, retorno);
+
+        }
+
     }
 }

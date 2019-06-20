@@ -162,5 +162,20 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             }
         }
 
+        public ActionResult VeficaDuplicidadeCnpjCpf(string cnpjcpf)
+        {
+            var mensagem = "";
+            EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
+            bool retorno = empresaServiceWeb.VeficaDuplicidadeCnpjCpf(cnpjcpf);
+
+            if (retorno)
+            {
+                mensagem = "CPF está cadastrado, por favor verifique";
+            }
+             
+
+            return Json(new { retorno = 200, duplicado = retorno ,mensagem = mensagem });
+        }
+
     }
 }

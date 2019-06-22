@@ -27,6 +27,7 @@
             $("#footer").css("margin-top", "50px");
             $("#footer").css("height", "40px");
             $("#footer").css("padding", "10px");
+            $("#tbListarEmpresas_length").parent().css("display", "contents");
         }).fail(function (jqXHR, exception) {
             TratamentoDeErro(jqXHR, exception);
         });
@@ -156,7 +157,7 @@
     },
 
     ListarUnidade: function (id) {
-        window.location.href = "Unidade/Index?IdEmpresa=" + id;
+        window.location.href = "/Unidade/Index?IdEmpresa=" + id;
     },
 
     VerificaDuplicidadeCPF: function (cpfcnpj) {
@@ -210,7 +211,6 @@ $(document).ready(function () {
     $("#btnSalvarEmpresa").on("click", function () {
         Empresa.Salvar();
     });
-
 
     $('#btNovo').on("click", function () {
 
@@ -293,7 +293,6 @@ $(document).ready(function () {
 
     });
 
-
     $("#CNPJ").focusout(function () {
         $("#CNPJ").unmask();
         var tamanho = $("#CNPJ").val().replace(/\D/g, '').length;
@@ -304,12 +303,6 @@ $(document).ready(function () {
         }
     });
 
-
 })
-
-////Abrir modal para cadastro
-//$(document).ready(function () {
-
-//});
 
 

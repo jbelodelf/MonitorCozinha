@@ -24,20 +24,6 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         // GET: Unidade
         public ActionResult Index(int IdEmpresa = 0)
         {
-
-
-            //UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
-            //EmpresaServiceWeb empresaServiceWeb = new EmpresaServiceWeb(_mapper);
-
-            //var vm = new UnidadeViewModel();
-            //var empresas = empresaServiceWeb.ListarEmpresas();
-
-            //if (empresas.Any())
-            //{               
-            //   vm.Empresas = empresas.Select(c => new EmpresaViewModel { IdEmpresa = c.IdEmpresa, NomeFantasia = c.NomeFantasia });
-
-            //}
-
             var unidadeViewModel = new UnidadeViewModel();
             unidadeViewModel.IdEmpresa = IdEmpresa;
 

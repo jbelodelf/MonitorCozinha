@@ -15,7 +15,7 @@ namespace JBD.MonitorCozinha.Domain.DTOS
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
-        //public PessoaEntity Pessoa { get; set; }
+        public PessoaDTO Pessoa { get; set; }
 
     }
 }

@@ -14,9 +14,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public string UserName { get; set; }
         public string Password { get; set; }
         public int IdStatus { get; set; }
+        public int IdTipo { get; set; }
         public DateTime DataCadastro { get; set; }
 
         public PessoaViewModel Pessoa { get; set; }
-
     }
 }

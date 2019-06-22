@@ -71,5 +71,21 @@ namespace Data.Repositories
                 }
             }
         }
+
+        // Get Usuario By userName and Password
+        public UsuarioEntity UsuarioLogar(string userName, string senha)
+        {
+            UsuarioEntity usuario = new UsuarioEntity();
+            string[] includes = new string[] { "Pessoa" };
+            Expression<Func<UsuarioEntity, bool>> expressionFiltro = u => (u.IdStatus == (int)StatusEnum.Ativo && u.UserName.Trim() == userName.Trim() && u.Password.Trim() == senha.Trim());
+
+            using (var rep = new RepositoryBase<UsuarioEntity>())
+            {
+                usuario = rep.Select(expressionFiltro, includes).FirstOrDefault();
+            }
+
+            return usuario;
+        }
+
     }
 }

@@ -15,6 +15,30 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public DateTime DataLogin { get; set; }
         public DateTime DataLogoff { get; set; }
         public bool ConexaoAtiva { get; set; }
-
     }
+
+    public static class Controle
+    {
+        public static ControleAcessoViewModel ControleAcesso { get; set; } = new ControleAcessoViewModel();
+
+        public static void AtualzarAcesso(UsuarioViewModel usuario)
+        {
+            ControleAcesso.IdEmpresa = usuario.IdEmpresa;
+            ControleAcesso.IdUnidade = usuario.IdUnidade;
+            ControleAcesso.IdUnidade = usuario.IdUsuario;
+            ControleAcesso.ConexaoAtiva = true;
+            ControleAcesso.DataLogin = DateTime.Now;
+        }
+
+        public static bool ValidarUsuarioLogado()
+        {
+            bool valido = false;
+            if (ControleAcesso.ConexaoAtiva)
+            {
+                valido = true;
+            }
+            return valido;
+        }
+    }
+
 }

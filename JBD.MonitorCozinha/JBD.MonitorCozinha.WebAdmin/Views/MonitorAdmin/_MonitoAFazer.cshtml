@@ -6,7 +6,19 @@
     {
         if (item.IdStatusPedido == StatusPedidoEnum.AFazer)
         {
-            <div class="float-left p-2"><span id="b"><button class="btn btn-outline-dark form-control" value="@item.IdStatusPedido" style="font-size:40px"><b>@item.NumeroPedido</b></button></span></div>
+            <div class="float-left p-2">
+               <span id="b">
+                   <button class="btn btn-outline-dark form-control" value="@item.IdStatusPedido" style="font-size:40px">
+                       <a href="#" id="btDelete" onclick="MonitorAdmin.DeletarNumero(@item.IdNumeroPedido)" title="Apagar esse número">
+                           <i class="fa fa-trash" aria-hidden="true"></i>
+                       </a>
+                       <b>@item.NumeroPedido</b>
+                       <a href="#" id="btFazendo" onclick="MonitorAdmin.AtualizarStatus(@item.IdNumeroPedido, 2)" title="Mudar para Fazendo">
+                           <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                       </a>
+                   </button>
+                </span>
+            </div>
         }
     }
 </div>

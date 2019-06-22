@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
-using JBD.MonitorCozinha.Application.Interfaces;
+using JBD.MonitorCozinha.Domain.Enuns;
 using JBD.MonitorCozinha.WebAdmin.Models;
 using JBD.MonitorCozinha.WebAdmin.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JBD.MonitorCozinha.WebAdmin.Controllers
@@ -14,100 +12,66 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
     public class MonitorAdminController : Controller
     {
         private readonly IMapper _mapper;
+        private readonly MonitorAdminServiceWeb _monitorAdminServiceWeb;
 
         public MonitorAdminController(IMapper mapper)
         {
             _mapper = mapper;
+            _monitorAdminServiceWeb = new MonitorAdminServiceWeb(_mapper);
         }
 
         // GET: Monitor
         public ActionResult Index()
         {
-            MonitorServiceWeb monitorServiceWeb = new MonitorServiceWeb(_mapper);
+            if (!Controle.ValidarUsuarioLogado()){ return RedirectToAction("Index", "Login"); }
 
             List<NumeroPedidoViewModel> numeroPedidoViewModel = new List<NumeroPedidoViewModel>();
             NumeroPedidoViewModel numeroPedidoVM = new NumeroPedidoViewModel();
-            var numeroPedidoDTO = monitorServiceWeb.ListarNumeroPedidos();
+            var numeroPedidoDTO = _monitorAdminServiceWeb.ListarNumeroPedidos();
 
             numeroPedidoViewModel = _mapper.Map<List<NumeroPedidoViewModel>>(numeroPedidoDTO);
-
             return View(numeroPedidoViewModel.OrderBy(n => n.IdNumeroPedido));
         }
 
-        // GET: Monitor/Details/5
-        public ActionResult Details(int id)
+        // GET: MonitorAdmin/AtualizaStatus/1/5
+        public ActionResult AlterarNumeroPedido(int IdNumeroPedido, StatusPedidoEnum Idstatus)
         {
-            return View();
+            if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
+
+            NumeroPedidoViewModel numeroPedidoVM = _monitorAdminServiceWeb.ObterNumeroPedido(IdNumeroPedido);
+            numeroPedidoVM.IdStatusPedido = Idstatus;
+            _monitorAdminServiceWeb.AlterarNumeroPedido(numeroPedidoVM);
+            bool retorno = true;
+
+            return Json(new { resultado = retorno });
         }
 
-        // GET: Monitor/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Monitor/Create
+        // POST: MonitorAdmin/InserirNumeroPedido/
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult InserirNumeroPedido(int IdEmpresa, int IdUnidade, string NumeroPedido)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
 
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            NumeroPedidoViewModel numeroPedidoVM = new NumeroPedidoViewModel() {
+                IdEmpresa = IdEmpresa,
+                IdUnidade = IdUnidade,
+                NumeroPedido = NumeroPedido,
+                IdStatusPedido = StatusPedidoEnum.AFazer,
+                DataCadastro = DateTime.Now
+            };
+            _monitorAdminServiceWeb.CadastrarNumeroPedido(numeroPedidoVM);
+            bool retorno = true;
+
+            return Json(new { resultado = retorno });
         }
 
-        // GET: Monitor/Edit/5
-        public ActionResult Edit(int id)
+        // GET: MonitorAdmin/DeletarNumeroPedido/1/5
+        public ActionResult DeletarNumeroPedido(int IdNumeroPedido)
         {
-            return View();
+            if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
+
+            bool retorno = _monitorAdminServiceWeb.DeletarNumeroPedido(IdNumeroPedido);
+            return Json(new { resultado = retorno });
         }
-
-        // POST: Monitor/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Monitor/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Monitor/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
     }
 }

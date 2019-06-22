@@ -36,5 +36,10 @@ namespace JBD.MonitorCozinha.Application.Repositories
         {
             _service.Salvar(usuario);
         }
+
+        public UsuarioEntity UsuarioLogar(string userName, string senha)
+        {
+            return _service.UsuarioLogar(userName,senha);
+        }
     }
 }

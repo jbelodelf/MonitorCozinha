@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using AutoMapper;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Domain.DTOS;
 using JBD.MonitorCozinha.Domain.Entitys;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
@@ -26,8 +21,6 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             _empresaApp = empresaApp;
         }
 
-        // GET api/values
-        //[HttpGet("ListarEmpresas")]
         [AcceptVerbs("GET")]
         [Route("ListarEmpresas")]
         public ObjectResult Get()
@@ -37,8 +30,6 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             return StatusCode((int)HttpStatusCode.OK, empresasDTO); 
         }
 
-        // GET api/values
-        //[HttpGet("{id}", Name = "ObterEmpresas")]
         [AcceptVerbs("GET")]
         [Route("ObterEmpresa/{id}")]
         public ObjectResult Get(int id)
@@ -48,8 +39,6 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             return StatusCode((int)HttpStatusCode.OK, empresaDTO);
         }
 
-        // POST: api/Empresa
-        //[HttpPost]
         [AcceptVerbs("POST")]
         [Route("InserirEmpresa")]
         public ObjectResult Post([FromBody] EmpresaDTO empresa)
@@ -59,8 +48,6 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             return StatusCode((int)HttpStatusCode.Created, empresa);
         }
 
-        // PUT: api/Empresa/5
-        //[HttpPut("{id}")]
         [AcceptVerbs("PUT")]
         [Route("AlterarEmpresa")]
         public ObjectResult Put([FromBody] EmpresaDTO empresa)
@@ -70,8 +57,6 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             return StatusCode((int)HttpStatusCode.Created, empresa);
         }
 
-        // DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
         [AcceptVerbs("DELETE")]
         [Route("AlterarEmpresa/{id}")]
         public ObjectResult Delete(int id)

@@ -3,62 +3,34 @@
 <table class="table table-striped table-bordered table-hover" id="tbListarUnidades">
     <thead>
         <tr>
-            @*<th>
-                    @Html.DisplayNameFor(model => model.IdUnidade)
-                </th>*@
-            @*<th>
-                @Html.DisplayNameFor(model => model.IdEmpresa)
-                IdEMpresa
-            </th>*@
             <th>
-                @*@Html.DisplayNameFor(model => model.Unidades.Nome)*@
                 Nome Unidade
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model..CEP)*@
                 CEP
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Endereco)*@
                 Endereço
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Bairro)*@
                 Bairro
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Cidade)*@
                 Cidade
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Estado)*@
                 Estado
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.Pais)*@
                 Pais
             </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.IdStatus)
-                Stadus
-            </th>*@
-            @*<th>
-                @Html.DisplayNameFor(model => model.DataCadastro)
-                Data Cadastro
-            </th>*@
-            <th></th>
+            <th style="width:150px;"></th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model.Unidades)
         {
             <tr>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.IdUnidade)
-                    </td>*@
-                @*<td>
-                    @Html.DisplayFor(modelItem => Model.RazaoSocial)
-                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.Nome)
                 </td>
@@ -80,19 +52,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Pais)
                 </td>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.IdStatus)
-                </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DataCadastro)
-                </td>*@
-                <td>
-                    <a href="javascript:;" onclick="Unidade.Editar(@item.IdUnidade)" title="Editar"><i class="fas fa-edit"></i></a>
-                    <a href="javascript:;" onclick="Unidade.Excluir(@item.IdUnidade)" title="Excluir"><i class="fas fa-trash"></i></a>
-
-                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                    <a href="javascript:;" onclick="Unidade.Editar(@item.IdUnidade)" title="Editar unidade"><i class="fas fa-edit"></i></a>
+                    <a href="javascript:;" onclick="Unidade.Excluir(@item.IdUnidade)" title="Excluir unidade"><i class="fas fa-trash"></i></a>
+                    <span style="font-size:25px;">&nbsp;|&nbsp;</span>
+                    <a href="javascript:;" onclick="Usuario.Listar(@item.IdUnidade)" title="Lista de usuários"><i class='fas fa-user-plus'></i></a>
                 </td>
             </tr>
         }

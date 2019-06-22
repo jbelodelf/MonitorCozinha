@@ -12,7 +12,6 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         {
             NumeroPedidos = new List<NumeroPedidoEntity>();
             Pessoas = new List<PessoaEntity>();
-            
         }
 
         [Key]
@@ -21,6 +20,7 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public string Nome { get; set; }
         public string CEP { get; set; }
         public string Endereco { get; set; }
+        public string Numero { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }

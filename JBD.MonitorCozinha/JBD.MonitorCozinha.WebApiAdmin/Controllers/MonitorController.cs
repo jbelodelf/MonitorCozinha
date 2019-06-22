@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Threading.Tasks;
 using AutoMapper;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Domain.DTOS;
-using Microsoft.AspNetCore.Http;
+using JBD.MonitorCozinha.Domain.Entitys;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
@@ -34,30 +31,39 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             return StatusCode((int)HttpStatusCode.OK, numeroPedidoDTO);
         }
 
-
-        // GET: api/Monitor/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [AcceptVerbs("GET")]
+        [Route("ObterNumeroPedido/{id}")]
+        public ObjectResult Get(int id)
         {
-            return "value";
+            var numeroPedidoEntity = _numeroPedidoApp.ObterPedidoById(id);
+            var numeroPedidoDTO = _mapper.Map<NumeroPedidoDTO>(numeroPedidoEntity);
+            return StatusCode((int)HttpStatusCode.OK, numeroPedidoDTO);
         }
 
-        // POST: api/Monitor
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [AcceptVerbs("POST")]
+        [Route("InserirNumeroPedido")]
+        public ObjectResult Post([FromBody] NumeroPedidoDTO numeroPedido)
         {
+            var numeroPedidoEntity = _mapper.Map<NumeroPedidoEntity>(numeroPedido);
+            _numeroPedidoApp.Salvar(numeroPedidoEntity);
+            return StatusCode((int)HttpStatusCode.Created, numeroPedido);
         }
 
-        // PUT: api/Monitor/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [AcceptVerbs("PUT")]
+        [Route("AtualizaNumeroPedido")]
+        public ObjectResult Put([FromBody] NumeroPedidoDTO numeroPedido)
         {
+            var numeroPedidoEntity = _mapper.Map<NumeroPedidoEntity>(numeroPedido);
+            _numeroPedidoApp.Salvar(numeroPedidoEntity);
+            return StatusCode((int)HttpStatusCode.Created, numeroPedido);
         }
 
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [AcceptVerbs("GET")]
+        [Route("DeleteNumeroPedido/{id}")]
+        public ObjectResult Delete(int id)
         {
+            _numeroPedidoApp.Deletar(id);
+            return StatusCode((int)HttpStatusCode.OK, true);
         }
     }
 }

@@ -29,6 +29,7 @@
             $("#footer").css("margin-top", "50px");
             $("#footer").css("height", "40px");
             $("#footer").css("padding", "10px");
+            $("#tbListarUnidades_length").parent().css("display", "contents");
         }).fail(function (jqXHR, exception) {
             TratamentoDeErro(jqXHR, exception);
         });

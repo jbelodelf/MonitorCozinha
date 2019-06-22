@@ -13,7 +13,8 @@
             , cache: false
         }).done(function (data) {
             if (data.logado) {
-                window.location.href = "Monitor/Index";
+                //window.location.href = "Monitor/Index";
+                window.location.href = "Login/Home";
             }
             else {
                 $("#mensagemModal").text(data.message).show();
@@ -188,5 +189,15 @@
 
 $(document).ready(function () {
 
+    $("#btTV").on("click", function () {
+        window.location.href = "/Monitor";
+    });
 
+    $("#btAdmin").on("click", function () {
+        window.location.href = "/MonitorAdmin";
+    });
+
+    $("#btGestao").on("click", function () {
+        window.location.href = "/Empresa";
+    });
 })

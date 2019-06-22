@@ -52,6 +52,14 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             return Json(new { message = mansagem, logado = logado });
         }
 
+        public ActionResult Home()
+        {
+            return View();
+        }
+
+
+
+
         // GET: Login/Details/5
         public ActionResult Details(int id)
         {

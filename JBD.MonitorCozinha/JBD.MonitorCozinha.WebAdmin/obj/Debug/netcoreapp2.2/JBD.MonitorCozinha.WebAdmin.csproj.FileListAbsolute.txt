@@ -44,3 +44,7 @@ D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\De
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.pdb
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.Properties.Resources.resources
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.csproj.GenerateResource.cache
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\MonitorAdmin\Index.g.cshtml.cs
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\MonitorAdmin\_MonitoAFazer.g.cshtml.cs
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\MonitorAdmin\_MonitorFazendo.g.cshtml.cs
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\MonitorAdmin\_MonitorPronto.g.cshtml.cs

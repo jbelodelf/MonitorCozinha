@@ -82,5 +82,24 @@ namespace Data.Reositories
                 }
             }
         }
+
+        public bool VeficaDuplicidadeCnpjCpf(string cnpjcpf)
+        {
+            bool retorno = false;
+            
+            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.CNPJ.Trim() == cnpjcpf.Trim());
+
+            using (var rep = new RepositoryBase<EmpresaEntity>())
+            {
+               var empresa = rep.Select(expressionFiltro).FirstOrDefault();
+               if ( empresa != null)
+               {
+                    retorno = true;
+               }
+            }
+            return retorno;
+
+
+        }
     }
 }

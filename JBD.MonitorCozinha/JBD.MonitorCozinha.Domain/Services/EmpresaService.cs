@@ -38,5 +38,10 @@ namespace JBD.MonitorCozinha.Domain.Services
         {
             _repository.Salvar(empresa);
         }
+
+        public bool VeficaDuplicidadeCnpjCpf(string cnpjcpf)
+        {
+           return _repository.VeficaDuplicidadeCnpjCpf(cnpjcpf);
+        }
     }
 }

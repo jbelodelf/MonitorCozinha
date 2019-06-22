@@ -47,6 +47,20 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             }
         }
 
+        public bool VeficaDuplicidadeCnpjCpf(string cnpjcpf)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                ServiceBase(client);
+                HttpResponseMessage response = client.GetAsync("GetVerificaDuplicidadeCPF/" + cnpjcpf).Result;
+                string stringData = response.Content.ReadAsStringAsync().Result;
+                var data = JsonConvert.DeserializeObject<bool>(stringData);
+
+                return data;
+            }
+        }
+
+
         public void CadastrarEmpresa(EmpresaViewModel empresa)
         {
             using (HttpClient client = new HttpClient())

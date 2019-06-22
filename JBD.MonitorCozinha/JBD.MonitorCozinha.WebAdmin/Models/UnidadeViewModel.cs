@@ -17,6 +17,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public string Endereco { get; set; }
         [DisplayName("Bairro")]
         public string Bairro { get; set; }
+        [DisplayName("Numero")]
+        public string Numero { get; set; }
         [DisplayName("Cidade")]
         public string Cidade { get; set; }
         [DisplayName("Estado")]

@@ -31,14 +31,15 @@ namespace Data.Contexts
         public DbSet<StatusEntity> Status { get; set; }
         public DbSet<StatusPedidoEntity> StatusPedido { get; set; }
         public DbSet<TipoContatoEntity> TipoContato { get; set; }
+        public DbSet<TipoUsuarioEntity> TipoUsuario { get; set; }
 
 
         private string StringConectionConfig()
         {
-            return "Server=DESKTOP-IANDO4A;Database=DB_MONITOR_COZINHA;User Id=sa;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
+            //return "Server=DESKTOP-IANDO4A;Database=DB_MONITOR_COZINHA;User Id=sa;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
 
             //Michel
-            //return "Server=DESKTOP-24V97RI;Database=DB_MONITOR_COZINHA;User Id=sa;Password=mbelo;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
+            return "Server=DESKTOP-24V97RI;Database=DB_MONITOR_COZINHA;User Id=sa;Password=mbelo;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
         }
     }
 }

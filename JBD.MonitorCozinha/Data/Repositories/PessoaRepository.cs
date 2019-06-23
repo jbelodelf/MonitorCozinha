@@ -12,7 +12,7 @@ namespace Data.Repositories
 {
     public class PessoaRepository : IPessoaRepository
     {
-        //Delete Pessoa
+        //Deletar Pessoa
         public void Deletar(int Id)
         {
             Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdPessoa == (Int64)Id);
@@ -28,7 +28,7 @@ namespace Data.Repositories
 
         }
 
-        //List Pessoas
+        //Listar Pessoas
         public List<PessoaEntity> ListarPessoas()
         {
             List<PessoaEntity> ListaPessoas = new List<PessoaEntity>();
@@ -43,7 +43,8 @@ namespace Data.Repositories
             return ListaPessoas;
         }
 
-        //Get By Id Pessoa
+
+        //Obter Pessoa Por Id
         public PessoaEntity ObterPessoaById(int Id)
         {
             PessoaEntity pessoa = new PessoaEntity();
@@ -58,6 +59,7 @@ namespace Data.Repositories
             return pessoa;
         }
 
+        // Salvar Pessoa ou Alterar 
         public void Salvar(PessoaEntity pessoa)
         {
             using (var rep = new RepositoryBase<PessoaEntity>())
@@ -72,5 +74,20 @@ namespace Data.Repositories
                 }
             }
         }
+
+        //Listar Pessoa por Unidade
+        public List<PessoaEntity> ListarPessoasByUnidade(int IdUnidade)
+        {
+            List<PessoaEntity> ListaPessoas = new List<PessoaEntity>();
+            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUnidade == IdUnidade);
+
+            using (var rep = new RepositoryBase<PessoaEntity>())
+            {
+                ListaPessoas = rep.Select(expressionFiltro).ToList();
+            }
+
+            return ListaPessoas;
+        }
+
     }
 }

@@ -27,7 +27,9 @@
             <button class="btn btn-primary" id="btNovo">Cadastrar</button>
         </div>
         <div class="col-md-1" style="padding-right: 80px">
-            <button class="btn btn-primary" id="btVoltar" style="align-content:flex-end">Voltar</button>
+            @Html.ActionLink("Voltar", "Index", "Empresa", null, new {@class = "btn btn-primary" })
+            @*<button class="btn btn-primary" id="btVoltar" style="align-content:flex-end">Voltar</button>*@
+
         </div>
 
     </div>

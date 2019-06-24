@@ -36,5 +36,11 @@ namespace JBD.MonitorCozinha.Domain.Services
         {
             _repository.Salvar(pessoa);
         }
+
+        public List<PessoaEntity> ListarPessoasByUnidade(int IdUnidade)
+        {
+            return _repository.ListarPessoasByUnidade(IdUnidade);
+        }
+
     }
 }

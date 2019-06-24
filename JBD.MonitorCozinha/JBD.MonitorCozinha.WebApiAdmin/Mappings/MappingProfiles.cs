@@ -21,6 +21,7 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Mappings
             CreateMap<TelefoneEntity, TelefoneDTO>().ReverseMap();
             CreateMap<UnidadeEntity, UnidadeDTO>().ReverseMap();
             CreateMap<UsuarioEntity, UsuarioDTO>().ReverseMap();
+            CreateMap<TipoUsuarioEntity, TipoUsuarioDTO>().ReverseMap();
         }
 
     }

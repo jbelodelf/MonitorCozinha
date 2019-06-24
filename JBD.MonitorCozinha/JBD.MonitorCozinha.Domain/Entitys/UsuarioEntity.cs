@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JBD.MonitorCozinha.Domain.DTOS;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,5 +21,6 @@ namespace JBD.MonitorCozinha.Domain.Entitys
 
         public UnidadeEntity Unidade { get; set; }
         public PessoaEntity Pessoa { get; set; }
+
     }
 }

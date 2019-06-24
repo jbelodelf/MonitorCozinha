@@ -19,6 +19,10 @@ namespace JBD.MonitorCozinha.Domain.DTOS
         public int IdTipoContato { get; set; }
         public DateTime DataCadastro { get; set; }
 
-        public List<TelefoneDTO> Telefones { get; set; }
+        public string NomeUnidade { get; set; }
+        public List<SelectListItem> TipoUsuarios { get; set; }
+
+
+        //public List<TelefoneDTO> Telefones { get; set; }
     }
 }

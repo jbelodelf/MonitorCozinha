@@ -17,7 +17,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Mappings
             CreateMap<TelefoneDTO, TelefoneViewModel>().ReverseMap();
             CreateMap<UnidadeDTO, UnidadeViewModel>().ReverseMap();
             CreateMap<UsuarioDTO, UsuarioViewModel>().ReverseMap();
-
+            CreateMap<TipoUsuarioDTO, TipoUsuarioViewModel>().ReverseMap();
 
         }
     }

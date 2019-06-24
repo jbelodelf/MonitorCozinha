@@ -44,22 +44,24 @@ namespace JBD.MonitorCozinha.WebApiAdmin
             services.AddSingleton<INumeroPedidoApp, NumeroPedidoRepositoryApp>();
             services.AddSingleton<IUnidadeApp, UnidadeRepositoryApp>();
             services.AddSingleton<IUsuarioApp, UsuarioRepositoryApp>();
+            services.AddSingleton<IPessoaApp, PessoaRepositoryApp>();
 
             services.AddSingleton<IEmpresaService, EmpresaService>();
             services.AddSingleton<INumeroPedidoService, NumeroPedidoService>();
             services.AddSingleton<IUnidadeService, UnidadeService>();
             services.AddSingleton<IUsuarioService, UsuarioService>();
+            services.AddSingleton<IPessoaService, PessoaService>();
 
             services.AddSingleton<IEmpresaRepository, EmpresaRepository>();
             services.AddSingleton<INumeroPedidoRepository, NumeroPedidoRepository>();
             services.AddSingleton<IUnidadeRepository, UnidadeRepository>();
             services.AddSingleton<IUsuarioRepository, UsuarioRepository>();
+            services.AddSingleton<IPessoaRepository, PessoaRepository>();
 
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

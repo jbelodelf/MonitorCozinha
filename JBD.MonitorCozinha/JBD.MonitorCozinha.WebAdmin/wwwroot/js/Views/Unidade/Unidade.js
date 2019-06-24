@@ -147,6 +147,11 @@
         });
     },
 
+    ListarPessoa: function (id) {
+        window.location.href = "/Pessoa/Index?IdUnidade=" + id;
+    },
+
+
     Editar: function (idUnidade) {
         var url = "/Unidade/EditarUnidade";
         $.ajax({

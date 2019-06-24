@@ -1,4 +1,22 @@
 ﻿MonitorAdmin = {
+    Listar: function () {
+        var idEmpresa = $("#IdEmpresa").val();
+        var idUnidade = $("#IdUnidade").val();
+        var url = "/MonitorAdmin/Listar";
+        $.ajax({
+            url: url
+            , datatype: "json"
+            , type: "GET"
+            , data: { idEmpresa: idEmpresa, idUnidade: idUnidade }
+            , async: false
+            , cache: false
+        }).done(function (data) {
+            $("#divMonitorBody").html(data);
+        }).fail(function (jqXHR, exception) {
+            TratamentoDeErro(jqXHR, exception);
+        });
+    },
+
     AtualizarStatus: function (idPedido, idStatus) {
         var url = "/MonitorAdmin/AlterarNumeroPedido";
         $.ajax({
@@ -11,7 +29,7 @@
         }).done(function (data) {
             if (data.resultado == true) {
                 window.setTimeout(function () {
-                    window.location.href = "/MonitorAdmin/Index";
+                    MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -35,7 +53,8 @@
         }).done(function (data) {
             if (data.resultado == true) {
                 window.setTimeout(function () {
-                    window.location.href = "/MonitorAdmin/Index";
+                   $("#ModalCadastrarNumero").modal('hide');
+                   MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -55,7 +74,7 @@
         }).done(function (data) {
             if (data.resultado == true) {
                 window.setTimeout(function () {
-                    window.location.href = "/MonitorAdmin/Index";
+                    MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -76,4 +95,9 @@ $(document).ready(function () {
     $("#btnSalvarNumeroPedido").click(function () {
         MonitorAdmin.InserirNumero();
     })
+
+    var url = window.location.pathname;
+    if ((url == "/") || (url == "/MonitorAdmin") || (url == "/MonitorAdmin/Index") || (url == "/MonitorAdmin/")) {
+        MonitorAdmin.Listar();
+    };
 })

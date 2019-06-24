@@ -23,10 +23,10 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
 
         // GET: api/Monitor
         [AcceptVerbs("GET")]
-        [Route("ListarNumeroPedidos")]
-        public ObjectResult Get()
+        [Route("ListarNumeroPedidos/{IdEmpresa}/{IdUnidade}")]
+        public ObjectResult Get(int IdEmpresa, int IdUnidade)
         {
-            var numeroPedidoEntity = _numeroPedidoApp.ListarPedidos();
+            var numeroPedidoEntity = _numeroPedidoApp.ListarPedidos(IdEmpresa, IdUnidade);
             var numeroPedidoDTO = _mapper.Map<List<NumeroPedidoDTO>>(numeroPedidoEntity);
             return StatusCode((int)HttpStatusCode.OK, numeroPedidoDTO);
         }

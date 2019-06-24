@@ -13,7 +13,6 @@
             , cache: false
         }).done(function (data) {
             if (data.logado) {
-                //window.location.href = "Monitor/Index";
                 window.location.href = "Login/Home";
             }
             else {
@@ -23,7 +22,6 @@
                     window.location.href = "/Login";
                 }, 3000);
             }
-
         }).fail(function (jqXHR, exception) {
             TratamentoDeErro(jqXHR, exception);
         });
@@ -184,7 +182,6 @@
             TratamentoDeErro(jqXHR, exception);
         });
     },
-
 }
 
 $(document).ready(function () {

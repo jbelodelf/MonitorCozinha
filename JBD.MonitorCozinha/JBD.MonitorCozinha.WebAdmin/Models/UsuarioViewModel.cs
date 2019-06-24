@@ -17,6 +17,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public int IdTipo { get; set; }
         public DateTime DataCadastro { get; set; }
 
+        public UnidadeViewModel Unidade { get; set; }
         public PessoaViewModel Pessoa { get; set; }
     }
 }

@@ -76,7 +76,7 @@ namespace Data.Repositories
         public UsuarioEntity UsuarioLogar(string userName, string senha)
         {
             UsuarioEntity usuario = new UsuarioEntity();
-            string[] includes = new string[] { "Pessoa" };
+            string[] includes = new string[] { "Pessoa", "Unidade" };
             Expression<Func<UsuarioEntity, bool>> expressionFiltro = u => (u.IdStatus == (int)StatusEnum.Ativo && u.UserName.Trim() == userName.Trim() && u.Password.Trim() == senha.Trim());
 
             using (var rep = new RepositoryBase<UsuarioEntity>())

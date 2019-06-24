@@ -7,7 +7,7 @@ namespace JBD.MonitorCozinha.Domain.Interfaces.Service
 {
     public interface INumeroPedidoService
     {
-        List<NumeroPedidoEntity> ListarPedidos();
+        List<NumeroPedidoEntity> ListarPedidos(int IdEmpresa, int IdUnidade);
         NumeroPedidoEntity ObterPedidoById(int Id);
         void Salvar(NumeroPedidoEntity pedido);
         void Deletar(int Id);

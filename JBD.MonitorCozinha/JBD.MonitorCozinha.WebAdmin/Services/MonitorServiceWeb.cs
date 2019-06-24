@@ -18,12 +18,13 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             _mapper = mapper;
         }
 
-        public List<NumeroPedidoViewModel> ListarNumeroPedidos()
+        public List<NumeroPedidoViewModel> ListarNumeroPedidos(int IdEmpresa, int IdUnidade)
         {
             using (HttpClient client = new HttpClient())
             {
                 ServiceBase(client);
-                HttpResponseMessage response = client.GetAsync("ListarNumeroPedidos").Result;
+                string parametros = string.Format("/{0}/{1}", IdEmpresa, IdUnidade);
+                HttpResponseMessage response = client.GetAsync("ListarNumeroPedidos" + parametros).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 List<NumeroPedidoDTO> data = JsonConvert.DeserializeObject<List<NumeroPedidoDTO>>(stringData);
 

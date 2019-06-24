@@ -11,6 +11,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public int IdUsuario { get; set; }
         public int IdUnidade { get; set; }
         public int IdEmpresa { get; set; }
+        public string Unidade { get; set; }
         public string IP { get; set; }
         public DateTime DataLogin { get; set; }
         public DateTime DataLogoff { get; set; }
@@ -26,6 +27,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
             ControleAcesso.IdEmpresa = usuario.IdEmpresa;
             ControleAcesso.IdUnidade = usuario.IdUnidade;
             ControleAcesso.IdUnidade = usuario.IdUsuario;
+            ControleAcesso.Unidade = usuario.Unidade.Nome;
             ControleAcesso.ConexaoAtiva = true;
             ControleAcesso.DataLogin = DateTime.Now;
         }
@@ -40,5 +42,4 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
             return valido;
         }
     }
-
 }

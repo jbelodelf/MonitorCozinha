@@ -1,6 +1,4 @@
-﻿@model IEnumerable<JBD.MonitorCozinha.WebAdmin.Models.NumeroPedidoViewModel>
-
-@{
+﻿@{
     Layout = null;
 }
 
@@ -17,6 +15,9 @@
     </environment>
 </head>
 <body>
+    <div style="text-align:right; font-size:25px; margin-right:30px;"><b>@Controle.ControleAcesso.Unidade</b></div>
+    <input type="hidden" id="IdEmpresa" name="IdEmpresa" value="@Controle.ControleAcesso.IdEmpresa" />
+    <input type="hidden" id="IdUnidade" name="IdUnidade" value="@Controle.ControleAcesso.IdUnidade" />
     <header>
         <div class="container-fluid mt-2" id="divTop">
             <table class="table table-bordered" style="border: 5px solid #dee2e6 !important;">
@@ -36,26 +37,11 @@
             </table>
         </div>
     </header>
-    <div class="container-fluid" >
-        <table class="table table-bordered" style="border: 5px solid #dee2e6 !important;">
-            <tbody>
-                <tr id="divFazer" style="height: 820px;">
-                    <td style="width:33%;border: 5px solid #dee2e6 !important;">
-                        @Html.Partial("_MonitoAFazer", Model)
-                    </td>
-                    <td style="width:33%;border: 5px solid #dee2e6 !important;">
-                        @Html.Partial("_MonitorFazendo", Model)
-                    </td>
-                    <td style="width:33%;border: 5px solid #dee2e6 !important;">
-                        @Html.Partial("_MonitorPronto", Model)
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+
+    <div id="divMonitorTvBody" class="container-fluid"></div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
+        <div class="container-fluid" style="text-align:center">
             &copy; 2019 - JBD.MonitorCozinha.WebAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
@@ -63,7 +49,7 @@
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
-        <script src="~/js/Views/Monitor.js"></script>
+        <script src="~/js/Views/Monitor/Monitor.js"></script>
     </environment>
 </body>
 </html>

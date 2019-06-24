@@ -28,10 +28,15 @@ namespace Data.Repositories
         }
 
         //List Pedidos
-        public List<NumeroPedidoEntity> ListarPedidos()
+        public List<NumeroPedidoEntity> ListarPedidos(int IdEmpresa, int IdUnidade)
         {
             List<NumeroPedidoEntity> ListaPedidos = new List<NumeroPedidoEntity>();
-            Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (a => a.IdStatusPedido != (int)StatusEnum.Excluido);
+            Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (
+                a => 
+                a.IdStatusPedido != (int)StatusEnum.Excluido 
+                && a.IdStatusPedido != (int)StatusPedidoEnum.Entregue
+                && a.IdEmpresa == IdEmpresa && a.IdUnidade == IdUnidade
+            );
 
             using (var rep = new RepositoryBase<NumeroPedidoEntity>())
             {

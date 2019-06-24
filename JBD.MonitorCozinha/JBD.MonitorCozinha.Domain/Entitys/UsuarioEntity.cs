@@ -17,6 +17,7 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public int IdStatus { get; set; }
         public DateTime DataCadastro { get; set; }
 
+        public UnidadeEntity Unidade { get; set; }
         public PessoaEntity Pessoa { get; set; }
     }
 }

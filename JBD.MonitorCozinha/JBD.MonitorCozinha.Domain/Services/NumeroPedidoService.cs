@@ -21,9 +21,9 @@ namespace JBD.MonitorCozinha.Domain.Services
             _repository.Deletar(Id);
         }
 
-        public List<NumeroPedidoEntity> ListarPedidos()
+        public List<NumeroPedidoEntity> ListarPedidos(int IdEmpresa, int IdUnidade)
         {
-            return _repository.ListarPedidos();
+            return _repository.ListarPedidos(IdEmpresa, IdUnidade);
         }
 
         public NumeroPedidoEntity ObterPedidoById(int Id)

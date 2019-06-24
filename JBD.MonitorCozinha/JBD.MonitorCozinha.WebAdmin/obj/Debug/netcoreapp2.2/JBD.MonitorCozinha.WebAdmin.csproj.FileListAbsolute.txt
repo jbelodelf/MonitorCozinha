@@ -96,3 +96,5 @@ F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.dll
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebAdmin.pdb
 F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\Login\Home.g.cshtml.cs
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\MonitorAdmin\MainMonitor.g.cshtml.cs
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebAdmin\obj\Debug\netcoreapp2.2\Razor\Views\Monitor\MainMonitorTv.g.cshtml.cs

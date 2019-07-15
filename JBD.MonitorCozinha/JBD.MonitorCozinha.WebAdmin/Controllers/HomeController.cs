@@ -5,34 +5,35 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using JBD.MonitorCozinha.WebAdmin.Models;
-using JBD.MonitorCozinha.Application.Interfaces;
-using AutoMapper;
 using JBD.MonitorCozinha.WebAdmin.Services;
+using AutoMapper;
 
 namespace JBD.MonitorCozinha.WebAdmin.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly IEmpresaApp _empresaApp;
-        //private readonly IMapper _mapper;
+        EmpresaServiceWeb _service;
+        private readonly IMapper _mapper;
 
-        //public HomeController(IEmpresaApp empresaApp, IMapper mapper)
+        public HomeController(IMapper mapper)
+        {
+            _mapper = mapper;
+            _service = new EmpresaServiceWeb(_mapper);
+        }
+
+        // GET: Index/funcionalidade
+        //[HttpGet("Index/{funcionalidade}")]
+        public ActionResult Index(string funcionalidade)
+        {
+            var empresa = _service.ObterEmpresa(Controle.ControleAcesso.IdEmpresa);
+            Controle.PerfilPFuncionalidade.Nome = funcionalidade;
+            return View(empresa);
+        }
+
+        //public IActionResult Privacy()
         //{
-        //    _empresaApp = empresaApp;
-        //    _mapper = mapper;
+        //    return View();
         //}
-
-        public IActionResult Index()
-        {
-            //EmpresaServiceWeb service = new EmpresaServiceWeb(_mapper);
-            //var teste = service.ListarEmpresas();
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
 
         //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         //public IActionResult Error()

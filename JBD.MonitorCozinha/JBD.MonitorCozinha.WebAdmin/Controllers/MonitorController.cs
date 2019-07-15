@@ -19,9 +19,11 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
         // GET: Monitor
-        public ActionResult Index()
+        public ActionResult Index(int idUnidade, string NomeUnidade)
         {
             if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
+            Controle.ControleAcesso.IdUnidade = idUnidade;
+            Controle.ControleAcesso.Unidade = NomeUnidade;
 
             return View();
         }

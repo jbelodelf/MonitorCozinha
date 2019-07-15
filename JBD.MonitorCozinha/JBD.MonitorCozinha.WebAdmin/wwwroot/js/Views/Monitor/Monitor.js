@@ -28,8 +28,9 @@
 
 $(document).ready(function () {
     var altura = window.screen.availHeight;
+    var largura = window.screen.availWidth;
     $("#divFazer").css('height', (altura - 230));
-
+    $("#divTopHeader").css('width', (largura - 17));
     RecarregarMonitor();
 })
 

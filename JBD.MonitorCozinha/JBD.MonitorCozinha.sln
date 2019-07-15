@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-TDD", "5-TDD", "{7614FA2A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Domain", "JBD.MonitorCozinha.Domain\JBD.MonitorCozinha.Domain.csproj", "{A4329FD6-95D6-4E4A-9959-E0498FB1744D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{78E13183-CE0F-43A1-BAE4-01F0055AD8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Data", "JBD.MonitorCozinha.Data\Data.csproj", "{78E13183-CE0F-43A1-BAE4-01F0055AD8B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Application", "JBD.MonitorCozinha.Application\JBD.MonitorCozinha.Application.csproj", "{B5E9F9AF-1037-44CE-BE80-C05AD80D252B}"
 EndProject

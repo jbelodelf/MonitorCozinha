@@ -55,3 +55,6 @@ dkms.conf
 /JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/Server/sqlite3/storage.ide-shm
 /JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/Server/sqlite3/storage.ide-wal
 /JBD.MonitorCozinha/.vs/JBD.MonitorCozinha/v15/.suo
+/JBD.MonitorCozinha/JBD.MonitorCozinha.Data/bin/Debug/netcoreapp2.2/Data.deps.json
+/JBD.MonitorCozinha/JBD.MonitorCozinha.Data/obj/Debug/netcoreapp2.2
+/JBD.MonitorCozinha/JBD.MonitorCozinha.Data/obj

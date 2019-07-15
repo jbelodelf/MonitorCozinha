@@ -21,9 +21,11 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
         // GET: Monitor
-        public ActionResult Index()
+        public ActionResult Index(int IdUnidade, string NomeUnidade)
         {
             if (!Controle.ValidarUsuarioLogado()){ return RedirectToAction("Index", "Login"); }
+            Controle.ControleAcesso.IdUnidade = IdUnidade;
+            Controle.ControleAcesso.Unidade = NomeUnidade;
 
             return View();
         }
@@ -65,7 +67,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                 IdEmpresa = IdEmpresa,
                 IdUnidade = IdUnidade,
                 NumeroPedido = NumeroPedido,
-                IdStatusPedido = StatusPedidoEnum.AFazer,
+                IdStatusPedido = StatusPedidoEnum.Fazendo,
                 DataCadastro = DateTime.Now
             };
             _monitorAdminServiceWeb.CadastrarNumeroPedido(numeroPedidoVM);

@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\Data.csproj" />
+    <ProjectReference Include="..\JBD.MonitorCozinha.Data\Data.csproj" />
     <ProjectReference Include="..\JBD.MonitorCozinha.Application\JBD.MonitorCozinha.Application.csproj" />
     <ProjectReference Include="..\JBD.MonitorCozinha.Domain\JBD.MonitorCozinha.Domain.csproj" />
     <ProjectReference Include="..\JBD.MonitorCozinha.WebAdmin\JBD.MonitorCozinha.WebAdmin.csproj" />

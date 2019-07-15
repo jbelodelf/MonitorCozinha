@@ -1,8 +1,152 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model JBD.MonitorCozinha.WebAdmin.Models.EmpresaViewModel
+
+@{
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome xxx</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Monitor Cozinha</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+</head>
+<body>
+    <!-- ---------------------------------------------- -->
+    <input type="hidden" id="IdEmpresa" name="IdEmpresa" value="@Controle.ControleAcesso.IdEmpresa" />
+    <input type="hidden" id="IdUnidade" name="IdUnidade" value="@Controle.ControleAcesso.IdUnidade" />
+    <!-- ---------------------------------------------- -->
+    @if (Controle.PerfilPFuncionalidade.Nome == "MONITOR TV")
+    {
+        <div class="container-fluid p-4" style="width: 90%;">
+            <div class="jumbotron row" id="TopoPesquisa">
+                <div class="col-md-12" style="text-align:center; padding-top: 5px; font-size:40px;">
+                    <b>@Controle.PerfilPFuncionalidade.Nome</b>
+                </div>
+                <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
+                    @foreach (var iten in Model.Unidades)
+                    {
+                        <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
+                            <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorTV(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- ---------------------------------------------- -->
+    @if (Controle.PerfilPFuncionalidade.Nome == "CADASTRAR SENHAS")
+    {
+        <div class="container-fluid p-4" style="width: 90%;">
+            <div class="jumbotron row" id="TopoPesquisa">
+                <div class="col-md-12" style="text-align:center; padding-top: 5px; font-size:40px;">
+                    <b>@Controle.PerfilPFuncionalidade.Nome</b>
+                </div>
+                <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
+                    @foreach (var iten in Model.Unidades)
+                    {
+                        <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
+                            <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Home.Cadastrar(@iten.IdEmpresa,@iten.IdUnidade)">@iten.Nome<p>&nbsp;</p></button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    <!-- ---------------------------------------------- -->
+    @if (Controle.PerfilPFuncionalidade.Nome == "MONITOR ADMINISTRATIVO")
+    {
+        <div class="container-fluid p-4" style="width: 90%;">
+            <div class="jumbotron row" id="TopoPesquisa">
+                <div class="col-md-12" style="text-align:center; padding-top: 5px; font-size:40px;">
+                    <b>@Controle.PerfilPFuncionalidade.Nome</b>
+                </div>
+                <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
+                    @foreach (var iten in Model.Unidades)
+                    {
+                        <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
+                            <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    <!-- ---------------------------------------------- -->
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid" style="text-align:center">
+            &copy; 2019 - JBD.MonitorCozinha.WebAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Modal para cadastrar número -->
+    <div class="modal fade" id="ModalCadastrarNumero" tabindex="-1" role="dialog" aria-labelledby="fatorFModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog border-dark">
+            <div class="modal-content" style="width: 200%; margin-left: -50%;">
+                <!-- Modal Header -->
+                <div id="mensagemModal" name="mensagem" style="display: none; background-color: #ff2d296b; text-align:center; height: 40px; padding-top: 5px; font-size: 20px;"><b>mensagem</b></div>
+
+                <div class="modal-header">
+                    <div class="col-md-11">
+                        <h3 class="modal-title">Cadastrar Número de Pedido </h3>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+                <!-- Modal body -->
+                <!--------------------------------------------------->
+
+                <input type="hidden" id="IdEmpresa" value="@Controle.ControleAcesso.IdEmpresa" />
+                <input type="hidden" id="IdUnidade" value="@Controle.ControleAcesso.IdUnidade" />
+
+                <fieldset>
+                    <legend>@ViewBag.Title</legend>
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="form-group row col-md-12">
+                            <div class="form-group col-md-12">
+                                <Label class="control-label col-md-3">Número de pedido:</Label>
+                                <div class="col-md-12">
+                                    <input type="text" id="NumeroPedido" name="NumeroPedido" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!--------------------------------------------------->
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="col-md-12" style="text-align: right;">
+                        <button id="btnFecharNumeroPedido" type="button" class="btn btn-danger">&nbsp;&nbsp;&nbsp;Fechar&nbsp;&nbsp;&nbsp;</button>
+                        <button id="btnSalvarNumeroPedido" type="button" class="btn btn-outline-success">&nbsp;&nbsp;&nbsp;Salvar&nbsp;&nbsp;&nbsp;</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        <script src="~/js/Views/Usuario/Usuario.js"></script>
+        <script src="~/js/Views/Home/Home.js"></script>
+    </environment>
+</body>
+</html>
+
+
+
+

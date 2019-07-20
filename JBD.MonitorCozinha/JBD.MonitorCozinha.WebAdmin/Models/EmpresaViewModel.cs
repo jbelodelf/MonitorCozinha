@@ -1,5 +1,4 @@
-﻿using JBD.MonitorCozinha.Domain.Enuns;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 
@@ -24,10 +23,15 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         [DisplayName("Inscrição Municipal")]
         public string InscricaoMunicipal { get; set; }
         public int IdStatus { get; set; }
+        [DisplayName("Nome contato")]
+        public string NomeContato { get; set; }
+        [DisplayName("Telefone")]
+        public string Telefone { get; set; }
+        [DisplayName("E-Mail")]
+        public string Email { get; set; }
         [DisplayName("Data de Cadastro")]
         public DateTime DataCadastro { get; set; }
-
+        public DateTime dataNow = DateTime.Today;
         public List<UnidadeViewModel> Unidades { get; set; }
-        public DateTime dataNow = DateTime.Today; 
     }
 }

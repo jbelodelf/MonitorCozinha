@@ -26,6 +26,12 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         [DisplayName("Pais")]
         public string Pais { get; set; }
         public int IdStatus { get; set; }
+        [DisplayName("Nome contato")]
+        public string NomeContato { get; set; }
+        [DisplayName("Telefone")]
+        public string Telefone { get; set; }
+        [DisplayName("E-Mail")]
+        public string Email { get; set; }
         [DisplayName("Data de Cadastro")]
         public DateTime DataCadastro { get; set; }
       

@@ -28,14 +28,14 @@
                 <div class="col-md-12" style="text-align:center; padding-top: 5px; font-size:40px;">
                     <b>@Controle.PerfilPFuncionalidade.Nome</b>
                 </div>
-                <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
-                    @foreach (var iten in Model.Unidades)
-                    {
-                        <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
-                            <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorTV(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
-                        </div>
-                    }
-                </div>
+            </div>
+            <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
+                @foreach (var iten in Model.Unidades)
+                {
+                    <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
+                        <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorTV(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                    </div>
+                }
             </div>
         </div>
     }
@@ -48,17 +48,18 @@
                 <div class="col-md-12" style="text-align:center; padding-top: 5px; font-size:40px;">
                     <b>@Controle.PerfilPFuncionalidade.Nome</b>
                 </div>
-                <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
-                    @foreach (var iten in Model.Unidades)
-                    {
-                        <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
-                            <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Home.Cadastrar(@iten.IdEmpresa,@iten.IdUnidade)">@iten.Nome<p>&nbsp;</p></button>
-                        </div>
-                    }
-                </div>
+            </div>
+            <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
+                @foreach (var iten in Model.Unidades)
+                {
+                    <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
+                        <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Home.Cadastrar(@iten.IdEmpresa,@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                    </div>
+                }
             </div>
         </div>
     }
+
     <!-- ---------------------------------------------- -->
     @if (Controle.PerfilPFuncionalidade.Nome == "MONITOR ADMINISTRATIVO")
     {
@@ -67,14 +68,26 @@
                 <div class="col-md-12" style="text-align:center; padding-top: 5px; font-size:40px;">
                     <b>@Controle.PerfilPFuncionalidade.Nome</b>
                 </div>
-                <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
-                    @foreach (var iten in Model.Unidades)
+            </div>
+            <div class="col-md-12 form-group row" style="height: 300px; margin-top:100px;">
+                @foreach (var iten in Model.Unidades)
+                {
+                    if (Controle.ControleAcesso.IdTipo == JBD.MonitorCozinha.Domain.Enuns.TipoUsuarioEnum.Cozinha)
+                    {
+                        if (iten.IdUnidade == Controle.ControleAcesso.IdUnidade)
+                        {
+                            <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
+                                <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                            </div>
+                        }
+                    }
+                    else
                     {
                         <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
                             <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
                         </div>
                     }
-                </div>
+                }
             </div>
         </div>
     }
@@ -96,7 +109,7 @@
 
                 <div class="modal-header">
                     <div class="col-md-11">
-                        <h3 class="modal-title">Cadastrar Número de Pedido </h3>
+                        <h3 class="modal-title">Cadastrar Número de Pedido&nbsp;-&nbsp;<span id="nomeCozinha"></span></h3>
                     </div>
                     <div class="col-md-1">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>

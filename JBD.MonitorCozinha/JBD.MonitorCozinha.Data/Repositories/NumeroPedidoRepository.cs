@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Data.Repositories
 {
@@ -15,7 +14,7 @@ namespace Data.Repositories
         //Delete Pedido
         public void Deletar(int Id)
         {
-            Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (a => a.IdStatusPedido != (int)StatusEnum.Excluido && a.IdNumeroPedido == (Int64)Id);
+            Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (a => a.IdNumeroPedido == (Int64)Id);
 
             using (var rep = new RepositoryBase<NumeroPedidoEntity>())
             {
@@ -32,9 +31,8 @@ namespace Data.Repositories
         {
             List<NumeroPedidoEntity> ListaPedidos = new List<NumeroPedidoEntity>();
             Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (
-                a => 
-                a.IdStatusPedido != (int)StatusEnum.Excluido 
-                && a.IdStatusPedido != (int)StatusPedidoEnum.Entregue
+                a =>
+                a.IdStatusPedido != (int)StatusPedidoEnum.Entregue
                 && a.IdEmpresa == IdEmpresa && a.IdUnidade == IdUnidade
             );
 
@@ -50,7 +48,7 @@ namespace Data.Repositories
         public NumeroPedidoEntity ObterPedidoById(int Id)
         {
             NumeroPedidoEntity pedido = new NumeroPedidoEntity();
-            Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (a => a.IdStatusPedido != (int)StatusEnum.Excluido && a.IdNumeroPedido == (Int64)Id);
+            Expression<Func<NumeroPedidoEntity, bool>> expressionFiltro = (a => a.IdNumeroPedido == (Int64)Id);
 
             using (var rep = new RepositoryBase<NumeroPedidoEntity>())
             {

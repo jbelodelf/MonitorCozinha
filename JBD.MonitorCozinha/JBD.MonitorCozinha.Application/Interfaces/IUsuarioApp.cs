@@ -9,7 +9,7 @@ namespace JBD.MonitorCozinha.Application.Interfaces
     {
         List<UsuarioEntity> ListarUsuarios();
         UsuarioEntity ObterUsuarioById(int Id);
-        void Salvar(UsuarioEntity usuario);
+        UsuarioEntity Salvar(UsuarioEntity usuario);
         void Deletar(int Id);
         UsuarioEntity UsuarioLogar(string userName, string senha);
     }

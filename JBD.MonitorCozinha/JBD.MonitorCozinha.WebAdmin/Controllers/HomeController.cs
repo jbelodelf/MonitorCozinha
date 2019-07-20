@@ -27,6 +27,10 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         {
             var empresa = _service.ObterEmpresa(Controle.ControleAcesso.IdEmpresa);
             Controle.PerfilPFuncionalidade.Nome = funcionalidade;
+
+            var testeA = Controle.ControleAcesso;
+            var testeF = Controle.PerfilPFuncionalidade;
+
             return View(empresa);
         }
 

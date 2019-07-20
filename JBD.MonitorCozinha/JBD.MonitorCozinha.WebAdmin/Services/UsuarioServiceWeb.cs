@@ -47,7 +47,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             }
         }
 
-        public void CadastrarUsuario(UsuarioViewModel usuario)
+        public UsuarioViewModel CadastrarUsuario(UsuarioViewModel usuario)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -58,7 +58,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
                 HttpResponseMessage response = client.PostAsync("InserirUsuario", conteudo).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 UsuarioDTO data = JsonConvert.DeserializeObject<UsuarioDTO>(stringData);
+                usuario = _mapper.Map<UsuarioViewModel>(data);
             }
+            return usuario;
         }
 
         public void AlterarUsuario(UsuarioViewModel usuario)

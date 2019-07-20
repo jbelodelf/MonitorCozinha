@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Data.Repositories
 {
@@ -15,7 +14,7 @@ namespace Data.Repositories
         //Delete Unidade
         public void Deletar(int Id)
         {
-            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUnidade == (Int64)Id);
+            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdUnidade == (Int64)Id);
 
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
@@ -32,13 +31,12 @@ namespace Data.Repositories
         {
             List<UnidadeEntity> ListaUnidades = new List<UnidadeEntity>();
             string[] includes = new string[] { "Pessoas" };
-            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
+            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo);
 
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
                 ListaUnidades = rep.Select(expressionFiltro, includes).ToList();
             }
-
             return ListaUnidades;
         }
 
@@ -47,13 +45,12 @@ namespace Data.Repositories
         {
             List<UnidadeEntity> ListaUnidades = new List<UnidadeEntity>();
             string[] includes = new string[] { "Pessoas" };
-            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdEmpresa == IdEmpresa);
+            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdEmpresa == IdEmpresa);
 
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
                 ListaUnidades = rep.Select(expressionFiltro, includes).ToList();
             }
-
             return ListaUnidades;
         }
 
@@ -62,29 +59,31 @@ namespace Data.Repositories
         {
             UnidadeEntity unidade = new UnidadeEntity();
             string[] includes = new string[] { "Pessoas" };
-            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUnidade == (Int64)Id);
+            Expression<Func<UnidadeEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdUnidade == (Int64)Id);
 
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
                 unidade = rep.Select(expressionFiltro, includes).FirstOrDefault();
             }
-
             return unidade;
         }
 
-        public void Salvar(UnidadeEntity unidade)
+        public UnidadeEntity Salvar(UnidadeEntity unidade)
         {
             using (var rep = new RepositoryBase<UnidadeEntity>())
             {
                 if (unidade.IdUnidade == 0)
                 {
-                    rep.Insert(unidade);
+                    unidade.DataCadastro = DateTime.Now;
+                    unidade = rep.Insert(unidade);
                 }
                 else
                 {
                     rep.Update(unidade);
+                    unidade = null;
                 }
             }
+            return unidade;
         }
     }
 }

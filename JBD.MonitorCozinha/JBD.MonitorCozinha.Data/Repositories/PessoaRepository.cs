@@ -15,7 +15,7 @@ namespace Data.Repositories
         //Deletar Pessoa
         public void Deletar(int Id)
         {
-            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdPessoa == (Int64)Id);
+            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdPessoa == (Int64)Id);
 
             using (var rep = new RepositoryBase<PessoaEntity>())
             {
@@ -33,7 +33,7 @@ namespace Data.Repositories
         {
             List<PessoaEntity> ListaPessoas = new List<PessoaEntity>();
             string[] includes = new string[] { "Telefones" };
-            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
+            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo);
 
             using (var rep = new RepositoryBase<PessoaEntity>())
             {
@@ -49,7 +49,7 @@ namespace Data.Repositories
         {
             PessoaEntity pessoa = new PessoaEntity();
             string[] includes = new string[] { "Telefone" };
-            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdPessoa == (Int64)Id);
+            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdPessoa == (Int64)Id);
 
             using (var rep = new RepositoryBase<PessoaEntity>())
             {
@@ -79,7 +79,7 @@ namespace Data.Repositories
         public List<PessoaEntity> ListarPessoasByUnidade(int IdUnidade)
         {
             List<PessoaEntity> ListaPessoas = new List<PessoaEntity>();
-            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUnidade == IdUnidade);
+            Expression<Func<PessoaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdUnidade == IdUnidade);
 
             using (var rep = new RepositoryBase<PessoaEntity>())
             {

@@ -1,24 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
+using JBD.MonitorCozinha.CrossCutting;
+using JBD.MonitorCozinha.Domain.Enuns;
 using JBD.MonitorCozinha.WebAdmin.Models;
 using JBD.MonitorCozinha.WebAdmin.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace JBD.MonitorCozinha.WebAdmin.Controllers
 {
     public class UnidadeController : Controller
     {
-
         private readonly IMapper _mapper;
+        private readonly UnidadeServiceWeb _unidadeServiceWeb;
+        private readonly UsuarioServiceWeb _usuarioServiceWeb;
+        private readonly EmailService emailService;
 
         public UnidadeController(IMapper mapper)
         {
             _mapper = mapper;
+            _unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
+            _usuarioServiceWeb = new UsuarioServiceWeb(_mapper);
+            emailService = new EmailService();
         }
 
         // GET: Unidade
@@ -76,7 +81,6 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
 
         }
 
-
         // GET: Unidade/Details/5
         public ActionResult Details(int id)
         {
@@ -86,7 +90,6 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         // GET: Unidade/Create
         public ActionResult Create()
         {
-
             return View();
         }
 
@@ -97,14 +100,55 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         {
             try
             {
-                UnidadeServiceWeb unidadeServiceWeb = new UnidadeServiceWeb(_mapper);
-                unidadeServiceWeb.CadastrarUnidade(unidade);
+                unidade = _unidadeServiceWeb.CadastrarUnidade(unidade);
+
+                if (unidade != null)
+                {
+                    Random randNum = new Random();
+                    var Numero = randNum.Next().ToString().Substring(5);
+
+                    var padraoPassword = "cozinha" + Numero + unidade.IdUnidade;
+                    var usuarioViewModel = new UsuarioViewModel()
+                    {
+                        IdUsuario = 0,
+                        IdEmpresa = unidade.IdEmpresa,
+                        IdUnidade = unidade.IdUnidade,
+                        IdPessoa = 0,
+                        IdTipo = TipoUsuarioEnum.Cozinha,
+                        IdStatus = (int)StatusEnum.Ativo,
+                        UserName = "cozinha",
+                        Password = GeraradorDeHash.GerarHash256(padraoPassword),
+                        DataCadastro = DateTime.Now,
+                        Pessoa = null,
+                        Unidade = null
+                    };
+
+                    var usuario = _usuarioServiceWeb.CadastrarUsuario(usuarioViewModel);
+
+                    if (usuario.IdUsuario > 0)
+                    {
+                        string mensagem = "";
+                        string email = unidade.Email;
+
+                        mensagem = "<html><head><title>Dados para acesso</title></head><body>";
+                        mensagem += "<h1>Olá " + unidade.NomeContato + "</h1>";
+                        mensagem += "<p>Segue as informações para acessar o Monitor de Cozinha.</p>";
+                        mensagem += "<p></p>";
+                        mensagem += "<p>Usuário: " + usuario.UserName + "</p>";
+                        mensagem += "<p>Senha: " + padraoPassword + "</p>";
+                        mensagem += "<p>Este usuário lhe dará acesso aos recursos do Monitor de Administrativo, para atualizar o andamento das senha</p>";
+                        mensagem += "</body></html>";
+
+                        //Enviar e-mail para acesso
+                        var retorno = emailService.EnvioEmail(email, mensagem);
+                    }
+                }
 
                 return Json (new {mensagem = "Registro salvo com sucesso", retorno = "200" });
             }
-            catch
+            catch(Exception ex)
             {
-                return View();
+                return Json(new { mensagem = "Ocorreu um erro ao tentar salvar a unidade", retorno = "400" });
             }
         }
 

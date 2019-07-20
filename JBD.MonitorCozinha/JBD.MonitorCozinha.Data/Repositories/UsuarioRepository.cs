@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 
 namespace Data.Repositories
 {
@@ -15,7 +14,7 @@ namespace Data.Repositories
         //Delete Usuario
         public void Deletar(int Id)
         {
-            Expression<Func<UsuarioEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUsuario == (Int64)Id);
+            Expression<Func<UsuarioEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdUsuario == (Int64)Id);
 
             using (var rep = new RepositoryBase<UsuarioEntity>())
             {
@@ -31,13 +30,12 @@ namespace Data.Repositories
         public List<UsuarioEntity> ListarUsuarios()
         {
             List<UsuarioEntity> ListaUsuarios = new List<UsuarioEntity>();
-            Expression<Func<UsuarioEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
+            Expression<Func<UsuarioEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo);
 
             using (var rep = new RepositoryBase<UsuarioEntity>())
             {
                 ListaUsuarios = rep.Select(expressionFiltro).ToList();
             }
-
             return ListaUsuarios;
         }
 
@@ -45,45 +43,51 @@ namespace Data.Repositories
         public UsuarioEntity ObterUsuarioById(int Id)
         {
             UsuarioEntity usuario = new UsuarioEntity();
-            Expression<Func<UsuarioEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdUsuario == (Int64)Id);
+            Expression<Func<UsuarioEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdUsuario == (Int64)Id);
 
             using (var rep = new RepositoryBase<UsuarioEntity>())
             {
                 usuario = rep.Select(expressionFiltro).FirstOrDefault();
             }
-
             return usuario;
-
         }
 
         //Save Usuario
-        public void Salvar(UsuarioEntity usuario)
+        public UsuarioEntity Salvar(UsuarioEntity usuario)
         {
             using (var rep = new RepositoryBase<UsuarioEntity>())
             {
-                if (usuario.IdUnidade == 0)
+                if (usuario.IdUsuario == 0)
                 {
-                    rep.Insert(usuario);
+                    usuario = rep.Insert(usuario);
                 }
                 else
                 {
                     rep.Update(usuario);
+                    usuario = null;
                 }
             }
+            return usuario;
         }
 
         // Get Usuario By userName and Password
         public UsuarioEntity UsuarioLogar(string userName, string senha)
         {
             UsuarioEntity usuario = new UsuarioEntity();
-            string[] includes = new string[] { "Pessoa", "Unidade" };
+            string[] includes = new string[] { "Unidade" };
             Expression<Func<UsuarioEntity, bool>> expressionFiltro = u => (u.IdStatus == (int)StatusEnum.Ativo && u.UserName.Trim() == userName.Trim() && u.Password.Trim() == senha.Trim());
 
             using (var rep = new RepositoryBase<UsuarioEntity>())
             {
-                usuario = rep.Select(expressionFiltro, includes).FirstOrDefault();
+                if (userName == "operacional")
+                {
+                    usuario = rep.Select(expressionFiltro).FirstOrDefault();
+                }
+                else
+                {
+                    usuario = rep.Select(expressionFiltro, includes).FirstOrDefault();
+                }
             }
-
             return usuario;
         }
 

@@ -23,8 +23,9 @@
         });
     },
 
-    Cadastrar: function (idEmpresa, idUnidade) {
+    Cadastrar: function (idEmpresa, idUnidade, nomeCozinha) {
         $("#IdUnidade").val(idUnidade);
+        $("#nomeCozinha").html(nomeCozinha);
         $("#ModalCadastrarNumero").modal('show');
     }
 }

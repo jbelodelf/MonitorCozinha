@@ -60,8 +60,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             }
         }
 
-
-        public void CadastrarEmpresa(EmpresaViewModel empresa)
+        public EmpresaViewModel CadastrarEmpresa(EmpresaViewModel empresa)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -72,7 +71,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
                 HttpResponseMessage response = client.PostAsync("InserirEmpresa", conteudo).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 EmpresaDTO data = JsonConvert.DeserializeObject<EmpresaDTO>(stringData);
+                empresa = _mapper.Map<EmpresaViewModel>(data);
             }
+            return empresa;
         }
 
         public void AlterarEmpresa(EmpresaViewModel empresa)

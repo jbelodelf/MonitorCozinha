@@ -1,9 +1,7 @@
 ﻿using JBD.MonitorCozinha.Domain.Entitys;
 using JBD.MonitorCozinha.Domain.Interfaces.Repository;
 using JBD.MonitorCozinha.Domain.Interfaces.Service;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace JBD.MonitorCozinha.Domain.Services
 {
@@ -31,9 +29,9 @@ namespace JBD.MonitorCozinha.Domain.Services
             return _repository.ObterUsuarioById(Id);
         }
 
-        public void Salvar(UsuarioEntity usuario)
+        public UsuarioEntity Salvar(UsuarioEntity usuario)
         {
-            _repository.Salvar(usuario);
+            return _repository.Salvar(usuario);
         }
 
         public UsuarioEntity UsuarioLogar(string userName, string senha)

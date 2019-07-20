@@ -22,6 +22,9 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public string InscricaoEstadual { get; set; }
         public string InscricaoMunicipal { get; set; }
         public int IdStatus { get; set; }
+        public string NomeContato { get; set; }
+        public string Telefone { get; set; }
+        public string Email { get; set; }
         public DateTime DataCadastro { get; set; }
 
         public List<UnidadeEntity> Unidades { get; set; }

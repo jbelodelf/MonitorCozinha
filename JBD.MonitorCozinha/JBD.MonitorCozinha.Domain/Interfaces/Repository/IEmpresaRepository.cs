@@ -9,7 +9,8 @@ namespace JBD.MonitorCozinha.Domain.Interfaces.Repository
         List<EmpresaEntity> ListarEmpresas(string nome, string cnpjcpf);
         EmpresaEntity ObterEmpresaById(int Id);
         bool VeficaDuplicidadeCnpjCpf(string cnpjcpf);
-        void Salvar(EmpresaEntity empresa);
+        EmpresaEntity Inserir(EmpresaEntity empresa);
+        void Alterar(EmpresaEntity empresa);
         void Deletar(int Id);
     }
 }

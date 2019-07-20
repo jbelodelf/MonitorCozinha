@@ -50,9 +50,12 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         {
             ControleAcesso.IdEmpresa = usuario.IdEmpresa;
             ControleAcesso.IdUnidade = usuario.IdUnidade;
-            ControleAcesso.IdUnidade = usuario.IdUsuario;
+            ControleAcesso.IdUsuario = usuario.IdUsuario;
             ControleAcesso.IdTipo = usuario.IdTipo;
-            ControleAcesso.Unidade = usuario.Unidade.Nome;
+            if (usuario.Unidade != null)
+            {
+                ControleAcesso.Unidade = usuario.Unidade.Nome;
+            }
             ControleAcesso.ConexaoAtiva = true;
             ControleAcesso.DataLogin = DateTime.Now;
         }

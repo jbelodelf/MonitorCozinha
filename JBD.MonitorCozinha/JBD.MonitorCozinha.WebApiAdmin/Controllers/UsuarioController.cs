@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net;
-using System.Threading.Tasks;
 using AutoMapper;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Domain.DTOS;
 using JBD.MonitorCozinha.Domain.Entitys;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
@@ -48,7 +44,8 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         public ObjectResult Post([FromBody] UsuarioDTO usuario)
         {
             var usuarioEntity = _mapper.Map<UsuarioEntity>(usuario);
-            _usuarioApp.Salvar(usuarioEntity);
+            usuarioEntity = _usuarioApp.Salvar(usuarioEntity);
+            usuario = _mapper.Map<UsuarioDTO>(usuarioEntity);
             return StatusCode((int)HttpStatusCode.Created, usuario);
         }
 

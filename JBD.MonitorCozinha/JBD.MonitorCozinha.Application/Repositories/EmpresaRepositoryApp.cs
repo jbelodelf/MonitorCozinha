@@ -34,9 +34,10 @@ namespace JBD.MonitorCozinha.Application.Repositories
             return _service.ObterEmpresaById(Id);
         }
 
-        public void Salvar(EmpresaEntity empresa)
+        public EmpresaEntity Salvar(EmpresaEntity empresa)
         {
-            _service.Salvar(empresa);
+            var empresaEntity = _service.Salvar(empresa);
+            return empresaEntity;
         }
 
         public bool VeficaDuplicidadeCnpjCpf(string cnpjcpf)

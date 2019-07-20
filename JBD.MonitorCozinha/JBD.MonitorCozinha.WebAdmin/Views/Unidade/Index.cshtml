@@ -70,14 +70,13 @@
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                         <div class="form-group row col-md-12">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-8">
                                 @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-8" })
                                 <div class="col-md-12">
                                     @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
                                     @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group col-md-4">
                                 @Html.LabelFor(model => model.CEP, htmlAttributes: new { @class = "control-label col-md-3" })
                                 <div class="col-md-12">
@@ -85,11 +84,10 @@
                                     @Html.ValidationMessageFor(model => model.CEP, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                         </div>
 
                         <div class="form-group row col-md-12">
-                            <div class="form-group col-md-4">
+                            <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.Endereco, htmlAttributes: new { @class = "control-label col-md-3" })
                                 <div class="col-md-12">
                                     @Html.EditorFor(model => model.Endereco, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
@@ -103,7 +101,6 @@
                                     @Html.ValidationMessageFor(model => model.Numero, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
                             <div class="form-group col-md-4">
                                 @Html.LabelFor(model => model.Bairro, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-12">
@@ -111,45 +108,62 @@
                                     @Html.ValidationMessageFor(model => model.Bairro, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <div class="form-group col-md-4">
+                        </div>
+
+                        <div class="form-group row col-md-12">
+                            <div class="form-group col-md-6">
                                 @Html.LabelFor(model => model.Cidade, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-12">
                                     @Html.EditorFor(model => model.Cidade, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
                                     @Html.ValidationMessageFor(model => model.Cidade, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-
-                            <div class="form-group row col-md-12">
-                                <div class="form-group col-md-2">
-                                    @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-12">
-                                        @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
-                                        @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
-                                    </div>
+                            <div class="form-group col-md-2">
+                                @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Estado, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
+                                    @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
                                 </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label>
+                                    @Html.LabelFor(model => model.Pais, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        <select id="Pais" class="form-control"></select>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
 
-                                <div class="form-group col-md-6">
-                                    <label>
-                                        @Html.LabelFor(model => model.Pais, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        <div class="col-md-12">
-                                            <select id="Pais" class="form-control"></select>
-                                        </div>
-                                    </label>
+                        <div class="form-group row col-md-12">
+                            <div class="form-group col-md-8">
+                                @Html.LabelFor(model => model.NomeContato, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.NomeContato, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" } })
+                                    @Html.ValidationMessageFor(model => model.NomeContato, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                @Html.LabelFor(model => model.Telefone, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Telefone, new { htmlAttributes = new { @class = "form-control", @maxlength = "15" } })
+                                    @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row col-md-12">
+                            <div class="form-group col-md-12">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @maxlength = "100" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
-                            @*<div class="form-group col-md-2">
-            @Html.LabelFor(model => model.Pais, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-12">
-                @Html.EditorFor(model => model.Pais, new { htmlAttributes = new { @class = "form-control", @maxlength = "60" } })
-                @Html.ValidationMessageFor(model => model.Pais, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
                             <input type="hidden" id="DataCadastro" value="@DateTime.Now" />
                             <input type="hidden" id="IdStatus" value="" />
                             <input type="hidden" id="idEmpresaNum" value="@Model.IdEmpresa" />
-                            @*<input type="text" id="paisText" value="" />*@
-
 
                         </div>
                     </div>

@@ -3309,6 +3309,16 @@
           "bin/placeholder/JBD.MonitorCozinha.Application.dll": {}
         }
       },
+      "JBD.MonitorCozinha.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/JBD.MonitorCozinha.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JBD.MonitorCozinha.CrossCutting.dll": {}
+        }
+      },
       "JBD.MonitorCozinha.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -3326,6 +3336,7 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.1.0",
           "Data": "1.0.0",
           "JBD.MonitorCozinha.Application": "1.0.0",
+          "JBD.MonitorCozinha.CrossCutting": "1.0.0",
           "JBD.MonitorCozinha.Domain": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
           "Newtonsoft.Json": "12.0.2"
@@ -10302,6 +10313,11 @@
       "type": "project",
       "path": "../JBD.MonitorCozinha.Application/JBD.MonitorCozinha.Application.csproj",
       "msbuildProject": "../JBD.MonitorCozinha.Application/JBD.MonitorCozinha.Application.csproj"
+    },
+    "JBD.MonitorCozinha.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../JBD.MonitorCozinha.CrossCutting/JBD.MonitorCozinha.CrossCutting.csproj",
+      "msbuildProject": "../JBD.MonitorCozinha.CrossCutting/JBD.MonitorCozinha.CrossCutting.csproj"
     },
     "JBD.MonitorCozinha.Domain/1.0.0": {
       "type": "project",

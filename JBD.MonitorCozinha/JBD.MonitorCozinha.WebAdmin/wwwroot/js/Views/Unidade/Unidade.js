@@ -66,10 +66,13 @@
         else if ($("Pais").val() == "") {
             isValido = false;
         }
-        else if ($("IdStatus").val() == "") {
+        else if ($("#NomeContato").val() == "") {
             isValido = false;
         }
-        else if ($("DataCadastro").val() == "") {
+        else if ($("#Telefone").val() == "") {
+            isValido = false;
+        }
+        else if ($("#Email").val() == "") {
             isValido = false;
         }
 
@@ -98,7 +101,6 @@
                     return;
                 }
                 var url = "/Unidade/SalvarUnidade";
-
                 var cep = $("#CEP").val().replace(/\D/g, '');
 
                 unidade = {                  
@@ -113,8 +115,10 @@
                     Estado: $("#Estado").val(),
                     Pais: $("#Pais").val(),
                     IdStatus: $("#IdStatus").val(),
-                    DataCadastro: $("#DataCadastro").val()  
-                    
+                    NomeContato: $("#NomeContato").val(),
+                    Telefone: $("#Telefone").val(),
+                    Email: $("#Email").val(),
+                    DataCadastro: $("#DataCadastro").val()
                 },
                 $.ajax({
                     url: url
@@ -151,7 +155,6 @@
         window.location.href = "/Pessoa/Index?IdUnidade=" + id;
     },
 
-
     Editar: function (idUnidade) {
         var url = "/Unidade/EditarUnidade";
         $.ajax({
@@ -166,7 +169,7 @@
                 $("#IdUnidade").val(data.data.idUnidade);
                 $("#IdEmpresa").val(data.data.idEmpresa);
                 $("#Nome").val(data.data.nome);
-                $("#CEP").val(data.data.cep).attr("Readonly", true);
+                $("#CEP").val(data.data.cep);
                 $("#Endereco").val(data.data.endereco).attr("Readonly", true);
                 $("#Bairro").val(data.data.bairro).attr("Readonly", true);
                 $("#Numero").val(data.data.numero);
@@ -174,6 +177,9 @@
                 $("#Estado").val(data.data.estado).attr("Readonly", true);
                 $("#Pais").val(data.data.pais);
                 $("#IdStatus").val(data.data.idStatus);
+                $("#NomeContato").val(data.data.nomeContato);
+                $("#Telefone").val(data.data.telefone);
+                $("#Email").val(data.data.email);
                 $("#DataCadastro").val(data.data.dataCadastro);
 
                 $("#btnSalvarUnidade").show();
@@ -206,7 +212,6 @@ $(document).ready(function () {
     });
 
     $('#btNovo').on("click", function () {
-
         $("#IdUnidade").val("0");
         $("#IdEmpresa").val("").attr("Readonly", false);
         $("#Nome").val("").attr("Readonly", false);
@@ -218,21 +223,20 @@ $(document).ready(function () {
         $("#Estado").val("").attr("Readonly", true);
         $("#Pais").val("").attr("Readonly", false);
         $("#IdStatus").val("1").attr("Readonly", true);
+        $("#NomeContato").val("");
+        $("#Telefone").val("");
+        $("#Email").val("");
         $("#DataCadastro").attr("Readonly", false);
 
         $("#btnSalvarUnidade").show();
         $("#ModalCadastrarUnidade").modal('show');
-
     });
 
     $('#btPesquisar').on("click", function () {
         Unidade.Listar();
-
     });
 
-
     $('#btnFecharUnidade').on("click", function () {
-
         $("#IdUnidade").val("0");
         $("#IdEmpresa").val("");
         $("#Nome").val("");
@@ -244,11 +248,12 @@ $(document).ready(function () {
         $("#Estado").val("");
         $("#Pais").val("");
         $("#IdStatus").val("");
+        $("#NomeContato").val("");
+        $("#Telefone").val("");
+        $("#Email").val("");
         $("#DataCadastro").val("");
 
         $("#ModalCadastrarUnidade").modal('hide');
-
-
     });
 
     $("#CEP").blur(function () {
@@ -344,6 +349,4 @@ $(document).ready(function () {
     }
 
     montaPais();
-
-
 });

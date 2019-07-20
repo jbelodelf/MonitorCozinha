@@ -32,9 +32,9 @@ namespace JBD.MonitorCozinha.Application.Repositories
             return _service.ObterUsuarioById(Id);
         }
 
-        public void Salvar(UsuarioEntity usuario)
+        public UsuarioEntity Salvar(UsuarioEntity usuario)
         {
-            _service.Salvar(usuario);
+            return _service.Salvar(usuario);
         }
 
         public UsuarioEntity UsuarioLogar(string userName, string senha)

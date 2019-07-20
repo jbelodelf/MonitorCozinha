@@ -13,7 +13,7 @@ namespace Data.Reositories
     {
         public void Deletar(int Id)
         {
-            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdEmpresa == (Int64)Id);
+            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdEmpresa == (Int64)Id);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
@@ -30,7 +30,7 @@ namespace Data.Reositories
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
             string[] includes = new string[] { "Unidades" };
-            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
+            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
@@ -44,7 +44,7 @@ namespace Data.Reositories
         {
             List<EmpresaEntity> ListaEmpresas = new List<EmpresaEntity>();
             string[] includes = new string[] { "Unidades" };
-            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido);
+            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
@@ -58,7 +58,7 @@ namespace Data.Reositories
         {
             EmpresaEntity empresa = new EmpresaEntity();
             string[] includes = new string[] { "Unidades" };
-            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.IdEmpresa == (Int64)Id);
+            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.IdEmpresa == (Int64)Id);
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
@@ -68,26 +68,26 @@ namespace Data.Reositories
             return empresa;
         }
 
-        public void Salvar(EmpresaEntity empresa)
+        public EmpresaEntity Inserir(EmpresaEntity empresa)
         {
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
-                if (empresa.IdEmpresa == 0)
-                {
-                    rep.Insert(empresa);
-                }
-                else
-                {
-                    rep.Update(empresa);
-                }
+                return empresa = rep.Insert(empresa);
+            }
+        }
+
+        public void Alterar(EmpresaEntity empresa)
+        {
+            using (var rep = new RepositoryBase<EmpresaEntity>())
+            {
+                rep.Update(empresa);
             }
         }
 
         public bool VeficaDuplicidadeCnpjCpf(string cnpjcpf)
         {
             bool retorno = false;
-            
-            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus != (int)StatusEnum.Excluido && a.CNPJ.Trim() == cnpjcpf.Trim());
+            Expression<Func<EmpresaEntity, bool>> expressionFiltro = (a => a.IdStatus == (int)StatusEnum.Ativo && a.CNPJ.Trim() == cnpjcpf.Trim());
 
             using (var rep = new RepositoryBase<EmpresaEntity>())
             {
@@ -98,8 +98,6 @@ namespace Data.Reositories
                }
             }
             return retorno;
-
-
         }
     }
 }

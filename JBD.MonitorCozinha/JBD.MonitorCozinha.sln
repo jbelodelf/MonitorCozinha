@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5-TDD", "5-TDD", "{7614FA2A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Domain", "JBD.MonitorCozinha.Domain\JBD.MonitorCozinha.Domain.csproj", "{A4329FD6-95D6-4E4A-9959-E0498FB1744D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Data", "JBD.MonitorCozinha.Data\Data.csproj", "{78E13183-CE0F-43A1-BAE4-01F0055AD8B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "JBD.MonitorCozinha.Data\Data.csproj", "{78E13183-CE0F-43A1-BAE4-01F0055AD8B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Application", "JBD.MonitorCozinha.Application\JBD.MonitorCozinha.Application.csproj", "{B5E9F9AF-1037-44CE-BE80-C05AD80D252B}"
 EndProject
@@ -26,6 +26,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.Test.Admin", "JBD.MonitorCozinha.Test.Admin\JBD.MonitorCozinha.Test.Admin.csproj", "{AA7EBAA7-C767-4A5A-90EB-65674FBC2700}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JBD.MonitorCozinha.WebApiAdmin", "JBD.MonitorCozinha.WebApiAdmin\JBD.MonitorCozinha.WebApiAdmin.csproj", "{1F8C4851-9051-418D-B237-9CCA90ABB678}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JBD.MonitorCozinha.CrossCutting", "JBD.MonitorCozinha.CrossCutting\JBD.MonitorCozinha.CrossCutting.csproj", "{496BF3CA-76D8-4CBD-B10E-2223ECA89A4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{C90B3B31-4AC5-4713-90D6-329783135C0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,10 @@ Global
 		{1F8C4851-9051-418D-B237-9CCA90ABB678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F8C4851-9051-418D-B237-9CCA90ABB678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F8C4851-9051-418D-B237-9CCA90ABB678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{496BF3CA-76D8-4CBD-B10E-2223ECA89A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{496BF3CA-76D8-4CBD-B10E-2223ECA89A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{496BF3CA-76D8-4CBD-B10E-2223ECA89A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{496BF3CA-76D8-4CBD-B10E-2223ECA89A4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +76,8 @@ Global
 		{056F4DD9-EB03-4D0F-B060-B5B376ABF691} = {9FBD008E-83D0-461A-BC62-D10CC1C71EA6}
 		{AA7EBAA7-C767-4A5A-90EB-65674FBC2700} = {7614FA2A-0A3F-4CBC-A953-AE40DCA455C1}
 		{1F8C4851-9051-418D-B237-9CCA90ABB678} = {482BB6F8-3136-4A03-B47A-A4FA29ED6CD3}
+		{496BF3CA-76D8-4CBD-B10E-2223ECA89A4F} = {C90B3B31-4AC5-4713-90D6-329783135C0A}
+		{C90B3B31-4AC5-4713-90D6-329783135C0A} = {BCD4AE03-58A7-4FDA-9DAC-EC2D99933F57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D4AC03B-39C3-4661-A662-D51267AAF454}

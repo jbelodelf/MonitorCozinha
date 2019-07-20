@@ -31,7 +31,7 @@ namespace Data.Repositories
         public List<TelefoneEntity> ListarTelefones()
         {
             List<TelefoneEntity> ListaTelefones = new List<TelefoneEntity>();
-            Expression<Func<TelefoneEntity, bool>> expressionFiltro = (a => a.IdTelefone != (int)StatusEnum.Excluido);
+            Expression<Func<TelefoneEntity, bool>> expressionFiltro = (a => a.IdTelefone == (int)StatusEnum.Ativo);
 
             using (var rep = new RepositoryBase<TelefoneEntity>())
             {

@@ -4775,6 +4775,16 @@
           "bin/placeholder/JBD.MonitorCozinha.Application.dll": {}
         }
       },
+      "JBD.MonitorCozinha.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/JBD.MonitorCozinha.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JBD.MonitorCozinha.CrossCutting.dll": {}
+        }
+      },
       "JBD.MonitorCozinha.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -13045,6 +13055,11 @@
       "path": "../JBD.MonitorCozinha.Application/JBD.MonitorCozinha.Application.csproj",
       "msbuildProject": "../JBD.MonitorCozinha.Application/JBD.MonitorCozinha.Application.csproj"
     },
+    "JBD.MonitorCozinha.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../JBD.MonitorCozinha.CrossCutting/JBD.MonitorCozinha.CrossCutting.csproj",
+      "msbuildProject": "../JBD.MonitorCozinha.CrossCutting/JBD.MonitorCozinha.CrossCutting.csproj"
+    },
     "JBD.MonitorCozinha.Domain/1.0.0": {
       "type": "project",
       "path": "../JBD.MonitorCozinha.Domain/JBD.MonitorCozinha.Domain.csproj",
@@ -13056,6 +13071,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.1.0",
       "Data >= 1.0.0",
       "JBD.MonitorCozinha.Application >= 1.0.0",
+      "JBD.MonitorCozinha.CrossCutting >= 1.0.0",
       "JBD.MonitorCozinha.Domain >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -13099,6 +13115,9 @@
           "projectReferences": {
             "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj": {
               "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj"
+            },
+            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.CrossCutting\\JBD.MonitorCozinha.CrossCutting.csproj": {
+              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.CrossCutting\\JBD.MonitorCozinha.CrossCutting.csproj"
             },
             "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj": {
               "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj"

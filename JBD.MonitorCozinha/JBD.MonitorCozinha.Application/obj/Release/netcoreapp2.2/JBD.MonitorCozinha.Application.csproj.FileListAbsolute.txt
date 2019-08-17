@@ -1,0 +1,12 @@
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.deps.json
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.pdb
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.Domain.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.Domain.pdb
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.csprojAssemblyReference.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.csproj.CoreCompileInputs.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.AssemblyInfoInputs.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.AssemblyInfo.cs
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.csproj.CopyComplete
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Application\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.Application.pdb

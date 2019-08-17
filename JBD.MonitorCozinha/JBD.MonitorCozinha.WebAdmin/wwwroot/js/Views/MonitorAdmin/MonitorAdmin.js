@@ -12,7 +12,10 @@
             , cache: false
         }).done(function (data) {
             $("#divMonitorBody").html(data);
-        }).fail(function (jqXHR, exception) {
+            window.setTimeout(function () {
+                RecarregarMonitor();
+            }, 15000);
+       }).fail(function (jqXHR, exception) {
             TratamentoDeErro(jqXHR, exception);
         });
     },
@@ -54,7 +57,7 @@
             if (data.resultado == true) {
                 window.setTimeout(function () {
                    $("#ModalCadastrarNumero").modal('hide');
-                   MonitorAdmin.Listar();
+                    MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -103,6 +106,10 @@ $(document).ready(function () {
 
     var url = window.location.pathname;
     if ((url == "/") || (url == "/MonitorAdmin") || (url == "/MonitorAdmin/Index") || (url == "/MonitorAdmin/")) {
-        MonitorAdmin.Listar();
+        RecarregarMonitor();
     };
 })
+
+function RecarregarMonitor() {
+    MonitorAdmin.Listar();
+}

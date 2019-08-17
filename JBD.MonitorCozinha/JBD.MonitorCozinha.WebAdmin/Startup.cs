@@ -35,7 +35,7 @@ namespace JBD.MonitorCozinha.WebAdmin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
 
             //services.Configure<CookiePolicyOptions>(options =>
             //{

@@ -30,7 +30,7 @@ namespace JBD.MonitorCozinha.WebApiAdmin
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddSingleton(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
 

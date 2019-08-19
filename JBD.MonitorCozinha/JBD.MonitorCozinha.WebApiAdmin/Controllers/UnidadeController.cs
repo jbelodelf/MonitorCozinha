@@ -66,7 +66,8 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         public ObjectResult Post([FromBody] UnidadeDTO unidade)
         {
             var unidadeEntity = _mapper.Map<UnidadeEntity>(unidade);
-            _unidadeApp.Salvar(unidadeEntity);
+            unidadeEntity = _unidadeApp.Salvar(unidadeEntity);
+            unidade = _mapper.Map<UnidadeDTO>(unidadeEntity);
             return StatusCode((int)HttpStatusCode.Created, unidade);
         }
 

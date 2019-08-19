@@ -4,13 +4,19 @@ namespace JBD.MonitorCozinha.Domain.Enuns
 {
     public enum TipoUsuarioEnum
     {
-        [Description("ADMIN")]
+        [Description("ADMINISTRADOR")]
         Admin = 1,  //Usuário administrador
-        [Description("USER")]
+        [Description("USUÁRIO")]
         User = 2,   //Usuário que tem acesso aos Monitores
-        [Description("GUEST")]
+        [Description("CONVIDADE")]
         Guest = 3,  //Usuário com acesso de demostração
-        [Description("TEST")]
-        Test = 4    //Usuário com acesso para testes
+        [Description("TESTE")]
+        Test = 4,    //Usuário com acesso para testes
+        [Description("OPERACIONAL")]
+        Operacional = 5,    //Usuário com acesso para testes
+        [Description("COZINHA")]
+        Cozinha = 6,    //Usuário com acesso para testes
+        [Description("MONITOR TV")]
+        MonitorTV = 7    //Usuário com acesso para testes
     }
 }

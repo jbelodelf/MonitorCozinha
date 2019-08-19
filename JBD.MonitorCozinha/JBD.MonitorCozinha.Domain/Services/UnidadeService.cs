@@ -36,9 +36,9 @@ namespace JBD.MonitorCozinha.Domain.Services
             return _repository.ObterUnidadeById(Id);
         }
 
-        public void Salvar(UnidadeEntity unidade)
+        public UnidadeEntity Salvar(UnidadeEntity unidade)
         {
-            _repository.Salvar(unidade);
+            return _repository.Salvar(unidade);
         }
     }
 }

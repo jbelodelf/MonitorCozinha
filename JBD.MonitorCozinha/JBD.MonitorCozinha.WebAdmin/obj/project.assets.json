@@ -4775,6 +4775,16 @@
           "bin/placeholder/JBD.MonitorCozinha.Application.dll": {}
         }
       },
+      "JBD.MonitorCozinha.CrossCutting/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/JBD.MonitorCozinha.CrossCutting.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/JBD.MonitorCozinha.CrossCutting.dll": {}
+        }
+      },
       "JBD.MonitorCozinha.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -13016,13 +13026,18 @@
     },
     "Data/1.0.0": {
       "type": "project",
-      "path": "../Data/Data.csproj",
-      "msbuildProject": "../Data/Data.csproj"
+      "path": "../JBD.MonitorCozinha.Data/Data.csproj",
+      "msbuildProject": "../JBD.MonitorCozinha.Data/Data.csproj"
     },
     "JBD.MonitorCozinha.Application/1.0.0": {
       "type": "project",
       "path": "../JBD.MonitorCozinha.Application/JBD.MonitorCozinha.Application.csproj",
       "msbuildProject": "../JBD.MonitorCozinha.Application/JBD.MonitorCozinha.Application.csproj"
+    },
+    "JBD.MonitorCozinha.CrossCutting/1.0.0": {
+      "type": "project",
+      "path": "../JBD.MonitorCozinha.CrossCutting/JBD.MonitorCozinha.CrossCutting.csproj",
+      "msbuildProject": "../JBD.MonitorCozinha.CrossCutting/JBD.MonitorCozinha.CrossCutting.csproj"
     },
     "JBD.MonitorCozinha.Domain/1.0.0": {
       "type": "project",
@@ -13035,6 +13050,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.1.0",
       "Data >= 1.0.0",
       "JBD.MonitorCozinha.Application >= 1.0.0",
+      "JBD.MonitorCozinha.CrossCutting >= 1.0.0",
       "JBD.MonitorCozinha.Domain >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
@@ -13044,24 +13060,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mbelo\\.nuget\\packages\\": {},
+    "C:\\Users\\dell\\.nuget\\packages\\": {},
+    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj",
+      "projectUniqueName": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj",
       "projectName": "JBD.MonitorCozinha.WebAdmin",
-      "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj",
-      "packagesPath": "C:\\Users\\mbelo\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\obj\\",
+      "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj",
+      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+      "outputPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mbelo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -13073,14 +13092,17 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\Data\\Data.csproj": {
-              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\Data\\Data.csproj"
+            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj": {
+              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj"
             },
-            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj": {
-              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj"
+            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.CrossCutting\\JBD.MonitorCozinha.CrossCutting.csproj": {
+              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.CrossCutting\\JBD.MonitorCozinha.CrossCutting.csproj"
             },
-            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj": {
-              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj"
+            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj": {
+              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj"
+            },
+            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj": {
+              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj"
             }
           }
         }

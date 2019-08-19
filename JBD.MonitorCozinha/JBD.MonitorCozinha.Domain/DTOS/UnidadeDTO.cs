@@ -17,6 +17,9 @@ namespace JBD.MonitorCozinha.Domain.DTOS
         public string Estado { get; set; }
         public string Pais { get; set; }
         public int IdStatus { get; set; }
+        public string NomeContato { get; set; }
+        public string Telefone { get; set; }
+        public string Email { get; set; }
         public DateTime DataCadastro { get; set; }
 
         public List<PessoaDTO> Pessoas { get; set; }

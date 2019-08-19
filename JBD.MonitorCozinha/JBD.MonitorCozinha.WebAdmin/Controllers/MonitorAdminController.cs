@@ -21,16 +21,27 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
         // GET: Monitor
-        public ActionResult Index()
+        public ActionResult Index(int IdUnidade, string NomeUnidade)
         {
             if (!Controle.ValidarUsuarioLogado()){ return RedirectToAction("Index", "Login"); }
+            Controle.ControleAcesso.IdUnidade = IdUnidade;
+            Controle.ControleAcesso.Unidade = NomeUnidade;
+
+            return View();
+        }
+
+        // GET: Listar
+        public ActionResult Listar(int IdEmpresa, int IdUnidade)
+        {
+            if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
 
             List<NumeroPedidoViewModel> numeroPedidoViewModel = new List<NumeroPedidoViewModel>();
             NumeroPedidoViewModel numeroPedidoVM = new NumeroPedidoViewModel();
-            var numeroPedidoDTO = _monitorAdminServiceWeb.ListarNumeroPedidos();
+            var numeroPedidoDTO = _monitorAdminServiceWeb.ListarNumeroPedidos(IdEmpresa, IdUnidade);
 
             numeroPedidoViewModel = _mapper.Map<List<NumeroPedidoViewModel>>(numeroPedidoDTO);
-            return View(numeroPedidoViewModel.OrderBy(n => n.IdNumeroPedido));
+
+            return PartialView("~/Views/MonitorAdmin/MainMonitor.cshtml", numeroPedidoViewModel.OrderBy(n => n.IdNumeroPedido));
         }
 
         // GET: MonitorAdmin/AtualizaStatus/1/5
@@ -56,7 +67,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                 IdEmpresa = IdEmpresa,
                 IdUnidade = IdUnidade,
                 NumeroPedido = NumeroPedido,
-                IdStatusPedido = StatusPedidoEnum.AFazer,
+                IdStatusPedido = StatusPedidoEnum.Fazendo,
                 DataCadastro = DateTime.Now
             };
             _monitorAdminServiceWeb.CadastrarNumeroPedido(numeroPedidoVM);

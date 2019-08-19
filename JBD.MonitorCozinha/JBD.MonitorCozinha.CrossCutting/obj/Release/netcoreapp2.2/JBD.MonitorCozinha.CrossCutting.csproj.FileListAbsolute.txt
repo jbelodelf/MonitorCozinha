@@ -1,0 +1,8 @@
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.deps.json
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\bin\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.pdb
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.csproj.CoreCompileInputs.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.AssemblyInfoInputs.cache
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.AssemblyInfo.cs
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.dll
+F:\Projetos_Gerais\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.CrossCutting\obj\Release\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.pdb

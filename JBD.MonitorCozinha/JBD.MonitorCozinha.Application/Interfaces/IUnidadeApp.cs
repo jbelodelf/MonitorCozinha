@@ -10,7 +10,7 @@ namespace JBD.MonitorCozinha.Application.Interfaces
         List<UnidadeEntity> ListarUnidades();
         UnidadeEntity ObterUnidadeById(int Id);
         List<UnidadeEntity> ListarUnidadesByEmpresa(int IdEmpresa);
-        void Salvar(UnidadeEntity unidade);
+        UnidadeEntity Salvar(UnidadeEntity unidade);
         void Deletar(int Id);
 
     }

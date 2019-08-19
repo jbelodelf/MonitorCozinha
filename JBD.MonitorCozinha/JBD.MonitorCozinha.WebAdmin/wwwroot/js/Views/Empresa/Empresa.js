@@ -44,16 +44,16 @@
         else if ($("#CNPJ").val() == "") {
             isValido = false;
         }
-        else if ($("#InscricaoEstadual").val() == "") {
-            isValido = false;
-        }
-        else if ($("#InscricaoMunicipal").val() == "") {
-            isValido = false;
-        }
         else if ($("#IdStatus").val() == "") {
             isValido = false;
         }
-        else if ($("#DataCadastro").val() == "") {
+        else if ($("#NomeContato").val() == "") {
+            isValido = false;
+        }
+        else if ($("#Telefone").val() == "") {
+            isValido = false;
+        }
+        else if ($("#Email").val() == "") {
             isValido = false;
         }
 
@@ -82,9 +82,7 @@
                     return;
                 }
                 var url = "/Empresa/SalvarEmpresa";
-
                 var cnpj = $("#CNPJ").val().replace(/\D/g, '');
-
                 empresa = {
                     IdEmpresa: $("#IdEmpresa").val(),
                     RazaoSocial: $("#RazaoSocial").val(),
@@ -93,6 +91,9 @@
                     InscricaoEstadual: $("#InscricaoEstadual").val(),
                     InscricaoMunicipal: $("#InscricaoMunicipal").val(),
                     IdStatus: $("#IdStatus").val(),
+                    NomeContato: $("#NomeContato").val(),
+                    Telefone: $("#Telefone").val(),
+                    Email: $("#Email").val(),
                     DataCadastro: $("#DataCadastro").val()
                 };
                 $.ajax({
@@ -137,12 +138,17 @@
         }).done(function (data) {
             if (data != null) {
                 $("#IdEmpresa").val(data.data.idEmpresa);
+                $("#CNPJ_ORIGINAL").val(data.data.cnpj);
+
                 $("#RazaoSocial").val(data.data.razaoSocial);
                 $("#NomeFantasia").val(data.data.nomeFantasia);
-                $("#CNPJ").val(data.data.cnpj);
+                $("#CNPJ").val(data.data.cnpj).attr("Readonly", true);
                 $("#InscricaoEstadual").val(data.data.inscricaoEstadual);
                 $("#InscricaoMunicipal").val(data.data.inscricaoMunicipal);
                 $("#IdStatus").val(data.data.idStatus);
+                $("#NomeContato").val(data.data.nomeContato);
+                $("#Telefone").val(data.data.telefone);
+                $("#Email").val(data.data.email);
                 $("#DataCadastro").val(data.data.dataCadastro);
 
                 $("#btnSalvarEmpresa").show();
@@ -156,11 +162,68 @@
         });
     },
 
+    Excluir: function (idEmpresa) {
+        var url = "/Empresa/Delete";
+        bootbox.confirm({
+            message: 'Deseja realmente excluir este registro?',
+            buttons: {
+                confirm: {
+                    label: 'Sim',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'Não',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (!result) {
+                    controle = true;
+                    return;
+                }
+                $.ajax({
+                    url: url
+                    , datatype: "json"
+                    , type: "GET"
+                    , async: false
+                    , data: { id: idEmpresa }
+                    , cache: false
+                }).done(function (data) {
+                    if (data != null) {
+                        if (data.retorno == "200") {
+                            $("#mensagem").text(data.mensagem).show();
+                            window.setTimeout(function () {
+                                $("#mensagem").text("").hide();
+                                window.location.href = "/Empresa";
+                            }, 3000);
+                        }
+                        else {
+                            $("#mensagem").text('Erro:' + data.mensagem).show();
+                            window.setTimeout(function () {
+                                $("#mensagem").text("").hide();
+                                window.location.href = "/Empresa";
+                            }, 3000);
+                            return;
+                        }
+                    }
+                    else {
+                        return;
+                    }
+                }).fail(function (jqXHR, exception) {
+                    TratamentoDeErro(jqXHR, exception);
+                });
+            }
+        });
+    },
+
     ListarUnidade: function (id) {
         window.location.href = "/Unidade/Index?IdEmpresa=" + id;
     },
 
     VerificaDuplicidadeCPF: function (cpfcnpj) {
+        if ($("#CNPJ_ORIGINAL").val() == cpfcnpj) {
+            return;
+        }
         if ($("#CNPJ").val().length = 0) {
             return;
         }
@@ -198,13 +261,12 @@
             TratamentoDeErro(jqXHR, exception);
         });
     },
+};
 
-}
 
-//Carregar grid quando o documento é acessado conforme endereço passado
 $(document).ready(function () {
     var url = window.location.pathname;
-    if ((url == "/") || (url == "/Empresa") || (url =="/Empresa/Index") || (url == "/Empresa/")){
+    if ((url == "/") || (url == "/Empresa") || (url == "/Empresa/Index") || (url == "/Empresa/")) {
         Empresa.Listar();
     };
 
@@ -213,39 +275,41 @@ $(document).ready(function () {
     });
 
     $('#btNovo').on("click", function () {
-
         $("#IdEmpresa").val("0");
+        $("#CNPJ_ORIGINAL").val("");
         $("#RazaoSocial").val("").attr("Readonly", false);
         $("#NomeFantasia").val("").attr("Readonly", false);
         $("#CNPJ").val("").attr("Readonly", false);
         $("#InscricaoEstadual").val("").attr("Readonly", false);
         $("#InscricaoMunicipal").val("").attr("Readonly", false);
         $("#IdStatus").val("1").attr("Readonly", true);
-        $("#DataCadastro").attr("Readonly")
-
+        $("#DataCadastro").attr("Readonly");
+        $("#NomeContato").val("");
+        $("#Telefone").val("");
+        $("#Email").val("");
         $("#btnSalvarEmpresa").show();
         $("#ModalCadastrarEmpresa").modal('show');
-
     });
 
     $('#btnFecharEmpresa').on("click", function () {
-
         $("#IdEmpresa").val("0");
-        $("#RazaoSocial").val("")
-        $("#NomeFantasia").val("")
-        $("#CNPJ").val("")
-        $("#InscricaoEstadual").val("")
-        $("#InscricaoMunicipal").val("")
-        $("#IdStatus").val("1")
-        $("#DataCadastro").val("")
+        $("#CNPJ_ORIGINAL").val("");
+        $("#RazaoSocial").val("");
+        $("#NomeFantasia").val("");
+        $("#CNPJ").val("");
+        $("#InscricaoEstadual").val("");
+        $("#InscricaoMunicipal").val("");
+        $("#IdStatus").val("1");
+        $("#DataCadastro").val("");
+        $("#NomeContato").val("");
+        $("#Telefone").val("");
+        $("#Email").val("");
 
         $("#ModalCadastrarEmpresa").modal('hide');
-
     });
 
     $('#btPesquisar').on("click", function () {
         Empresa.Listar();
-
     });
 
     $("#CNPJ").blur(function () {
@@ -284,13 +348,10 @@ $(document).ready(function () {
                 }, 2000);
                 return;
             }
-            
+
         }
-
         var cnpj = $("#CNPJ").val().replace(/\D/g, '');
-
         Empresa.VerificaDuplicidadeCPF(cnpj);
-
     });
 
     $("#CNPJ").focusout(function () {
@@ -303,6 +364,4 @@ $(document).ready(function () {
         }
     });
 
-})
-
-
+});

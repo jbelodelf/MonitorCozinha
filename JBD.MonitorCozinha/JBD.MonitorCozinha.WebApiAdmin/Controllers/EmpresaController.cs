@@ -44,7 +44,8 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
         public ObjectResult Post([FromBody] EmpresaDTO empresa)
         {
             var empresaEntity = _mapper.Map<EmpresaEntity>(empresa);
-            _empresaApp.Salvar(empresaEntity);
+            empresaEntity = _empresaApp.Salvar(empresaEntity);
+            empresa = _mapper.Map<EmpresaDTO>(empresaEntity);
             return StatusCode((int)HttpStatusCode.Created, empresa);
         }
 

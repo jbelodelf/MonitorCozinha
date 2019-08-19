@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using JBD.MonitorCozinha.CrossCutting;
 using JBD.MonitorCozinha.WebAdmin.Models;
 using JBD.MonitorCozinha.WebAdmin.Services;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +35,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             bool logado = false;
             try
             {
-                var usuario = _usuarioServiceWeb.UsuarioLogar(userName, senha);
+                var usuario = _usuarioServiceWeb.UsuarioLogar(userName, GeraradorDeHash.GerarHash256(senha));
                 if (usuario != null)
                 {
                     Controle.AtualzarAcesso(usuario);
@@ -56,9 +57,6 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         {
             return View();
         }
-
-
-
 
         // GET: Login/Details/5
         public ActionResult Details(int id)

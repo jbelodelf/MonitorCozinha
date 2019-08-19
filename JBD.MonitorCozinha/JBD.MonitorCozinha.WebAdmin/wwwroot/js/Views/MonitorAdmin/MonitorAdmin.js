@@ -1,4 +1,25 @@
 ﻿MonitorAdmin = {
+    Listar: function () {
+        var idEmpresa = $("#IdEmpresa").val();
+        var idUnidade = $("#IdUnidade").val();
+        var url = "/MonitorAdmin/Listar";
+        $.ajax({
+            url: url
+            , datatype: "json"
+            , type: "GET"
+            , data: { idEmpresa: idEmpresa, idUnidade: idUnidade }
+            , async: false
+            , cache: false
+        }).done(function (data) {
+            $("#divMonitorBody").html(data);
+            window.setTimeout(function () {
+                RecarregarMonitor();
+            }, 15000);
+       }).fail(function (jqXHR, exception) {
+            TratamentoDeErro(jqXHR, exception);
+        });
+    },
+
     AtualizarStatus: function (idPedido, idStatus) {
         var url = "/MonitorAdmin/AlterarNumeroPedido";
         $.ajax({
@@ -11,7 +32,7 @@
         }).done(function (data) {
             if (data.resultado == true) {
                 window.setTimeout(function () {
-                    window.location.href = "/MonitorAdmin/Index";
+                    MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -35,7 +56,8 @@
         }).done(function (data) {
             if (data.resultado == true) {
                 window.setTimeout(function () {
-                    window.location.href = "/MonitorAdmin/Index";
+                   $("#ModalCadastrarNumero").modal('hide');
+                    MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -55,7 +77,7 @@
         }).done(function (data) {
             if (data.resultado == true) {
                 window.setTimeout(function () {
-                    window.location.href = "/MonitorAdmin/Index";
+                    MonitorAdmin.Listar();
                 }, 500);
             }
         }).fail(function (jqXHR, exception) {
@@ -65,6 +87,11 @@
 }
 
 $(document).ready(function () {
+    var altura = window.screen.availHeight;
+    var largura = window.screen.availWidth;
+    $("#divFazer").css('height', (altura - 230));
+    $("#divTopHeader").css('width', (largura - 17));
+
     $("#btCadastrarNumeroPedido").click(function () {
         $("#ModalCadastrarNumero").modal('show');
     })
@@ -76,4 +103,13 @@ $(document).ready(function () {
     $("#btnSalvarNumeroPedido").click(function () {
         MonitorAdmin.InserirNumero();
     })
+
+    var url = window.location.pathname;
+    if ((url == "/") || (url == "/MonitorAdmin") || (url == "/MonitorAdmin/Index") || (url == "/MonitorAdmin/")) {
+        RecarregarMonitor();
+    };
 })
+
+function RecarregarMonitor() {
+    MonitorAdmin.Listar();
+}

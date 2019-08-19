@@ -65,7 +65,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
 
         }
 
-        public void CadastrarUnidade(UnidadeViewModel unidade)
+        public UnidadeViewModel CadastrarUnidade(UnidadeViewModel unidade)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -76,7 +76,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
                 HttpResponseMessage response = client.PostAsync("InserirUnidade", conteudo).Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 UnidadeDTO data = JsonConvert.DeserializeObject<UnidadeDTO>(stringData);
+                unidade = _mapper.Map<UnidadeViewModel>(data);
             }
+            return unidade;
         }
 
         public void AlterarUnidade(UnidadeViewModel unidade)

@@ -7,7 +7,7 @@ namespace JBD.MonitorCozinha.Application.Interfaces
 {
     public interface INumeroPedidoApp
     {
-        List<NumeroPedidoEntity> ListarPedidos();
+        List<NumeroPedidoEntity> ListarPedidos(int IdEmpresa, int IdUnidade);
         NumeroPedidoEntity ObterPedidoById(int Id);
         void Salvar(NumeroPedidoEntity pedido);
         void Deletar(int Id);

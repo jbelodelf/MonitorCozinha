@@ -13,7 +13,6 @@
             , cache: false
         }).done(function (data) {
             if (data.logado) {
-                //window.location.href = "Monitor/Index";
                 window.location.href = "Login/Home";
             }
             else {
@@ -23,7 +22,6 @@
                     window.location.href = "/Login";
                 }, 3000);
             }
-
         }).fail(function (jqXHR, exception) {
             TratamentoDeErro(jqXHR, exception);
         });
@@ -185,13 +183,25 @@
         });
     },
 
+    UnidadeAdmin: function (funcionalidade) {
+        window.location.href = "/Home/Index?funcionalidade=" + funcionalidade;
+    },
+
+    MonitorTV: function (idUnidade, nomeUnidade) {
+        window.location.href = "/Monitor/Index?idUnidade=" + idUnidade + "&NomeUnidade=" + nomeUnidade;
+    },
+
+    MonitorAdmin: function (idUnidade, nomeUnidade) {
+        $("#IdUnidade").val(idUnidade);
+        window.location.href = "/MonitorAdmin/Index?IdUnidade=" + idUnidade + "&NomeUnidade=" + nomeUnidade;
+    }
 }
 
 $(document).ready(function () {
 
-    $("#btTV").on("click", function () {
-        window.location.href = "/Monitor";
-    });
+    //$("#btTV").on("click", function () {
+    //    window.location.href = "/Monitor";
+    //});
 
     $("#btAdmin").on("click", function () {
         window.location.href = "/MonitorAdmin";

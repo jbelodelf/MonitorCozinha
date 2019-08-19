@@ -10,7 +10,7 @@ namespace JBD.MonitorCozinha.Domain.Interfaces.Repository.Base
     {
         IQueryable<T> Select(params string[] includes);
         IQueryable<T> Select(Expression<Func<T, bool>> expression, params string[] includes);
-        void Insert(T entity);
+        T Insert(T entity);
         void Insert(IEnumerable<T> entity);
         void Update(T entity);
         T Update(T entity, params string[] fieldsToUpdate);

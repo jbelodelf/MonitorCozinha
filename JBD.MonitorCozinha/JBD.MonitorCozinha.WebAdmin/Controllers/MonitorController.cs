@@ -19,15 +19,25 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
         }
 
         // GET: Monitor
-        public ActionResult Index()
+        public ActionResult Index(int idUnidade, string NomeUnidade)
+        {
+            if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
+            Controle.ControleAcesso.IdUnidade = idUnidade;
+            Controle.ControleAcesso.Unidade = NomeUnidade;
+
+            return View();
+        }
+
+        // GET: Monitor
+        public ActionResult Listar(int IdEmpresa, int IdUnidade)
         {
             if (!Controle.ValidarUsuarioLogado()) { return RedirectToAction("Index", "Login"); }
 
             List<NumeroPedidoViewModel> numeroPedidoViewModel = new List<NumeroPedidoViewModel>();
-            NumeroPedidoViewModel numeroPedidoVM = new NumeroPedidoViewModel();
-            var numeroPedidoDTO = _monitorServiceWeb.ListarNumeroPedidos();
+            var numeroPedidoDTO = _monitorServiceWeb.ListarNumeroPedidos(IdEmpresa, IdUnidade);
             numeroPedidoViewModel = _mapper.Map<List<NumeroPedidoViewModel>>(numeroPedidoDTO);
-            return View(numeroPedidoViewModel.OrderBy(n => n.IdNumeroPedido));
+
+            return PartialView("~/Views/Monitor/MainMonitorTv.cshtml", numeroPedidoViewModel.OrderBy(n => n.IdNumeroPedido));
         }
     }
 }

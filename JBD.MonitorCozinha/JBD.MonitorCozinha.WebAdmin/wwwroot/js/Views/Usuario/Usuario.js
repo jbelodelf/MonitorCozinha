@@ -198,11 +198,6 @@
 }
 
 $(document).ready(function () {
-
-    //$("#btTV").on("click", function () {
-    //    window.location.href = "/Monitor";
-    //});
-
     $("#btAdmin").on("click", function () {
         window.location.href = "/MonitorAdmin";
     });
@@ -210,4 +205,9 @@ $(document).ready(function () {
     $("#btGestao").on("click", function () {
         window.location.href = "/Empresa";
     });
+
+    var altura = window.screen.availHeight;
+    var largura = window.screen.availWidth;
+    $("#CadastroSenhaMotoboy").css('height', (altura - 230));
+    //$("#CadastroSenhaMotoboy").css('width', (largura - 17));
 })

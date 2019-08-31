@@ -30,6 +30,7 @@ namespace JBD.MonitorCozinha.Domain.Entitys
         public string Telefone { get; set; }
         public string Email { get; set; }
         public DateTime DataCadastro { get; set; }
+        public string ImageLogomarca { get; set; }
 
         public List<PessoaEntity> Pessoas { get; set; }
         public List<NumeroPedidoEntity> NumeroPedidos { get; set; }

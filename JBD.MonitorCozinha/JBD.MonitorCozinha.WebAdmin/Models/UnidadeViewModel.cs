@@ -34,7 +34,9 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public string Email { get; set; }
         [DisplayName("Data de Cadastro")]
         public DateTime DataCadastro { get; set; }
-      
+        [DisplayName("Logomarca")]
+        public string ImageLogomarca { get; set; }
+
         public string NomeEmpresa { get; set; }
 
         // Para List Index

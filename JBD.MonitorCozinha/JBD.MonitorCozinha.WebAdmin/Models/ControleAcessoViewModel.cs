@@ -34,6 +34,12 @@ namespace JBD.MonitorCozinha.WebAdmin.Models
         public int IdFuncionalidade { get; set; }
         public string Nome { get; set; }
 
+        // MONITOR TV
+        // CADASTRAR SENHAS
+        // CADASTRAR SENHAS - MOTOBOY
+        // MONITOR ADMINISTRATIVO
+
+
         // Cadastro
         // MonitorTV
         // MonitorTVAdmin

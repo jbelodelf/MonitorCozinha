@@ -36,6 +36,7 @@ namespace Data.Contexts
 
         private string StringConectionConfig()
         {
+            //My Sql...:Sqlerver@2016
             return "Server=DESKTOP-IANDO4A;Database=DB_MONITOR_COZINHA;User Id=sa;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
 
             //Michel

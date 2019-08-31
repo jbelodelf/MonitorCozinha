@@ -43,8 +43,6 @@ namespace JBD.MonitorCozinha.WebAdmin
             //    options.CheckConsentNeeded = context => true;
             //    options.MinimumSameSitePolicy = SameSiteMode.None;
             //});
-
-
             //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddSingleton(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));

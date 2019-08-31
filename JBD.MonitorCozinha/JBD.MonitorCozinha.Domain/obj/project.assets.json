@@ -686,24 +686,27 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mbelo\\.nuget\\packages\\": {},
+    "C:\\Users\\dell\\.nuget\\packages\\": {},
+    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
+      "projectUniqueName": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
       "projectName": "JBD.MonitorCozinha.Domain",
-      "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
-      "packagesPath": "C:\\Users\\mbelo\\.nuget\\packages\\",
-      "outputPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\obj\\",
+      "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj",
+      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
+      "outputPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
+        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\mbelo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"

@@ -8372,7 +8372,6 @@
       "path": "runtime.native.system/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8401,7 +8400,6 @@
       "path": "runtime.native.system.io.compression/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8415,7 +8413,6 @@
       "path": "runtime.native.system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -8895,7 +8892,6 @@
       "path": "system.collections.nongeneric/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9073,6 +9069,7 @@
       "path": "system.composition.attributedmodel/1.0.31",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.AttributedModel.dll",
@@ -9087,7 +9084,6 @@
       "path": "system.composition.convention/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.Convention.dll",
@@ -9130,7 +9126,6 @@
       "path": "system.composition.typedparts/1.0.31",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/System.Composition.TypedParts.dll",
@@ -9256,7 +9251,6 @@
       "path": "system.diagnostics.contracts/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -9385,6 +9379,8 @@
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.TXT",
+        "System.Diagnostics.DiagnosticSource.4.5.0.nupkg.sha512",
+        "System.Diagnostics.DiagnosticSource.nuspec",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net45/System.Diagnostics.DiagnosticSource.dll",
         "lib/net45/System.Diagnostics.DiagnosticSource.xml",
@@ -9396,8 +9392,6 @@
         "lib/netstandard1.3/System.Diagnostics.DiagnosticSource.xml",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.dll",
         "lib/portable-net45+win8+wpa81/System.Diagnostics.DiagnosticSource.xml",
-        "system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
-        "system.diagnostics.diagnosticsource.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
@@ -9408,7 +9402,6 @@
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10435,7 +10428,6 @@
       "path": "system.net.http/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -10729,7 +10721,6 @@
       "path": "system.private.datacontractserialization/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.3/System.Private.DataContractSerialization.dll",
@@ -10825,7 +10816,6 @@
       "path": "system.reflection.emit/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10861,7 +10851,6 @@
       "path": "system.reflection.emit.ilgeneration/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -10906,7 +10895,6 @@
       "path": "system.reflection.emit.lightweight/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11608,7 +11596,6 @@
       "path": "system.runtime.serialization.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11681,7 +11668,6 @@
       "path": "system.runtime.serialization.xml/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -11936,7 +11922,6 @@
       "path": "system.security.cryptography.csp/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12008,7 +11993,6 @@
       "path": "system.security.cryptography.openssl/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.6/System.Security.Cryptography.OpenSsl.dll",
@@ -12182,7 +12166,6 @@
       "path": "system.security.principal/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12765,7 +12748,6 @@
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -12822,7 +12804,6 @@
       "path": "system.threading.thread/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13018,7 +12999,6 @@
       "path": "system.xml.xmldocument/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13052,7 +13032,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -13127,7 +13107,6 @@
       "path": "system.xml.xpath/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -13241,27 +13220,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dell\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\mbelo\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebApiAdmin\\JBD.MonitorCozinha.WebApiAdmin.csproj",
+      "projectUniqueName": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebApiAdmin\\JBD.MonitorCozinha.WebApiAdmin.csproj",
       "projectName": "JBD.MonitorCozinha.WebApiAdmin",
-      "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebApiAdmin\\JBD.MonitorCozinha.WebApiAdmin.csproj",
-      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebApiAdmin\\obj\\",
+      "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebApiAdmin\\JBD.MonitorCozinha.WebApiAdmin.csproj",
+      "packagesPath": "C:\\Users\\mbelo\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebApiAdmin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\mbelo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -13273,17 +13249,17 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj": {
-              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj"
+            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj": {
+              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj"
             },
-            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj": {
-              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj"
+            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj": {
+              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Data\\Data.csproj"
             },
-            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj": {
-              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj"
+            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj": {
+              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj"
             },
-            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj": {
-              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj"
+            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj": {
+              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.WebAdmin\\JBD.MonitorCozinha.WebAdmin.csproj"
             }
           }
         }
@@ -13348,7 +13324,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.2.7' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETCoreApp,Version=v2.2'. This package may not be fully compatible with your project.",
+      "message": "O pacote 'Microsoft.AspNet.WebApi.Core 5.2.7' foi restaurado usando '.NETFramework,Version=v4.6.1' em vez da estrutura de destino do projeto '.NETCoreApp,Version=v2.2'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
       "libraryId": "Microsoft.AspNet.WebApi.Core",
       "targetGraphs": [
         ".NETCoreApp,Version=v2.2"

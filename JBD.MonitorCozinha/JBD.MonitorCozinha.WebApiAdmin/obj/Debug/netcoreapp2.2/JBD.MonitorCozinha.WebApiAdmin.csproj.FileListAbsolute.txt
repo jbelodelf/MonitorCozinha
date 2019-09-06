@@ -23,3 +23,5 @@ D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.csproj.CopyComplete
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.dll
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.WebApiAdmin.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.WebApiAdmin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.pdb

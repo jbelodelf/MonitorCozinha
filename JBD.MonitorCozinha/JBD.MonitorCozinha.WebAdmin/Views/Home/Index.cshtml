@@ -54,7 +54,7 @@
                 @foreach (var iten in Model.Unidades)
                 {
                     <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
-                        <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorTV(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                        <button class="btn btn-outline-dark col-sm-10 p-md-1" style="height:200px; font-size:35px;" onclick="Usuario.MonitorTV(@iten.IdUnidade,'@iten.Nome')">@iten.Nome</button>
                     </div>
                 }
             </div>
@@ -74,7 +74,7 @@
                 @foreach (var iten in Model.Unidades)
                 {
                     <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
-                        <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Home.Cadastrar(@iten.IdEmpresa,@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                        <button class="btn btn-outline-dark col-sm-10 p-md-1" style="height:200px; font-size:35px;" onclick="Home.Cadastrar(@iten.IdEmpresa,@iten.IdUnidade,'@iten.Nome')">@iten.Nome</button>
                     </div>
                 }
             </div>
@@ -193,14 +193,14 @@
                         if (iten.IdUnidade == Controle.ControleAcesso.IdUnidade)
                         {
                             <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
-                                <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                                <button class="btn btn-outline-dark col-sm-10 p-md-1" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome</button>
                             </div>
                         }
                     }
                     else
                     {
                         <div class="col-md-4" style="text-align:center; padding-top: 5px; font-size:50px;">
-                            <button class="btn btn-outline-dark col-10 p-5" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome<p>&nbsp;</p></button>
+                            <button class="btn btn-outline-dark col-sm-10 p-md-1" style="height:200px; font-size:35px;" onclick="Usuario.MonitorAdmin(@iten.IdUnidade,'@iten.Nome')">@iten.Nome</button>
                         </div>
                     }
                 }
@@ -214,7 +214,7 @@
     {
         <footer class="border-top footer text-muted">
             <div class="container-fluid" style="text-align:center">
-                &copy; 2019 - JBD.MonitorCozinha.WebAdmin - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                &copy; 2019 - Mymonitor.com.br @*<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>*@
             </div>
         </footer>
     }

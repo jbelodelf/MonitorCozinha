@@ -23,3 +23,5 @@ D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Test.Admin\obj\
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Test.Admin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Test.Admin.csproj.CopyComplete
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Test.Admin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Test.Admin.dll
 D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Test.Admin\obj\Debug\netcoreapp2.2\JBD.MonitorCozinha.Test.Admin.pdb
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Test.Admin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.dll
+D:\Projetos\MonitorCozinha\JBD.MonitorCozinha\JBD.MonitorCozinha.Test.Admin\bin\Debug\netcoreapp2.2\JBD.MonitorCozinha.CrossCutting.pdb

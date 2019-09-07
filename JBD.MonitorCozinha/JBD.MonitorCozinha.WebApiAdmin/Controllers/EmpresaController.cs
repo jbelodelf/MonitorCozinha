@@ -4,12 +4,14 @@ using AutoMapper;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Domain.DTOS;
 using JBD.MonitorCozinha.Domain.Entitys;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/empresa")]
     [ApiController]
+    [EnableCors("AllowSpecificOrigin")]
     public class EmpresaController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -21,8 +23,9 @@ namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
             _empresaApp = empresaApp;
         }
 
-        [AcceptVerbs("GET")]
-        [Route("ListarEmpresas")]
+        //[AcceptVerbs("GET")]
+        //[Route("ListarEmpresas")]
+        [HttpGet("listar")]
         public ObjectResult Get()
         {
             var empresasEntity = _empresaApp.ListarEmpresas();

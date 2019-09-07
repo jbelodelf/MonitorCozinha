@@ -10,7 +10,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             using (SmtpClient smtp = new SmtpClient("smtp.gmail.com"))
             {
                 MailMessage mail = new MailMessage();
-                mail.From = new MailAddress("jbelodelf@gmail.com");
+                mail.From = new MailAddress("mymonitor.suporte@gmail.com");
 
                 mail.Subject = "Monitor de Cozinha - Usuário operacional";
                 mail.IsBodyHtml = true;
@@ -20,7 +20,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
                 //mail.Attachments.Add(att);
                 smtp.EnableSsl = true;
                 smtp.Port = 587;
-                smtp.Credentials = new NetworkCredential("jbelodelf@gmail.com", "jbelo352");
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("mymonitor.suporte@gmail.com", "jbelo352");
                 smtp.Send(mail);
             }
             return true;

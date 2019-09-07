@@ -24,7 +24,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
             using (HttpClient client = new HttpClient())
             {
                 ServiceBase(client);
-                HttpResponseMessage response = client.GetAsync("ListarEmpresas").Result;
+                HttpResponseMessage response = client.GetAsync("listar").Result;
                 string stringData = response.Content.ReadAsStringAsync().Result;
                 List<EmpresaDTO> data = JsonConvert.DeserializeObject<List<EmpresaDTO>>(stringData);
 
@@ -92,7 +92,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Services
 
         public void ServiceBase(HttpClient client)
         {
-            client.BaseAddress = new Uri("http://localhost:52936/api/Empresa/");
+            //client.BaseAddress = new Uri("http://localhost:52936/api/empresa/");
+            client.BaseAddress = new Uri("http://www.apimymonitor.com.br/api/empresa/");
             MediaTypeWithQualityHeaderValue contentType = new MediaTypeWithQualityHeaderValue("application/json");
             client.DefaultRequestHeaders.Accept.Add(contentType);
         }

@@ -126,7 +126,8 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                         mensagem += "<p></p>";
                         mensagem += "<p>Usuário: " + usuario.UserName + "</p>";
                         mensagem += "<p>Senha: " + padraoPassword + "</p>";
-                        mensagem += "<p>Este usuário lhe dará acesso aos recursos de acesso ao Monitor de TV, para cadastrar novas senha</p>";
+                        mensagem += "<p>Este usuário lhe dará o acesso necessário aos recursos do Monitor de TV, para cadastrar novas senha e administra-las</p>";
+                        mensagem += "<p>http://www.mymonitor.com.br</p>";
                         mensagem += "</body></html>";
 
                         //Enviar e-mail para acesso
@@ -138,7 +139,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
             }
             catch (Exception ex)
             {
-                return View();
+                return Json(new { mensagem = "Ocorreu um erro ao tentar gravar os dados", retorno = "402" });
             }
         }
 

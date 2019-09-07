@@ -4,12 +4,14 @@ using AutoMapper;
 using JBD.MonitorCozinha.Application.Interfaces;
 using JBD.MonitorCozinha.Domain.DTOS;
 using JBD.MonitorCozinha.Domain.Entitys;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JBD.MonitorCozinha.WebApiAdmin.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("AllowSpecificOrigin")]
     public class UsuarioController : ControllerBase
     {
         private readonly IMapper _mapper;

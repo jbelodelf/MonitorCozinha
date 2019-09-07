@@ -36,10 +36,13 @@ namespace Data.Contexts
 
         private string StringConectionConfig()
         {
-            //My Sql...:Sqlerver@2016
-            return "Server=DESKTOP-IANDO4A;Database=DB_MONITOR_COZINHA;User Id=sa;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
+            //Produção
+            return "Server=mssql.mymonitor.com.br;Database=mymonitor;User Id=mymonitor;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
 
-            //Michel
+            ////Local
+            //return "Server=DESKTOP-IANDO4A;Database=DB_MONITOR_COZINHA;User Id=sa;Password=sqlserver2016;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
+
+            ////Michel
             //return "Server=DESKTOP-24V97RI;Database=DB_MONITOR_COZINHA;User Id=sa;Password=mbelo;MultipleActiveResultSets=true;Encrypt=YES;TrustServerCertificate=YES";
         }
     }

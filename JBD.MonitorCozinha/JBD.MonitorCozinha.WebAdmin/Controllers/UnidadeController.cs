@@ -136,6 +136,7 @@ namespace JBD.MonitorCozinha.WebAdmin.Controllers
                         mensagem += "<p></p>";
                         mensagem += "<p>Usuário: " + usuario.UserName + "</p>";
                         mensagem += "<p>Senha: " + padraoPassword + "</p>";
+                        mensagem += "<p>http://www.mymonitor.com.br</p>";
                         mensagem += "<p>Este usuário lhe dará acesso aos recursos do Monitor de Administrativo, para atualizar o andamento das senha</p>";
                         mensagem += "</body></html>";
 

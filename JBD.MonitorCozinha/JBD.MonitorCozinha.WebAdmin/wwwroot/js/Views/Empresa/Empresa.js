@@ -364,4 +364,34 @@ $(document).ready(function () {
         }
     });
 
+    $("#Telefone").focusout(function () {
+        $("#Telefone").unmask();
+        var tamanho = $("#Telefone").val().replace(/\D/g, '').length;
+        
+        if (tamanho > 11)
+        {
+            $("#mensagemModal").text("Digite um número válido de Telefone").show();
+            window.setTimeout(function () {
+                $("#mensagemModal").text("").hide();
+            }, 2000);
+            $("#Telefone").val("")
+        }
+        else if (tamanho < 10)
+        {
+            $("#mensagemModal").text("Digite um número válido de Telefone").show();
+            window.setTimeout(function () {
+                $("#mensagemModal").text("").hide();
+            }, 2000);
+            $("#Telefone").val("")
+        }
+        else if (tamanho == 10) {
+            $("#Telefone").mask("(99) 9999-9999");
+        }
+        else if (tamanho == 11)
+        {
+           $("#Telefone").mask("(99) 99999-9999");
+        } 
+
+    });
+
 });

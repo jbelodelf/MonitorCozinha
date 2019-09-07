@@ -702,27 +702,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dell\\.nuget\\packages\\": {},
-    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\mbelo\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj",
+      "projectUniqueName": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj",
       "projectName": "JBD.MonitorCozinha.Application",
-      "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj",
-      "packagesPath": "C:\\Users\\dell\\.nuget\\packages\\",
-      "outputPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\obj\\",
+      "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\JBD.MonitorCozinha.Application.csproj",
+      "packagesPath": "C:\\Users\\mbelo\\.nuget\\packages\\",
+      "outputPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\mbelo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -734,8 +731,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj": {
-              "projectPath": "F:\\Projetos_Gerais\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj"
+            "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj": {
+              "projectPath": "D:\\Projetos\\MonitorCozinha\\JBD.MonitorCozinha\\JBD.MonitorCozinha.Domain\\JBD.MonitorCozinha.Domain.csproj"
             }
           }
         }
